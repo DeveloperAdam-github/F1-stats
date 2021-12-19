@@ -105,9 +105,7 @@ export default {
   },
   props: ['team'],
   methods: {
-    whatTeam() {
-      console.log(this.team);
-    },
+    whatTeam() {},
   },
   mounted() {
     this.whatTeam();

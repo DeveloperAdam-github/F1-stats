@@ -37,13 +37,11 @@ export default {
         .then((response) => {
           this.drivers =
             response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
-          console.log(this.drivers);
         });
     },
   },
   mounted() {
     this.getDrivers();
-    console.log(this.drivers);
   },
 };
 </script>

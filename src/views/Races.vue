@@ -51,7 +51,7 @@ export default {
           response.data.MRData.RaceTable.Races.forEach((element) =>
             this.firstPlace.push(element)
           );
-          console.log(this.firstPlace, '🤡');
+
         });
     },
     getSecondPlace() {

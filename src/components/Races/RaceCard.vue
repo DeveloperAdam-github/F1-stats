@@ -281,9 +281,7 @@ export default {
     };
   },
   props: ['race', 'first', 'second', 'third', 'secondPlace'],
-  created() {
-    console.log(this.first, '1️⃣');
-  },
+  created() {},
 };
 </script>
 

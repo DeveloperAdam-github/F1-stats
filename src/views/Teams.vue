@@ -36,13 +36,11 @@ export default {
         .then((response) => {
           this.teams =
             response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
-          console.log(this.teams);
         });
     },
   },
   mounted() {
     this.getTeams();
-    console.log(this.teams);
   },
 };
 </script>

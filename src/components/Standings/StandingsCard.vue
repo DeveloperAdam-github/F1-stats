@@ -152,9 +152,7 @@ export default {
   },
   props: ['driver'],
   methods: {
-    whosDriver() {
-      console.log(this.driver);
-    },
+    whosDriver() {},
   },
   mounted() {
     this.whosDriver();
