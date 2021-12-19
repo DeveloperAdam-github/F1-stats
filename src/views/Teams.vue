@@ -32,7 +32,7 @@ export default {
   methods: {
     getTeams() {
       axios
-        .get('http://ergast.com/api/f1/current/constructorStandings.json')
+        .get('https://ergast.com/api/f1/current/constructorStandings.json')
         .then((response) => {
           this.teams =
             response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
