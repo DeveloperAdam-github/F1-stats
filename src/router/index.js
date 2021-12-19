@@ -9,11 +9,6 @@ import SingleDriver from '../views/SingleDriver.vue';
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/drivers',
     name: 'Drivers',
     component: Drivers,
   },
