@@ -16,9 +16,7 @@
           src="../../assets/dutch.gif"
           alt=""
         />
-        <h2 class="text-white font-bold">
-          {{ driver.Driver.givenName }}{{ driver.Driver.familyName }}
-        </h2>
+        <h2 class="text-white font-bold">Max</h2>
       </div>
       <div class="flex flex-col mt-4 p-1 text-gray-400 text-sm">
         <div class="flex w-full justify-between m-1">

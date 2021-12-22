@@ -5,6 +5,7 @@ import Races from '../views/Races.vue';
 import Teams from '../views/Teams.vue';
 import Standings from '../views/Standings.vue';
 import SingleDriver from '../views/SingleDriver.vue';
+import DriverBattle from '../views/DriverBattle.vue';
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/single-driver',
     name: 'Single Driver',
     component: SingleDriver,
+  },
+  {
+    path: '/driver-battles',
+    name: 'Driver Battles',
+    component: DriverBattle,
   },
 ];
 
