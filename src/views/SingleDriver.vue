@@ -3,8 +3,12 @@
     <div class="">
       <div class="driver-page h-84vh w-full flex flex-col p-6">
         <driver-title />
+        <p>
+          {{ currentDriver }}
+          lol
+        </p>
         <div class="w-full flex justify-center pt-10">
-          <drivers-card />
+          <drivers-card @driver="loadDriverData" />
         </div>
       </div>
     </div>
@@ -16,6 +20,20 @@ import DriversCard from '../components/Drivers/DriversCard.vue';
 import DriverTitle from '../components/Drivers/DriverTitle.vue';
 export default {
   components: { DriverTitle, DriversCard },
+  data() {
+    return {
+      currentDriver: [],
+    };
+  },
+  methods: {
+    loadDriverData() {
+      this.currentDriver = this.driverInfo;
+      console.log(this.currentDriver, 'hmm?');
+    },
+  },
+  mounted() {
+    this.loadDriverData();
+  },
 };
 </script>
 

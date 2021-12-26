@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8">
+  <div>
     <div class="pl-4">
       <img
         class="w-40"
@@ -16,7 +16,9 @@
           src="../../assets/dutch.gif"
           alt=""
         />
-        <h2 class="text-white font-bold">Max</h2>
+        <h2 class="text-white font-bold">
+          {{ driverInfo.givenName }} <span></span>{{ driverInfo.familyName }}
+        </h2>
       </div>
       <div class="flex flex-col mt-4 p-1 text-gray-400 text-sm">
         <div class="flex w-full justify-between m-1">
@@ -46,7 +48,28 @@
 
 <script>
 export default {
-  props: ['driver'],
+  components: {},
+  // props: ['driver'],
+  data() {
+    return {
+      driverInfo: '',
+    };
+  },
+  methods: {
+    getDriver() {
+      this.driverInfo = this.$props.driver;
+    },
+    emitFunction() {
+      this.$emit('driver', this.driverInfo);
+      console.log(this.driverInfo, 'driverinfo being emitted');
+    },
+  },
+  created() {
+    this.driverInfo = this.$route.params;
+    // console.log(this.$route.params, 'params');
+    console.log(this.driverInfo, 'lol');
+    this.emitFunction();
+  },
 };
 </script>
 

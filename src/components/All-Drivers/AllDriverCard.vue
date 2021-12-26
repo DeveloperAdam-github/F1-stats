@@ -1,81 +1,89 @@
 <template>
   <div class="pt-10 pl-2 w-72 m-2 mx-5 carousel-item flex flex-col lg:mx-8">
-    <div class="pl-4 relative w-64 flex right-10">
-      <p
-        class="transform text-2xl absolute top-1 -right-15 z-10 text-black font-boldHeadline"
-      >
-        {{ driver.Driver.permanentNumber }}
-      </p>
-      <p
-        class="transform text-2xl absolute top-1.5 -right-14 z-10 text-red-600 font-boldHeadline"
-      >
-        {{ driver.Driver.permanentNumber }}
-      </p>
-    </div>
-    <div
-      class="race-card w-72 h-96 rounded-lg flex flex-col p-4"
-      :style="{
-        'background-image':
-          driver.Driver.driverId === 'max_verstappen'
-            ? this.verstappen
-            : driver.Driver.driverId === 'hamilton'
-            ? this.hamilton
-            : driver.Driver.driverId === 'bottas'
-            ? this.bottas
-            : driver.Driver.driverId === 'perez'
-            ? this.perez
-            : driver.Driver.driverId === 'sainz'
-            ? this.sainz
-            : driver.Driver.driverId === 'norris'
-            ? this.norris
-            : driver.Driver.driverId === 'leclerc'
-            ? this.leclerc
-            : driver.Driver.driverId === 'ricciardo'
-            ? this.ricciardo
-            : driver.Driver.driverId === 'gasly'
-            ? this.gasly
-            : driver.Driver.driverId === 'alonso'
-            ? this.alonso
-            : driver.Driver.driverId === 'ocon'
-            ? this.ocon
-            : driver.Driver.driverId === 'vettel'
-            ? this.vettel
-            : driver.Driver.driverId === 'stroll'
-            ? this.stroll
-            : driver.Driver.driverId === 'tsunoda'
-            ? this.tsunoda
-            : driver.Driver.driverId === 'russell'
-            ? this.russell
-            : driver.Driver.driverId === 'raikkonen'
-            ? this.raikkonen
-            : driver.Driver.driverId === 'latifi'
-            ? this.latifi
-            : driver.Driver.driverId === 'giovinazzi'
-            ? this.giovinazzi
-            : driver.Driver.driverId === 'mick_schumacher'
-            ? this.mick_schumacher
-            : driver.Driver.driverId === 'mazepin'
-            ? this.mazepin
-            : driver.Driver.driverId === 'kubica'
-            ? this.kubica
-            : '',
+    <router-link
+      :to="{
+        name: 'SingleDriver',
+        params: { ...driver.Driver },
+        query: { driver: driver.Driver.driverId },
       }"
     >
-      <div class="flex flex-col p-2 mt-10 h-full justify-end">
-        <!-- <p class="faded-bg text-gray-100 font-boldHeadline text-sm text-right">
+      <div class="pl-4 relative w-64 flex right-10">
+        <p
+          class="transform text-2xl absolute top-1 -right-15 z-10 text-black font-boldHeadline"
+        >
+          {{ driver.Driver.permanentNumber }}
+        </p>
+        <p
+          class="transform text-2xl absolute top-1.5 -right-14 z-10 text-red-600 font-boldHeadline"
+        >
+          {{ driver.Driver.permanentNumber }}
+        </p>
+      </div>
+      <div
+        class="race-card w-72 h-96 rounded-lg flex flex-col p-4"
+        :style="{
+          'background-image':
+            driver.Driver.driverId === 'max_verstappen'
+              ? this.verstappen
+              : driver.Driver.driverId === 'hamilton'
+              ? this.hamilton
+              : driver.Driver.driverId === 'bottas'
+              ? this.bottas
+              : driver.Driver.driverId === 'perez'
+              ? this.perez
+              : driver.Driver.driverId === 'sainz'
+              ? this.sainz
+              : driver.Driver.driverId === 'norris'
+              ? this.norris
+              : driver.Driver.driverId === 'leclerc'
+              ? this.leclerc
+              : driver.Driver.driverId === 'ricciardo'
+              ? this.ricciardo
+              : driver.Driver.driverId === 'gasly'
+              ? this.gasly
+              : driver.Driver.driverId === 'alonso'
+              ? this.alonso
+              : driver.Driver.driverId === 'ocon'
+              ? this.ocon
+              : driver.Driver.driverId === 'vettel'
+              ? this.vettel
+              : driver.Driver.driverId === 'stroll'
+              ? this.stroll
+              : driver.Driver.driverId === 'tsunoda'
+              ? this.tsunoda
+              : driver.Driver.driverId === 'russell'
+              ? this.russell
+              : driver.Driver.driverId === 'raikkonen'
+              ? this.raikkonen
+              : driver.Driver.driverId === 'latifi'
+              ? this.latifi
+              : driver.Driver.driverId === 'giovinazzi'
+              ? this.giovinazzi
+              : driver.Driver.driverId === 'mick_schumacher'
+              ? this.mick_schumacher
+              : driver.Driver.driverId === 'mazepin'
+              ? this.mazepin
+              : driver.Driver.driverId === 'kubica'
+              ? this.kubica
+              : '',
+        }"
+      >
+        <div class="flex flex-col p-2 mt-10 h-full justify-end">
+          <!-- <p class="faded-bg text-gray-100 font-boldHeadline text-sm text-right">
           {{ driver.position }}
         </p>
         <p class="faded-bg text-white font-headline text-base text-right">
           {{ driver.points }}
         </p> -->
-        <h2 class="font-boldHeadline text-white text-right">
-          {{ driver.Driver.givenName }}
-        </h2>
-        <h2 class="font-boldHeadline text-base text-white text-right">
-          {{ driver.Driver.familyName }}
-        </h2>
+          <h2 class="font-boldHeadline text-white text-right">
+            {{ driver.Driver.givenName }}
+          </h2>
+          <h2 class="font-boldHeadline text-base text-white text-right">
+            {{ driver.Driver.familyName }}
+          </h2>
+        </div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 

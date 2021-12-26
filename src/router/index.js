@@ -30,8 +30,9 @@ const routes = [
   },
   {
     path: '/single-driver',
-    name: 'Single Driver',
+    name: 'SingleDriver',
     component: SingleDriver,
+    props: true,
   },
   {
     path: '/driver-battles',

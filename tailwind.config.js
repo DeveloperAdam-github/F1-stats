@@ -11,6 +11,11 @@ module.exports = {
       fourth: '#212226',
     }),
     extend: {
+      backgroundImage: {
+        max: 'linear-gradient(rgba(1, 1, 1, 100),rgba(255, 255, 255, 0.43)),url(https://qph.fs.quoracdn.net/main-qimg-b391f91142376d97500ed2b4c36668d5);',
+        lewis:
+          'linear-gradient(rgba(1, 1, 1, 100),rgba(255, 255, 255, 0.43)),url(https://static.independent.co.uk/2021/05/09/15/1317116893.jpg?width=982&height=726&auto=webp&quality=75);',
+      },
       fontFamily: {
         headline: ['F1-Regular'],
         boldHeadline: ['F1-Bold'],
