@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-14 md:h-16 lg:h-24 2xl:h-28 w-full rounded-md small-card flex rounded-br-full items-center carousel-item mt-4 lg:mt-5"
+    class="h-14 md:h-16 lg:h-24 2xl:h-28 w-full rounded-md small-card flex rounded-br-full items-center carousel-item mt-4 lg:mt-5 bg-center"
     :style="{
       'background-image':
         driver.Driver.driverId === 'max_verstappen'
@@ -143,7 +143,7 @@ export default {
       giovinazzi:
         'linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(1, 1, 1, 0.9)),url(https://f1i.com/wp-content/uploads/2021/04/antonio-giovinazzi.jpg)',
       mick_schumacher:
-        'linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(1, 1, 1, 0.9)),url(https://asnmp.com/wp-content/uploads/2021/06/rsz_1018678341-lat-20210620-gp2107_123118_56i8183-810.jpg)',
+        'linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(1, 1, 1, 0.9)),url(https://park.shifting-gears.com/wp-content/uploads/2020/12/mic-schumacher-haas-f1-2021-2.jpeg)',
       mazepin:
         'linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(1, 1, 1, 0.9)),url(https://files.gpblog.com/news/2021/05/15/v2_large_c024ea95476bd36c8d000148695603da9bc5984c.jpg)',
       kubica:

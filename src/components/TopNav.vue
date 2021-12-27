@@ -1,11 +1,11 @@
 <template>
-  <div class="w-full flex justify-between p-1 bg-black">
-    <div class="h-full p-2 pl-4 cursor-pointer">
+  <div class="w-full flex justify-between pt-5 lg:pt-2 px-2 bg-black">
+    <div class="h-full p-2 pl-4 cursor-pointer mt-5 lg:mt-0">
       <a @click="$router.go(-1)" class="cursor-pointer">
         <i class="fas fa-arrow-left text-white text-xl"></i>
       </a>
     </div>
-    <div class="h-full p-2">
+    <div class="h-full p-2 mt-5 lg:mt-0">
       <img class="w-12" src="../assets/F1-logo.png" alt="" />
     </div>
     <div class="h-full p-2 flex items-center">

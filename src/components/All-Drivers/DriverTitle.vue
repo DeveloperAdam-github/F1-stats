@@ -8,9 +8,9 @@
         </h1>
       </div>
       <div
-        class="text-xs lg:text-lg text-gray-400 flex-wrap lg:flex-nowrap w-4/5 text-left font-sans lg:w-full"
+        class="text-xs lg:text-lg text-gray-400 flex-wrap lg:flex-nowrap w-full text-left font-headline lg:w-full"
       >
-        <p>Driver line up for 2021 season</p>
+        <p>Driver line up for the 2021 Forumla 1 Season</p>
       </div>
     </div>
   </div>

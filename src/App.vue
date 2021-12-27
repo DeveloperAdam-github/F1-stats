@@ -1,7 +1,12 @@
 <template>
   <div class="h-screen w-screen bg-secondary overflow-hidden">
-    <TopNav class="h-6vh" />
-    <router-view class="h-84vh" />
+    <TopNav class="h-10vh lg:h-6vh" />
+    <!-- <router-view class="h-80vh lg:h-84vh" /> -->
+    <router-view v-slot="{ Component }" class="h-80vh lg:h-84vh">
+      <transition name="route" mode="out-in">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
     <Navbar class="h-10vh" />
   </div>
 </template>
@@ -33,5 +38,24 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+/* Route transitions */
+.router-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.router-enter-active {
+  transition: all 0.4s ease-in-out;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.route-leave-active {
+  transition: all 0.4s ease-in-out;
 }
 </style>

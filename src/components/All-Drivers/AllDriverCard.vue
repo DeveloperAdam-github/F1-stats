@@ -11,12 +11,12 @@
         <p
           class="transform text-2xl absolute top-1 -right-15 z-10 text-black font-boldHeadline"
         >
-          {{ driver.Driver.permanentNumber }}
+          <span class="text-base">#</span>{{ driver.Driver.permanentNumber }}
         </p>
         <p
           class="transform text-2xl absolute top-1.5 -right-14 z-10 text-red-600 font-boldHeadline"
         >
-          {{ driver.Driver.permanentNumber }}
+          <span class="text-base">#</span>{{ driver.Driver.permanentNumber }}
         </p>
       </div>
       <div
@@ -102,47 +102,48 @@ export default {
         mclaren: mclaren,
         williams: '',
       },
+      // rgba(255,255,255,0.22)
       verstappen:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)), url(https://f1lead.com/wp-content/uploads/2020/08/F1-ANNIVERSARY-GP-2020-MAX-VERSTAPPEN-WINS-RACE-1.jpg?is-pending-load=1)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)), url(https://www.formula1.com/content/dam/fom-website/sutton/2020/AbuDhabi/Saturday/1290862295.jpg)',
       hamilton:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/race-winner-lewis-hamilton-of-great-britain-and-mercedes-gp-news-photo-1636925829.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/race-winner-lewis-hamilton-of-great-britain-and-mercedes-gp-news-photo-1636925829.jpg)',
       bottas:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/10/10141604/valtteri-bottas-arms-raised-celebration-planetf1-1200x630.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/10/10141604/valtteri-bottas-arms-raised-celebration-planetf1-1200x630.jpg)',
       perez:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2021/4/20/cjfwx2fomovkyrd5w4sk/sergio-perez-emilia-eomagna-grand-prix-2021)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2021/4/20/cjfwx2fomovkyrd5w4sk/sergio-perez-emilia-eomagna-grand-prix-2021)',
       sainz:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://cdn.crash.net/styles/article/s3/image_importer/F1/2806911.0064.jpg?itok=djpUAc_u)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://cdn.crash.net/styles/article/s3/image_importer/F1/2806911.0064.jpg?itok=djpUAc_u)',
       norris:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/09/25143812/lando-norris-holds-up-one-finger-sochi-planetf1.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/09/25143812/lando-norris-holds-up-one-finger-sochi-planetf1.jpg)',
       leclerc:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://f1beat.com/wp-content/uploads/2021/06/polesitter-charles-leclerc-fer.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://f1beat.com/wp-content/uploads/2021/06/polesitter-charles-leclerc-fer.jpg)',
       ricciardo:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://lh3.googleusercontent.com/eEkrCtJNqjfuZ5neDS667-Me6aU3pbo_k6THoAgw4kdMvuzg27_1Q4GNEbqS_rCYzZWZsuWO-0GWxdNnhAURjJH0EzI6L2y4kSI=s1500-pp)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://lh3.googleusercontent.com/eEkrCtJNqjfuZ5neDS667-Me6aU3pbo_k6THoAgw4kdMvuzg27_1Q4GNEbqS_rCYzZWZsuWO-0GWxdNnhAURjJH0EzI6L2y4kSI=s1500-pp)',
       gasly:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://pbs.twimg.com/media/EhJyRuIWsAEIwdJ?format=jpg&name=large)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://pbs.twimg.com/media/EhJyRuIWsAEIwdJ?format=jpg&name=large)',
       alonso:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://www.motorsportweek.com/wp-content/uploads/2021/07/jm2117jy751-Custom.jpg)',
-      ocon: 'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/133/344/HD-wallpaper-esteban-ocon-alpine-alpine-f1-driver-f1-formula-1-formula-one-formula1-motorsport-sports.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://www.motorsportweek.com/wp-content/uploads/2021/07/jm2117jy751-Custom.jpg)',
+      ocon: 'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/133/344/HD-wallpaper-esteban-ocon-alpine-alpine-f1-driver-f1-formula-1-formula-one-formula1-motorsport-sports.jpg)',
       vettel:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/182/920/HD-wallpaper-sebastian-vettel-azerbaijan-green-sports-teams-baku-formula-1-f1-aston-martin.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/182/920/HD-wallpaper-sebastian-vettel-azerbaijan-green-sports-teams-baku-formula-1-f1-aston-martin.jpg)',
       stroll:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://cdn-1.motorsport.com/images/amp/YP3J3Ne2/s1000/lance-stroll-aston-martin-1.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://cdn-1.motorsport.com/images/amp/YP3J3Ne2/s1000/lance-stroll-aston-martin-1.jpg)',
       tsunoda:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://carmaniadotmx.files.wordpress.com/2020/12/4nlshj1z.jpeg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://carmaniadotmx.files.wordpress.com/2020/12/4nlshj1z.jpeg)',
       russell:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/704/645/HD-wallpaper-george-russell-63-williams-george-russell-formula-1-gr63-f1.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/704/645/HD-wallpaper-george-russell-63-williams-george-russell-formula-1-gr63-f1.jpg)',
       raikkonen:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://f1i.com/wp-content/uploads/2020/11/Kimi-Raikkonen-Alfa-Romeo-725x500.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://f1i.com/wp-content/uploads/2020/11/Kimi-Raikkonen-Alfa-Romeo-725x500.jpg)',
       latifi:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://www.thecheckeredflag.co.uk/wp-content/uploads/2019/10/Latifi-Williams.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://www.thecheckeredflag.co.uk/wp-content/uploads/2019/10/Latifi-Williams.jpg)',
       giovinazzi:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2020/10/06091051/Antonio-Giovinazzi-Alfa-Romeo.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2020/10/06091051/Antonio-Giovinazzi-Alfa-Romeo.jpg)',
       mick_schumacher:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/696/180/HD-wallpaper-mick-schumacher-47-formula-1-ms47-f1-haas-mick-schumacher.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/696/180/HD-wallpaper-mick-schumacher-47-formula-1-ms47-f1-haas-mick-schumacher.jpg)',
       mazepin:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://files.gpblog.com/news/2021/05/15/v2_large_c024ea95476bd36c8d000148695603da9bc5984c.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://files.gpblog.com/news/2021/05/15/v2_large_c024ea95476bd36c8d000148695603da9bc5984c.jpg)',
       kubica:
-        'linear-gradient(to bottom right, rgba(255,255,255,0.22), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/08/18101104/robert-kubica-alfa-romeo-garage-hungary-planetf1.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/08/18101104/robert-kubica-alfa-romeo-garage-hungary-planetf1.jpg)',
     };
   },
   props: ['driver'],

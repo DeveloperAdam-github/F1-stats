@@ -1,14 +1,58 @@
 <template>
-  <div class="w-full flex-1 bg-secondary">
+  <div class="w-full bg-secondary">
     <div class="">
-      <div class="driver-page h-84vh w-full flex flex-col p-6">
-        <driver-title />
-        <p>
-          {{ currentDriver }}
-          lol
-        </p>
+      <div
+        class="driver-page h-80vh lg:h-84vh w-full flex flex-col p-6"
+        :class="
+          driverInfo.code === 'VER'
+            ? 'bg-max'
+            : driverInfo.code === 'HAM'
+            ? 'bg-lewis'
+            : driverInfo.code === 'BOT'
+            ? 'bg-bottas'
+            : driverInfo.code === 'PER'
+            ? 'bg-perez'
+            : driverInfo.code === 'SAI'
+            ? 'bg-sainz'
+            : driverInfo.code === 'NOR'
+            ? 'bg-norris'
+            : driverInfo.code === 'LEC'
+            ? 'bg-leclerc'
+            : driverInfo.code === 'RIC'
+            ? 'bg-ricciardo'
+            : driverInfo.code === 'GAS'
+            ? 'bg-gasly'
+            : driverInfo.code === 'ALO'
+            ? 'bg-alonso'
+            : driverInfo.code === 'OCO'
+            ? 'bg-ocon'
+            : driverInfo.code === 'VET'
+            ? 'bg-vettel'
+            : driverInfo.code === 'STR'
+            ? 'bg-stroll'
+            : driverInfo.code === 'TSU'
+            ? 'bg-tsunoda'
+            : driverInfo.code === 'RUS'
+            ? 'bg-russell'
+            : driverInfo.code === 'RAI'
+            ? 'bg-raikonenn'
+            : driverInfo.code === 'LAT'
+            ? 'bg-latifi'
+            : driverInfo.code === 'GIO'
+            ? 'bg-giovinazzi'
+            : driverInfo.code === 'MSC'
+            ? 'bg-mick'
+            : driverInfo.code === 'MAZ'
+            ? 'bg-mazepin'
+            : driverInfo.code === 'KUB'
+            ? 'bg-kubica'
+            : ''
+        "
+      >
+        <driver-title :driverInfo="driverInfo" />
+        <p>{{ currentDriver }}</p>
         <div class="w-full flex justify-center pt-10">
-          <drivers-card @driver="loadDriverData" />
+          <drivers-card :driverInfo="driverInfo" />
         </div>
       </div>
     </div>
@@ -22,10 +66,14 @@ export default {
   components: { DriverTitle, DriversCard },
   data() {
     return {
+      driverInfo: '',
       currentDriver: [],
     };
   },
   methods: {
+    getDriver() {
+      this.driverInfo = this.$props.driver;
+    },
     loadDriverData() {
       this.currentDriver = this.driverInfo;
       console.log(this.currentDriver, 'hmm?');
@@ -33,6 +81,9 @@ export default {
   },
   mounted() {
     this.loadDriverData();
+    this.driverInfo = this.$route.params;
+    // console.log(this.$route.params, 'params');
+    console.log(this.driverInfo, 'lol');
   },
 };
 </script>
