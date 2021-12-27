@@ -34,7 +34,7 @@
         </p>
         <p v-if="driverInfo.code === 'RIC'">
           The self-styled “Honey Badger” is fuzzy on the outside and feisty on
-          the inside. 🦡
+          the inside.
         </p>
         <p v-if="driverInfo.code === 'GAS'">
           If there’s one man who knows how big a rollercoaster ride an F1
