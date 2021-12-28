@@ -36,8 +36,9 @@ const routes = [
   },
   {
     path: '/driver-battles',
-    name: 'Driver Battles',
+    name: 'DriverBattle',
     component: DriverBattle,
+    props: true,
   },
 ];
 

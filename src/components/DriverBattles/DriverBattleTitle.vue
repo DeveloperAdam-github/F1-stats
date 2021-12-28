@@ -4,23 +4,22 @@
     <div class="h-full flex flex-col justify-start pl-3">
       <div class="text-left text-lg font-bold text-white">
         <h1 class="font-boldHeadline tracking-wide text-base lg:text-lg">
-          Teams
+          Head to Head
         </h1>
       </div>
       <div
         class="text-xs lg:text-lg text-gray-400 flex-wrap lg:flex-nowrap w-4/5 text-left font-sans lg:w-full"
       >
-        <p>
-          The full Constructors line up for the 2021 Formula 1 season. Click a
-          card to see the drivers go head to head
-        </p>
+        <p>See the {{ team.name }} drivers go head to head!</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['team'],
+};
 </script>
 
 <style></style>

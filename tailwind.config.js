@@ -9,6 +9,17 @@ module.exports = {
       secondary: '#141517',
       third: '#FF2E0C',
       fourth: '#212226',
+      red_bull: '#0600ef',
+      mercedes: '#00D2BE',
+      ferrari: '#DC0000',
+      mclaren: '#FF9800',
+      alphatauri: '#2B4562',
+      alfa: '#900000',
+      haas: '#FFF',
+      alpine: '#0090FF',
+      aston_martin: '#006F62',
+      williams: '#005AFF',
+      white: '#f5f5f5',
     }),
     extend: {
       backgroundImage: {
@@ -51,6 +62,48 @@ module.exports = {
           'linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(https://cdn-1.motorsport.com/images/amp/0rGpe952/s1000/winning-constructor-representa.jpg);',
         kubica:
           'linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(https://cdn-1.motorsport.com/static/img/amp/4900000/4980000/4981000/4981700/4981771/s6_1008021/1008021.jpg);',
+        maxBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)), url(https://www.formula1.com/content/dam/fom-website/sutton/2020/AbuDhabi/Saturday/1290862295.jpg)',
+        hamiltonBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/race-winner-lewis-hamilton-of-great-britain-and-mercedes-gp-news-photo-1636925829.jpg)',
+        bottasBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/10/10141604/valtteri-bottas-arms-raised-celebration-planetf1-1200x630.jpg)',
+        perezBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2021/4/20/cjfwx2fomovkyrd5w4sk/sergio-perez-emilia-eomagna-grand-prix-2021)',
+        sainzBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://cdn.crash.net/styles/article/s3/image_importer/F1/2806911.0064.jpg?itok=djpUAc_u)',
+        norrisBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/09/25143812/lando-norris-holds-up-one-finger-sochi-planetf1.jpg)',
+        leclercBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://f1beat.com/wp-content/uploads/2021/06/polesitter-charles-leclerc-fer.jpg)',
+        ricciardoBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://lh3.googleusercontent.com/eEkrCtJNqjfuZ5neDS667-Me6aU3pbo_k6THoAgw4kdMvuzg27_1Q4GNEbqS_rCYzZWZsuWO-0GWxdNnhAURjJH0EzI6L2y4kSI=s1500-pp)',
+        gaslyBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://pbs.twimg.com/media/EhJyRuIWsAEIwdJ?format=jpg&name=large)',
+        alonsoBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://www.motorsportweek.com/wp-content/uploads/2021/07/jm2117jy751-Custom.jpg)',
+        oconBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/133/344/HD-wallpaper-esteban-ocon-alpine-alpine-f1-driver-f1-formula-1-formula-one-formula1-motorsport-sports.jpg)',
+        vettelBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/182/920/HD-wallpaper-sebastian-vettel-azerbaijan-green-sports-teams-baku-formula-1-f1-aston-martin.jpg)',
+        strollBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://cdn-1.motorsport.com/images/amp/YP3J3Ne2/s1000/lance-stroll-aston-martin-1.jpg)',
+        tsunodaBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://carmaniadotmx.files.wordpress.com/2020/12/4nlshj1z.jpeg)',
+        russellBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/704/645/HD-wallpaper-george-russell-63-williams-george-russell-formula-1-gr63-f1.jpg)',
+        raikkonenBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://f1i.com/wp-content/uploads/2020/11/Kimi-Raikkonen-Alfa-Romeo-725x500.jpg)',
+        latifiBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://www.thecheckeredflag.co.uk/wp-content/uploads/2019/10/Latifi-Williams.jpg)',
+        giovinazziBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2020/10/06091051/Antonio-Giovinazzi-Alfa-Romeo.jpg)',
+        mickBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://w0.peakpx.com/wallpaper/696/180/HD-wallpaper-mick-schumacher-47-formula-1-ms47-f1-haas-mick-schumacher.jpg)',
+        mazepinBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://files.gpblog.com/news/2021/05/15/v2_large_c024ea95476bd36c8d000148695603da9bc5984c.jpg)',
+        kubicaBattle:
+          'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/08/18101104/robert-kubica-alfa-romeo-garage-hungary-planetf1.jpg)',
       },
       fontFamily: {
         headline: ['F1-Regular'],
@@ -83,4 +136,126 @@ module.exports = {
     extend: {},
   },
   plugins: [require('daisyui')],
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: false,
+    utils: true,
+    logs: true,
+    rtl: false,
+  },
+
+  daisyui: {
+    themes: [
+      {
+        f1: {
+          /* your theme name */ primary: '#0F1012' /* Primary color */,
+          'primary-focus': '#212226' /* Primary color - focused */,
+          'primary-content':
+            '#ffffff' /* Foreground content color to use on primary color */,
+          'primary-redbull': '#0600ef',
+
+          third: '#0600ef',
+
+          secondary: '#141517' /* Secondary color */,
+          'secondary-focus': '#f3cc30' /* Secondary color - focused */,
+          'secondary-content':
+            '#ffffff' /* Foreground content color to use on secondary color */,
+
+          fourth: '#212226' /* fourth color */,
+          'fourth-focus': '#2aa79b' /* fourth color - focused */,
+          'fourth-content':
+            '#ffffff' /* Foreground content color to use on accent color */,
+
+          neutral: '#3d4451' /* Neutral color */,
+          'neutral-focus': '#2a2e37' /* Neutral color - focused */,
+          'neutral-content':
+            '#ffffff' /* Foreground content color to use on neutral color */,
+
+          'base-100':
+            '#ffffff' /* Base color of page, used for blank backgrounds */,
+          'base-200': '#f9fafb' /* Base color, a little darker */,
+          'base-300': '#d1d5db' /* Base color, even more darker */,
+          'base-content':
+            '#1f2937' /* Foreground content color to use on base color */,
+
+          info: '#2094f3' /* Info */,
+          success: '#009485' /* Success */,
+          warning: '#ff9900' /* Warning */,
+          error: '#FF2E0C' /* Error */,
+          navbar: '#101011',
+        },
+        red_bull: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#0600ef' /* Foreground content color to use on primary color */,
+          success: '#0600ef' /* Success */,
+        },
+        mercedes: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#00D2BE' /* Primary color - focused */,
+          'primary-content':
+            '#00D2BE' /* Foreground content color to use on primary color */,
+          success: '#00D2BE' /* Success */,
+        },
+        ferrari: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#DC0000' /* Foreground content color to use on primary color */,
+          success: '#DC0000',
+        },
+        mclaren: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#FF9800' /* Foreground content color to use on primary color */,
+          success: '#FF9800',
+        },
+        alphatauri: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#2B4562' /* Foreground content color to use on primary color */,
+          success: '#2B4562',
+        },
+        alfa: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#900000' /* Foreground content color to use on primary color */,
+          success: '#900000',
+        },
+        haas: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#FFF' /* Foreground content color to use on primary color */,
+          success: '#fff',
+        },
+        alpine: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#0090FF' /* Foreground content color to use on primary color */,
+          success: '#0090FF',
+        },
+        aston: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#006F62' /* Foreground content color to use on primary color */,
+          success: '#006F62',
+        },
+        williams: {
+          /* your theme name */ primary: '#0600ef' /* Primary color */,
+          'primary-focus': '#0600ef' /* Primary color - focused */,
+          'primary-content':
+            '#005AFF' /* Foreground content color to use on primary color */,
+          success: '#005AFF',
+        },
+      },
+    ],
+  },
 };

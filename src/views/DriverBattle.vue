@@ -1,15 +1,46 @@
 <template>
-  <div class="driver-battles standings w-full flex-1 race overflow-hidden">
-    <div></div>
+  <div class="w-full flex-1 bg-secondary battle overflow-hidden">
+    <div class="">
+      <div class="h-84vh w-full flex flex-col p-6">
+        <driver-battle-title :team="teamInfo" />
+        <div>
+          <driver-battle-card :team="teamInfo" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import DriverBattleCard from '../components/DriverBattles/DriverBattleCard.vue';
+import DriverBattleTitle from '../components/DriverBattles/DriverBattleTitle.vue';
+export default {
+  components: { DriverBattleTitle, DriverBattleCard },
+  data() {
+    return {
+      teamInfo: '',
+      currentTeam: [],
+    };
+  },
+  methods: {
+    getDriver() {
+      this.teamInfo = this.$props.team;
+    },
+    loadTeamData() {
+      this.currentTeam = this.teamInfo;
+      console.log(this.currentTeam, 'who is team?');
+    },
+  },
+  mounted() {
+    this.loadTeamData();
+    this.teamInfo = this.$route.params;
+    console.log(this.teamInfo, 'who is team');
+  },
+};
 </script>
 
 <style>
-.driver-battles {
+.battle {
   background-image: linear-gradient(rgba(1, 1, 1, 1), rgba(0, 0, 0, 0.1));
 }
 

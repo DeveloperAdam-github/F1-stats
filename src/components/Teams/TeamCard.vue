@@ -2,58 +2,65 @@
   <div
     class="carousel-item flex flex-col pt-10 m-2 mx-5 pl-2 lg:mx-8 w-auto transform"
   >
-    <div class="pl-4 w-64 flex justify-center relative">
-      <!-- <img
+    <router-link
+      :to="{
+        name: 'DriverBattle',
+        params: { ...team.Constructor },
+        query: { team: team.Constructor.constructorId },
+      }"
+    >
+      <div class="pl-4 w-64 flex justify-center relative">
+        <!-- <img
         class="w-40 absolute -top-14 z-10"
         :src="
           team.Circuit.circuitId === 'bahrain' ? this.trackImage.bahrain : ''
         "
         alt=""
       /> -->
-    </div>
+      </div>
 
-    <div
-      class="team-card w-72 h-96 rounded-lg flex flex-col p-4"
-      :style="{
-        'background-image':
-          team.Constructor.constructorId === 'red_bull'
-            ? this.red_bull
-            : team.Constructor.constructorId === 'mercedes'
-            ? this.mercedes
-            : team.Constructor.constructorId === 'ferrari'
-            ? this.ferrari
-            : team.Constructor.constructorId === 'mclaren'
-            ? this.mclaren
-            : team.Constructor.constructorId === 'alphatauri'
-            ? this.alphatauri
-            : team.Constructor.constructorId === 'alpine'
-            ? this.alpine
-            : team.Constructor.constructorId === 'aston_martin'
-            ? this.aston_martin
-            : team.Constructor.constructorId === 'williams'
-            ? this.williams
-            : team.Constructor.constructorId === 'alfa'
-            ? this.alfa
-            : team.Constructor.constructorId === 'haas'
-            ? this.haas
-            : '',
-      }"
-    >
-      <div class="flex flex-col p-2 mt-10">
-        <h2 class="font-boldHeadline text-white uppercase text-lg">
-          {{ team.Constructor.name }}
-        </h2>
-        <!-- <h2 class="font-boldHeadline text-sm text-white">
+      <div
+        class="team-card w-72 h-96 rounded-lg flex flex-col p-4"
+        :style="{
+          'background-image':
+            team.Constructor.constructorId === 'red_bull'
+              ? this.red_bull
+              : team.Constructor.constructorId === 'mercedes'
+              ? this.mercedes
+              : team.Constructor.constructorId === 'ferrari'
+              ? this.ferrari
+              : team.Constructor.constructorId === 'mclaren'
+              ? this.mclaren
+              : team.Constructor.constructorId === 'alphatauri'
+              ? this.alphatauri
+              : team.Constructor.constructorId === 'alpine'
+              ? this.alpine
+              : team.Constructor.constructorId === 'aston_martin'
+              ? this.aston_martin
+              : team.Constructor.constructorId === 'williams'
+              ? this.williams
+              : team.Constructor.constructorId === 'alfa'
+              ? this.alfa
+              : team.Constructor.constructorId === 'haas'
+              ? this.haas
+              : '',
+        }"
+      >
+        <div class="flex flex-col p-2 mt-10">
+          <h2 class="font-boldHeadline text-white uppercase text-lg">
+            {{ team.Constructor.name }}
+          </h2>
+          <!-- <h2 class="font-boldHeadline text-sm text-white">
           {{ team.points }}
         </h2>
         <p class="text-gray-300 font-boldHeadline text-xs">
           {{ team.position }}
         </p> -->
-      </div>
-      <div
-        class="flex flex-col text-white font-headline text-xs h-full justify-center pb-10"
-      >
-        <!-- <div class="flex justify-between">
+        </div>
+        <div
+          class="flex flex-col text-white font-headline text-xs h-full justify-center pb-10"
+        >
+          <!-- <div class="flex justify-between">
           <p>Max Verstappen</p>
           <p class="font-boldHeadline">1st</p>
         </div>
@@ -65,8 +72,9 @@
           <p>Carlos Sainz</p>
           <p class="font-boldHeadline">3rd</p>
         </div> -->
+        </div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 

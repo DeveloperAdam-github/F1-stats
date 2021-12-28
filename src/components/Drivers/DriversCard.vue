@@ -53,7 +53,7 @@
       />
     </div>
     <div
-      class="bg-fourth h-64 w-72 rounded-lg flex flex-col p-4 shadow-2xl shadow-white"
+      class="bg-fourth h-64 w-72 rounded-lg flex flex-col p-4 shadow-3xl shadow-white"
     >
       <div class="flex items-center p-2">
         <img
