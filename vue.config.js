@@ -2,7 +2,7 @@ module.exports = {
   pwa: {
     workboxPluginMode: 'GenerateSW',
     workboxOptions: {
-      navigateFallback: '/fallback.html',
+      navigateFallback: '/index.html',
       runtimeCaching: [
         {
           urlPattern: new RegExp('^https://ergast.com'),
