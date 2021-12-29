@@ -1,7 +1,5 @@
 /* eslint-disable no-console */
 
-const assets = ['/public/fallback.html'];
-
 import { register } from 'register-service-worker';
 
 if (process.env.NODE_ENV === 'production') {
