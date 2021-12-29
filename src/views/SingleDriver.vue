@@ -2,7 +2,7 @@
   <div class="w-full bg-secondary">
     <div class="">
       <div
-        class="driver-page h-80vh lg:h-84vh w-full flex flex-col p-6"
+        class="driver-page h-80vh lg:h-84vh w-full flex flex-col px-6 md:p-6"
         :class="
           driverInfo.code === 'VER'
             ? 'bg-max'

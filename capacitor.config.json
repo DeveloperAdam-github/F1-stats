@@ -1,6 +1,6 @@
 {
   "appId": "com.developeradam.app",
-  "appName": "F1 Live Stats",
+  "appName": "F1 Stats",
   "webDir": "dist",
   "bundledWebRuntime": false
 }

@@ -3,7 +3,9 @@
     <div class="h-full border-l-2 border-red-500"></div>
     <div class="h-full flex flex-col justify-start pl-3">
       <div class="text-left text-lg font-bold text-white">
-        <h1 class="font-boldHeadline tracking-wide text-base">Drivers</h1>
+        <h1 class="font-boldHeadline tracking-wide text-sm lg:text-lg">
+          Drivers
+        </h1>
       </div>
       <div
         class="text-xs lg:text-lg text-gray-400 flex-wrap lg:flex-nowrap w-4/5 text-left font-headline lg:w-full"

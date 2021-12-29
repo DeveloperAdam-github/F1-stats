@@ -1,7 +1,7 @@
 <template>
   <div class="teams w-full flex-1 bg-secondary overflow-hidden">
     <div class="">
-      <div class="h-84vh w-full flex flex-col p-6">
+      <div class="h-84vh w-full flex flex-col px-6 md:p-6">
         <team-title />
         <div
           class="w-auto flex pt-10 lg:pt-24 overflow-x-scroll no-scrollbar carousel"

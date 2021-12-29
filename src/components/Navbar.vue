@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bottom-0 h-10vh font-headline w-full flex items-center p-2 bg-secondary text-gray-400 text-xs justify-around lg:text-base"
+    class="bottom-0 h-10vh font-headline w-full flex items-center p-2 bg-secondary text-gray-400 text-xxs sm:text-xs justify-around lg:text-base"
   >
     <div class="w-auto p-1">
       <router-link

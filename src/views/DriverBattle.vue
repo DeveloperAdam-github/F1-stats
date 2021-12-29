@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex-1 bg-secondary battle overflow-hidden">
     <div class="">
-      <div class="h-84vh w-full flex flex-col p-6">
+      <div class="h-84vh w-full flex flex-col px-6 md:p-6 overflow-scroll">
         <driver-battle-title :team="teamInfo" />
         <div>
           <driver-battle-card :team="teamInfo" />

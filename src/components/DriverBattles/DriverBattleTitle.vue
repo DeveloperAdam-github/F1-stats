@@ -2,8 +2,8 @@
   <div class="h-20 flex p-3 lg:mt-4">
     <div class="h-full border-l-2 border-red-500"></div>
     <div class="h-full flex flex-col justify-start pl-3">
-      <div class="text-left text-lg font-bold text-white">
-        <h1 class="font-boldHeadline tracking-wide text-base lg:text-lg">
+      <div class="text-left text-sm font-bold text-white">
+        <h1 class="font-boldHeadline tracking-wide text-sm lg:text-lg">
           Head to Head
         </h1>
       </div>

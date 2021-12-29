@@ -1,11 +1,11 @@
 <template>
   <div class="standings w-full flex-1 race overflow-hidden">
     <div class="">
-      <div class="h-84vh w-full flex flex-col px-6 p-6">
+      <div class="h-84vh w-full flex flex-col px-6 md:p-6">
         <standings-title />
         <div class="h-full w-full flex flex-col items-center mt-4">
           <div
-            class="w-full h-full md:w-10/12 lg:w-8/12 xl:w-1/2 flex flex-col p-4 md:items-center overflow-scroll no-scrollbar pb-60 carousel-vertical"
+            class="w-full h-full md:w-10/12 lg:w-8/12 xl:w-1/2 flex flex-col p-4 md:items-center overflow-y-scroll overflow-x-hidden no-scrollbar pb-60 carousel-vertical"
           >
             <div class="flex w-full justify-between">
               <h2
