@@ -10,7 +10,7 @@
       <div
         class="text-xs lg:text-lg text-gray-400 flex-wrap lg:flex-nowrap w-full text-left font-headline lg:w-full"
       >
-        <p>Driver line up for the 2021 Forumla 1 Season</p>
+        <p>Driver line up for the 2021 Season</p>
       </div>
     </div>
   </div>

@@ -66,7 +66,7 @@
             : team.constructorId === 'ferrari'
             ? 'bg-success'
             : team.constructorId === 'mclaren'
-            ? 'bg-error'
+            ? 'bg-warning'
             : team.constructorId === 'alpine'
             ? 'bg-base-content'
             : team.constructorId === 'alphatauri'
@@ -102,9 +102,29 @@
               7
             </p>
             <progress
-              class="progress progress-success w-1/2 transform rotate-180 mr-1 h-3 xl:h-4"
+              class="progress w-1/2 transform rotate-180 mr-1 h-3 xl:h-4"
               :class="
-                team.constructorId === 'haas' ? 'bg-gray-600' : 'bg-white'
+                team.constructorId === 'red_bull'
+                  ? 'progress-info'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-base-content'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-base-300'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-base-200'
+                  : team.constructorId === 'williams'
+                  ? 'progress-base-100'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
               "
               value="7"
               max="20"
