@@ -168,22 +168,21 @@ module.exports = {
             '#ffffff' /* Foreground content color to use on accent color */,
 
           neutral: '#3d4451' /* Neutral color */,
-          'neutral-focus': '#2a2e37' /* Neutral color - focused */,
+          'neutral-focus': '#FFF' /* Neutral color - focused */,
           'neutral-content':
-            '#ffffff' /* Foreground content color to use on neutral color */,
+            '#900000' /* Foreground content color to use on neutral color */,
 
           'base-100':
-            '#ffffff' /* Base color of page, used for blank backgrounds */,
-          'base-200': '#f9fafb' /* Base color, a little darker */,
-          'base-300': '#d1d5db' /* Base color, even more darker */,
+            '#005AFF' /* Base color of page, used for blank backgrounds */,
+          'base-200': '#006F62' /* Base color, a little darker */,
+          'base-300': '#2B4562' /* Base color, even more darker */,
           'base-content':
-            '#1f2937' /* Foreground content color to use on base color */,
+            '#0090FF' /* Foreground content color to use on base color */,
 
           info: '#0600ef' /* Info */,
           success: '#FF0000' /* Success */,
           warning: '#ff9900' /* Warning */,
-          error: '#FF2E0C' /* Error */,
-          navbar: '#101011',
+          error: '#00D2BE' /* Error */,
         },
         red_bull: {
           /* your theme name */ primary: '#0600ef' /* Primary color */,

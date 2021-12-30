@@ -58,7 +58,29 @@
       ></div>
       <div
         class="w-32 absolute bottom-0 mx-auto left-0 right-0 flex items-center justify-center"
-        :class="team.constructorId === 'red_bull' ? 'bg-info' : 'bg-success'"
+        :class="
+          team.constructorId === 'red_bull'
+            ? 'bg-info'
+            : team.constructorId === 'mercedes'
+            ? 'bg-error'
+            : team.constructorId === 'ferrari'
+            ? 'bg-success'
+            : team.constructorId === 'mclaren'
+            ? 'bg-error'
+            : team.constructorId === 'alpine'
+            ? 'bg-base-content'
+            : team.constructorId === 'alphatauri'
+            ? 'bg-base-300'
+            : team.constructorId === 'aston_martin'
+            ? 'bg-base-200'
+            : team.constructorId === 'williams'
+            ? 'bg-base-100'
+            : team.constructorId === 'alfa'
+            ? 'bg-neutral-content'
+            : team.constructorId === 'haas'
+            ? 'bg-neutral-focus'
+            : 'bg-success'
+        "
       >
         <p
           class="font-boldHeadline uppercase"
