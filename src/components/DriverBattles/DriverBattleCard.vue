@@ -70,7 +70,7 @@
             : team.constructorId === 'alpine'
             ? 'bg-base-content'
             : team.constructorId === 'alphatauri'
-            ? 'bg-primary-content'
+            ? 'bg-base-300'
             : team.constructorId === 'aston_martin'
             ? 'bg-accent'
             : team.constructorId === 'williams'
