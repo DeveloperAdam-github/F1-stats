@@ -1,7 +1,7 @@
 <template>
   <div
     class="w-full h-full pt-6 lg:pt-10 xl:px-5 flex flex-col items-center"
-    :data-theme="team.constructorId"
+    :data-theme="mercedes"
   >
     <div class="w-full md:w-4/6 h-56 xl:h-80 flex relative">
       <div
