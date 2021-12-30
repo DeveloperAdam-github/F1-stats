@@ -57,7 +57,8 @@
         "
       ></div>
       <div
-        class="bg-success w-32 absolute bottom-0 mx-auto left-0 right-0 flex items-center justify-center"
+        class="w-32 absolute bottom-0 mx-auto left-0 right-0 flex items-center justify-center"
+        :class="team.constructorId === 'red_bull' ? 'bg-info' : 'bg-success'"
       >
         <p
           class="font-boldHeadline uppercase"

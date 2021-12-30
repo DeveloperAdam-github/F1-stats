@@ -179,7 +179,7 @@ module.exports = {
           'base-content':
             '#1f2937' /* Foreground content color to use on base color */,
 
-          info: '#2094f3' /* Info */,
+          info: '#0600ef' /* Info */,
           success: '#FF0000' /* Success */,
           warning: '#ff9900' /* Warning */,
           error: '#FF2E0C' /* Error */,
