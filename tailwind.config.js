@@ -149,7 +149,7 @@ module.exports = {
     themes: [
       {
         f1: {
-          /* your theme name */ primary: '#0F1012' /* Primary color */,
+          /* your theme name */ primary: '#0090FF' /* Primary color */,
           'primary-focus': '#212226' /* Primary color - focused */,
           'primary-content':
             '#ffffff' /* Foreground content color to use on primary color */,
@@ -157,7 +157,7 @@ module.exports = {
 
           third: '#0600ef',
 
-          secondary: '#141517' /* Secondary color */,
+          secondary: '#2B4562' /* Secondary color */,
           'secondary-focus': '#f3cc30' /* Secondary color - focused */,
           'secondary-content':
             '#ffffff' /* Foreground content color to use on secondary color */,
@@ -183,6 +183,7 @@ module.exports = {
           success: '#FF0000' /* Success */,
           warning: '#ff9900' /* Warning */,
           error: '#00D2BE' /* Error */,
+          accent: '#006F62',
         },
         red_bull: {
           /* your theme name */ primary: '#0600ef' /* Primary color */,
