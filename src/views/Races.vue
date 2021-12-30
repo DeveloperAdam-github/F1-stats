@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex-1 bg-secondary race overflow-hidden">
     <div class="">
-      <div class="h-84vh w-full flex flex-col px-6 md:p-6">
+      <div class="h-84vh w-full flex flex-col px-6 py-2 md:p-6">
         <race-title />
         <div>
           <div

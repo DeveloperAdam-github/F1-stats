@@ -1,6 +1,6 @@
 {
   "appId": "com.developeradam.app",
-  "appName": "F1 Stats",
+  "appName": "Formula GP",
   "webDir": "dist",
   "bundledWebRuntime": false
 }

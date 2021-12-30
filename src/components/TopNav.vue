@@ -6,9 +6,11 @@
       </a>
     </div>
     <div class="h-full p-2 mt-5 lg:mt-0">
-      <img class="w-12" src="../assets/F1-logo.png" alt="" />
+      <p class="font-boldHeadline font-bold text-success text-base lg:text-lg">
+        Formula GP
+      </p>
     </div>
-    <div class="h-full p-2 flex items-center">
+    <div class="h-full p-2 w-10 flex items-center">
       <!-- <img class="w-10" src="../assets/Teams/RedBull.svg" alt="" /> -->
     </div>
   </div>

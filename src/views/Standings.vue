@@ -1,7 +1,7 @@
 <template>
   <div class="standings w-full flex-1 race overflow-hidden">
     <div class="">
-      <div class="h-84vh w-full flex flex-col px-6 md:p-6">
+      <div class="h-84vh w-full flex flex-col px-6 py-2 md:p-6">
         <standings-title />
         <div class="h-full w-full flex flex-col items-center mt-4">
           <div

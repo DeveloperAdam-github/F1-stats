@@ -2,7 +2,7 @@
   <div class="w-full bg-secondary">
     <div class="">
       <div
-        class="driver-page h-80vh lg:h-84vh w-full flex flex-col px-6 md:p-6"
+        class="driver-page h-80vh lg:h-84vh w-full flex flex-col px-6 py-2 md:p-6"
         :class="
           driverInfo.code === 'VER'
             ? 'bg-max'
@@ -35,7 +35,7 @@
             : driverInfo.code === 'RUS'
             ? 'bg-russell'
             : driverInfo.code === 'RAI'
-            ? 'bg-raikonenn'
+            ? 'bg-raikonnen'
             : driverInfo.code === 'LAT'
             ? 'bg-latifi'
             : driverInfo.code === 'GIO'
