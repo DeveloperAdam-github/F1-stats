@@ -1,37 +1,34 @@
 <template>
   <div
-    class="bottom-0 h-10vh font-headline w-full flex items-center p-2 bg-secondary text-gray-400 text-xxs sm:text-xs justify-around lg:text-base"
+    class="bottom-0 h-10vh font-headline w-full flex items-center p-2 bg-secondary text-gray-400 text-xxs sm:text-xs lg:text-base carousel"
   >
-    <div class="w-auto p-1">
-      <router-link
-        class="flex items-center w-full m-2 p-1"
-        :to="{ name: 'Drivers' }"
-      >
+    <div class="w-1/5 mx-1 carousel-item flex justify-center">
+      <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Home' }">
+        <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span>
+        Home
+      </router-link>
+    </div>
+    <div class="w-1/5 mx-1 carousel-item flex justify-center">
+      <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Drivers' }">
         <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span>
         Drivers
       </router-link>
     </div>
-    <div class="w-auto p-1">
-      <router-link
-        class="flex items-center w-auto m-2 p-1"
-        :to="{ name: 'Races' }"
-      >
+    <div class="w-1/5 mx-1 carousel-item flex justify-center">
+      <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Races' }">
         <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span
         >Races</router-link
       >
     </div>
-    <div class="w-auto p-1">
-      <router-link
-        class="flex items-center w-auto m-2 p-1"
-        :to="{ name: 'Teams' }"
-      >
+    <div class="w-1/5 mx-1 carousel-item flex justify-center">
+      <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Teams' }">
         <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span
         >Teams</router-link
       >
     </div>
-    <div class="w-auto p-1">
+    <div class="w-1/5 mx-1 carousel-item flex justify-center">
       <router-link
-        class="flex items-center w-auto m-2 p-1"
+        class="flex items-center mx-2 p-1"
         :to="{ name: 'Standings' }"
       >
         <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span

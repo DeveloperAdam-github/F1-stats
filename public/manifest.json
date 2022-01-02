@@ -1,6 +1,7 @@
 {
   "name": "Formula GP",
   "short_name": "FGP",
+  "theme_color": "#111111",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

@@ -10,6 +10,11 @@ import DriverBattle from '../views/DriverBattle.vue';
 const routes = [
   {
     path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/drivers',
     name: 'Drivers',
     component: Drivers,
   },
