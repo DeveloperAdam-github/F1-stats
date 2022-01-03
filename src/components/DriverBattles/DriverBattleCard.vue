@@ -115,7 +115,7 @@
             ? 'Raikonnen'
             : team.constructorId === 'haas'
             ? 'Mazepin'
-            : 'bg-maxBattle'
+            : ''
         }}
       </p>
       <p>
@@ -139,8 +139,8 @@
             : team.constructorId === 'alfa'
             ? 'Giovinazzi'
             : team.constructorId === 'haas'
-            ? 'Mick'
-            : 'bg-bottasBattle'
+            ? 'Schumacher'
+            : ''
         }}
       </p>
     </div>
@@ -149,13 +149,13 @@
         class="w-full flex flex-col items-center p-2 font-headline xl:text-base text-white uppercase text-xs"
       >
         <!-- RACE -->
-        <div class="w-full flex flex-col">
+        <div class="w-full flex flex-col" v-if="driverBattleInfo[0]">
           <p>Race</p>
           <div class="p-2 flex items-center">
             <p
               class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
             >
-              19
+              {{ driverBattleInfo[0].Race }}
             </p>
             <progress
               class="progress w-1/2 transform bg-white rotate-180 mr-1 h-3 lg:h-4"
@@ -182,7 +182,7 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="19"
+              :value="driverBattleInfo[0].Race"
               max="22"
             ></progress>
             <progress
@@ -210,22 +210,22 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="3"
+              :value="driverBattleInfo[1].Race"
               max="22"
             ></progress>
             <p class="w-15 text-base xl:text-xl font-boldHeadline text-right">
-              3
+              {{ driverBattleInfo[1].Race }}
             </p>
           </div>
         </div>
         <!-- QUALIFYING -->
-        <div class="w-full flex flex-col">
+        <div class="w-full flex flex-col" v-if="driverBattleInfo[0]">
           <p>Qualifying</p>
           <div class="p-2 flex items-center">
             <p
               class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
             >
-              20
+              {{ driverBattleInfo[0].Qualifying }}
             </p>
 
             <progress
@@ -253,11 +253,11 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="20"
+              :value="driverBattleInfo[0].Qualifying"
               max="22"
             ></progress>
             <progress
-              class="progress bg-white w-1/2 ml-1 bg-white h-3 lg:h-4"
+              class="progress bg-white w-1/2 ml-1 h-3 lg:h-4"
               :class="
                 team.constructorId === 'red_bull'
                   ? 'progress-info bg-white'
@@ -281,24 +281,24 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="2"
+              :value="driverBattleInfo[1].Qualifying"
               max="22"
             ></progress>
             <p
               class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
             >
-              2
+              {{ driverBattleInfo[1].Qualifying }}
             </p>
           </div>
         </div>
         <!-- POINTS -->
-        <div class="w-full flex flex-col">
+        <div class="w-full flex flex-col" v-if="driverBattleInfo[0]">
           <p>Points</p>
           <div class="p-2 flex items-center">
             <p
               class="w-20 text-base xl:text-xl text-white font-boldHeadline text-left mr-1"
             >
-              395.5
+              {{ driverBattleInfo[0].Points }}
             </p>
             <progress
               class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
@@ -325,7 +325,7 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="395.5"
+              :value="driverBattleInfo[0].Points"
               max="395.5"
             ></progress>
             <progress
@@ -353,25 +353,49 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="190"
+              :value="driverBattleInfo[1].Points"
               max="395.5"
             ></progress>
             <p
               class="w-20 text-base xl:text-xl text-white font-boldHeadline text-right ml-1"
             >
-              190
+              {{ driverBattleInfo[1].Points }}
             </p>
           </div>
         </div>
 
         <!-- BEST RACE FINISH -->
-        <div class="w-full flex flex-col">
+        <div class="w-full flex flex-col" v-if="driverBattleInfo[0]">
           <p>Best race finish</p>
           <div class="p-2 flex items-center justify-between">
             <p
               class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
             >
-              1<span class="text-xs lg:text-lg pr-2">st</span>
+              {{ driverBattleInfo[0].BestFinish
+              }}<span
+                class="text-xs lg:text-lg pr-2"
+                v-if="driverBattleInfo[0].BestFinish === 1"
+                >st</span
+              >
+              <span
+                class="text-xs lg:text-lg pr-2"
+                v-if="driverBattleInfo[0].BestFinish === 2"
+                >nd</span
+              >
+              <span
+                class="text-xs lg:text-lg pr-2"
+                v-if="driverBattleInfo[0].BestFinish === 3"
+                >rd</span
+              >
+              <span
+                class="text-xs lg:text-lg pr-2"
+                v-if="
+                  driverBattleInfo[0].BestFinish !== 1 &&
+                  driverBattleInfo[0].BestFinish !== 2 &&
+                  driverBattleInfo[0].BestFinish !== 3
+                "
+                >th</span
+              >
             </p>
             <progress
               class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
@@ -398,7 +422,393 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="22"
+              :value="
+                driverBattleInfo[0].BestFinish === 1
+                  ? 20
+                  : driverBattleInfo[0].BestFinish === 2
+                  ? 19
+                  : driverBattleInfo[0].BestFinish === 3
+                  ? 18
+                  : driverBattleInfo[0].BestFinish === 4
+                  ? 17
+                  : driverBattleInfo[0].BestFinish === 5
+                  ? 16
+                  : driverBattleInfo[0].BestFinish === 6
+                  ? 15
+                  : driverBattleInfo[0].BestFinish === 7
+                  ? 14
+                  : driverBattleInfo[0].BestFinish === 8
+                  ? 13
+                  : driverBattleInfo[0].BestFinish === 9
+                  ? 12
+                  : driverBattleInfo[0].BestFinish === 10
+                  ? 11
+                  : driverBattleInfo[0].BestFinish === 11
+                  ? 10
+                  : driverBattleInfo[0].BestFinish === 12
+                  ? 9
+                  : driverBattleInfo[0].BestFinish === 13
+                  ? 8
+                  : driverBattleInfo[0].BestFinish === 14
+                  ? 7
+                  : driverBattleInfo[0].BestFinish === 15
+                  ? 6
+                  : driverBattleInfo[0].BestFinish === 16
+                  ? 5
+                  : driverBattleInfo[0].BestFinish === 17
+                  ? 4
+                  : driverBattleInfo[0].BestFinish === 18
+                  ? 3
+                  : driverBattleInfo[0].BestFinish === 19
+                  ? 2
+                  : driverBattleInfo[0].BestFinish === 20
+                  ? 1
+                  : 20
+              "
+              max="20"
+            ></progress>
+            <progress
+              class="progress bg-white w-1/2 ml-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              :value="
+                driverBattleInfo[1].BestFinish === 1
+                  ? 20
+                  : driverBattleInfo[1].BestFinish === 2
+                  ? 19
+                  : driverBattleInfo[1].BestFinish === 3
+                  ? 18
+                  : driverBattleInfo[1].BestFinish === 4
+                  ? 17
+                  : driverBattleInfo[1].BestFinish === 5
+                  ? 16
+                  : driverBattleInfo[1].BestFinish === 6
+                  ? 15
+                  : driverBattleInfo[1].BestFinish === 7
+                  ? 14
+                  : driverBattleInfo[1].BestFinish === 8
+                  ? 13
+                  : driverBattleInfo[1].BestFinish === 9
+                  ? 12
+                  : driverBattleInfo[1].BestFinish === 10
+                  ? 11
+                  : driverBattleInfo[1].BestFinish === 11
+                  ? 10
+                  : driverBattleInfo[1].BestFinish === 12
+                  ? 9
+                  : driverBattleInfo[1].BestFinish === 13
+                  ? 8
+                  : driverBattleInfo[1].BestFinish === 14
+                  ? 7
+                  : driverBattleInfo[1].BestFinish === 15
+                  ? 6
+                  : driverBattleInfo[1].BestFinish === 16
+                  ? 5
+                  : driverBattleInfo[1].BestFinish === 17
+                  ? 4
+                  : driverBattleInfo[1].BestFinish === 18
+                  ? 3
+                  : driverBattleInfo[1].BestFinish === 19
+                  ? 2
+                  : driverBattleInfo[1].BestFinish === 20
+                  ? 1
+                  : 20
+              "
+              max="20"
+            ></progress>
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
+            >
+              {{ driverBattleInfo[1].BestFinish
+              }}<span
+                class="text-xs lg:text-lg"
+                v-if="driverBattleInfo[1].BestFinish === 1"
+                >st</span
+              >
+              <span
+                class="text-xs lg:text-lg"
+                v-if="driverBattleInfo[1].BestFinish === 2"
+                >nd</span
+              >
+              <span
+                class="text-xs lg:text-lg"
+                v-if="driverBattleInfo[1].BestFinish === 3"
+                >rd</span
+              >
+              <span
+                class="text-xs lg:text-lg"
+                v-if="
+                  driverBattleInfo[1].BestFinish !== 1 &&
+                  driverBattleInfo[1].BestFinish !== 2 &&
+                  driverBattleInfo[1].BestFinish !== 3
+                "
+                >th</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- HIGHEST GRID POSITION -->
+        <div class="w-full flex flex-col" v-if="driverBattleInfo[0]">
+          <p>Highest Grid Position</p>
+          <div class="p-2 flex items-center justify-between">
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
+            >
+              {{ driverBattleInfo[0].HighestGrid
+              }}<span
+                class="text-xs lg:text-lg pr-2"
+                v-if="driverBattleInfo[0].HighestGrid === 1"
+                >st</span
+              >
+              <span
+                class="text-xs lg:text-lg pr-2"
+                v-if="driverBattleInfo[0].HighestGrid === 2"
+                >nd</span
+              >
+              <span
+                class="text-xs lg:text-lg pr-2"
+                v-if="driverBattleInfo[0].HighestGrid === 3"
+                >rd</span
+              >
+              <span
+                class="text-xs lg:text-lg pr-2"
+                v-if="
+                  driverBattleInfo[0].HighestGrid !== 1 &&
+                  driverBattleInfo[0].HighestGrid !== 2 &&
+                  driverBattleInfo[0].HighestGrid !== 3
+                "
+                >th</span
+              >
+            </p>
+            <progress
+              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              :value="
+                driverBattleInfo[0].HighestGrid === 1
+                  ? 20
+                  : driverBattleInfo[0].HighestGrid === 2
+                  ? 19
+                  : driverBattleInfo[0].HighestGrid === 3
+                  ? 18
+                  : driverBattleInfo[0].HighestGrid === 4
+                  ? 17
+                  : driverBattleInfo[0].HighestGrid === 5
+                  ? 16
+                  : driverBattleInfo[0].HighestGrid === 6
+                  ? 15
+                  : driverBattleInfo[0].HighestGrid === 7
+                  ? 14
+                  : driverBattleInfo[0].HighestGrid === 8
+                  ? 13
+                  : driverBattleInfo[0].HighestGrid === 9
+                  ? 12
+                  : driverBattleInfo[0].HighestGrid === 10
+                  ? 11
+                  : driverBattleInfo[0].HighestGrid === 11
+                  ? 10
+                  : driverBattleInfo[0].HighestGrid === 12
+                  ? 9
+                  : driverBattleInfo[0].HighestGrid === 13
+                  ? 8
+                  : driverBattleInfo[0].HighestGrid === 14
+                  ? 7
+                  : driverBattleInfo[0].HighestGrid === 15
+                  ? 6
+                  : driverBattleInfo[0].HighestGrid === 16
+                  ? 5
+                  : driverBattleInfo[0].HighestGrid === 17
+                  ? 4
+                  : driverBattleInfo[0].HighestGrid === 18
+                  ? 3
+                  : driverBattleInfo[0].HighestGrid === 19
+                  ? 2
+                  : driverBattleInfo[0].HighestGrid === 20
+                  ? 1
+                  : 20
+              "
+              max="20"
+            ></progress>
+            <progress
+              class="progress bg-white w-1/2 ml-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              :value="
+                driverBattleInfo[1].HighestGrid === 1
+                  ? 20
+                  : driverBattleInfo[1].HighestGrid === 2
+                  ? 19
+                  : driverBattleInfo[1].HighestGrid === 3
+                  ? 18
+                  : driverBattleInfo[1].HighestGrid === 4
+                  ? 17
+                  : driverBattleInfo[1].HighestGrid === 5
+                  ? 16
+                  : driverBattleInfo[1].HighestGrid === 6
+                  ? 15
+                  : driverBattleInfo[1].HighestGrid === 7
+                  ? 14
+                  : driverBattleInfo[1].HighestGrid === 8
+                  ? 13
+                  : driverBattleInfo[1].HighestGrid === 9
+                  ? 12
+                  : driverBattleInfo[1].HighestGrid === 10
+                  ? 11
+                  : driverBattleInfo[1].HighestGrid === 11
+                  ? 10
+                  : driverBattleInfo[1].HighestGrid === 12
+                  ? 9
+                  : driverBattleInfo[1].HighestGrid === 13
+                  ? 8
+                  : driverBattleInfo[1].HighestGrid === 14
+                  ? 7
+                  : driverBattleInfo[1].HighestGrid === 15
+                  ? 6
+                  : driverBattleInfo[1].HighestGrid === 16
+                  ? 5
+                  : driverBattleInfo[1].HighestGrid === 17
+                  ? 4
+                  : driverBattleInfo[1].HighestGrid === 18
+                  ? 3
+                  : driverBattleInfo[1].HighestGrid === 19
+                  ? 2
+                  : driverBattleInfo[1].HighestGrid === 20
+                  ? 1
+                  : 20
+              "
+              max="20"
+            ></progress>
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
+            >
+              {{ driverBattleInfo[1].HighestGrid
+              }}<span
+                class="text-xs lg:text-lg"
+                v-if="driverBattleInfo[1].HighestGrid === 1"
+                >st</span
+              >
+              <span
+                class="text-xs lg:text-lg"
+                v-if="driverBattleInfo[1].HighestGrid === 2"
+                >nd</span
+              >
+              <span
+                class="text-xs lg:text-lg"
+                v-if="driverBattleInfo[1].HighestGrid === 3"
+                >rd</span
+              >
+              <span
+                class="text-xs lg:text-lg"
+                v-if="
+                  driverBattleInfo[1].HighestGrid !== 1 &&
+                  driverBattleInfo[1].HighestGrid !== 2 &&
+                  driverBattleInfo[1].HighestGrid !== 3
+                "
+                >th</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- DNF -->
+        <div class="w-full flex flex-col" v-if="driverBattleInfo[0]">
+          <p>DNF</p>
+          <div class="p-2 flex items-center">
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
+            >
+              {{ driverBattleInfo[0].DNF }}
+            </p>
+            <progress
+              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              :value="driverBattleInfo[0].DNF"
               max="22"
             ></progress>
             <progress
@@ -426,159 +836,13 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="22"
+              :value="driverBattleInfo[1].DNF"
               max="22"
             ></progress>
             <p
               class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
             >
-              1<span class="text-xs lg:text-lg">st</span>
-            </p>
-          </div>
-        </div>
-
-        <!-- HIGHEST GRID POSITION -->
-        <div class="w-full flex flex-col">
-          <p>Highest Grid Position</p>
-          <div class="p-2 flex items-center justify-between">
-            <p
-              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
-            >
-              1<span class="text-xs lg:text-lg">st</span>
-            </p>
-            <progress
-              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="22"
-              max="22"
-            ></progress>
-            <progress
-              class="progress bg-white w-1/2 ml-1 bg-white h-3 lg:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="21"
-              max="22"
-            ></progress>
-            <p
-              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
-            >
-              2<span class="text-xs lg:text-lg">nd</span>
-            </p>
-          </div>
-        </div>
-
-        <!-- DNF -->
-        <div class="w-full flex flex-col">
-          <p>DNF</p>
-          <div class="p-2 flex items-center">
-            <p
-              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
-            >
-              3
-            </p>
-            <progress
-              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="3"
-              max="22"
-            ></progress>
-            <progress
-              class="progress bg-white w-1/2 ml-1 bg-white h-3 lg:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="3"
-              max="22"
-            ></progress>
-            <p
-              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
-            >
-              3
+              {{ driverBattleInfo[1].DNF }}
             </p>
           </div>
         </div>
@@ -588,10 +852,26 @@
 </template>
 
 <script>
+import supabase from '../../supabase';
 export default {
   props: ['team'],
   data() {
-    return {};
+    return {
+      driverBattleInfo: [],
+    };
+  },
+  methods: {
+    async getDrivers() {
+      let { data } = await supabase
+        .from('Driver Stats Table')
+        .select('*')
+        .eq('Team', this.$route.query.team);
+      this.driverBattleInfo = data;
+      console.log(this.driverBattleInfo, 'info state');
+    },
+  },
+  created() {
+    this.getDrivers();
   },
 };
 </script>
