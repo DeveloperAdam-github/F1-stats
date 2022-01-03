@@ -1,9 +1,9 @@
 <template>
   <div
-    class="w-full h-full pt-6 lg:pt-10 xl:px-5 flex flex-col items-center"
+    class="w-full h-full pt-6 lg:pt-10 lg:px-5 flex flex-col items-center"
     :data-theme="team.constructorId"
   >
-    <div class="w-full md:w-4/6 h-56 xl:h-80 flex relative">
+    <div class="w-full md:w-4/6 h-56 lg:h-96 flex relative">
       <div
         class="h-full w-1/2 bg-cover bg-center bg-maxBattle"
         :class="
@@ -90,6 +90,60 @@
         </p>
       </div>
     </div>
+    <div
+      class="w-full md:w-4/6 flex justify-around font-headline text-xs lg:text-base pt-1 text-white"
+    >
+      <p>
+        {{
+          team.constructorId === 'red_bull'
+            ? 'Verstappen'
+            : team.constructorId === 'mercedes'
+            ? 'Hamilton'
+            : team.constructorId === 'ferrari'
+            ? 'Sainz'
+            : team.constructorId === 'mclaren'
+            ? 'Norris'
+            : team.constructorId === 'alpine'
+            ? 'Ocon'
+            : team.constructorId === 'alphatauri'
+            ? 'Tsunoda'
+            : team.constructorId === 'aston_martin'
+            ? 'Vettel'
+            : team.constructorId === 'williams'
+            ? 'Russell'
+            : team.constructorId === 'alfa'
+            ? 'Raikonnen'
+            : team.constructorId === 'haas'
+            ? 'Mazepin'
+            : 'bg-maxBattle'
+        }}
+      </p>
+      <p>
+        {{
+          team.constructorId === 'red_bull'
+            ? 'Perez'
+            : team.constructorId === 'mercedes'
+            ? 'Bottas'
+            : team.constructorId === 'ferrari'
+            ? 'Leclerc'
+            : team.constructorId === 'mclaren'
+            ? 'Ricciardo'
+            : team.constructorId === 'alpine'
+            ? 'Alonso'
+            : team.constructorId === 'alphatauri'
+            ? 'Gasly'
+            : team.constructorId === 'aston_martin'
+            ? 'Stroll'
+            : team.constructorId === 'williams'
+            ? 'Latifi'
+            : team.constructorId === 'alfa'
+            ? 'Giovinazzi'
+            : team.constructorId === 'haas'
+            ? 'Mick'
+            : 'bg-bottasBattle'
+        }}
+      </p>
+    </div>
     <div class="w-full md:w-4/6 flex mt-2 h-full overflow-scroll">
       <div
         class="w-full flex flex-col items-center p-2 font-headline xl:text-base text-white uppercase text-xs"
@@ -98,11 +152,13 @@
         <div class="w-full flex flex-col">
           <p>Race</p>
           <div class="p-2 flex items-center">
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              7
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
+            >
+              19
             </p>
             <progress
-              class="progress w-1/2 transform bg-white rotate-180 mr-1 h-3 xl:h-4"
+              class="progress w-1/2 transform bg-white rotate-180 mr-1 h-3 lg:h-4"
               :class="
                 team.constructorId === 'red_bull'
                   ? 'progress-info'
@@ -126,11 +182,11 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="7"
-              max="20"
+              value="19"
+              max="22"
             ></progress>
             <progress
-              class="progress bg-white w-1/2 ml-1 h-3 xl:h-4"
+              class="progress bg-white w-1/2 ml-1 h-3 lg:h-4"
               :class="
                 team.constructorId === 'red_bull'
                   ? 'progress-info bg-white'
@@ -154,22 +210,26 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="13"
-              max="20"
+              value="3"
+              max="22"
             ></progress>
-            <p class="w-15 text-base xl:text-xl font-boldHeadline">13</p>
+            <p class="w-15 text-base xl:text-xl font-boldHeadline text-right">
+              3
+            </p>
           </div>
         </div>
         <!-- QUALIFYING -->
         <div class="w-full flex flex-col">
           <p>Qualifying</p>
           <div class="p-2 flex items-center">
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              15
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
+            >
+              20
             </p>
 
             <progress
-              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 xl:h-4"
+              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
               :class="
                 team.constructorId === 'red_bull'
                   ? 'progress-info bg-white'
@@ -193,258 +253,11 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="15"
-              max="20"
+              value="20"
+              max="22"
             ></progress>
             <progress
-              class="progress bg-white w-1/2 ml-1 bg-white h-3 xl:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="5"
-              max="20"
-            ></progress>
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              5
-            </p>
-          </div>
-        </div>
-        <!-- POINTS -->
-        <div class="w-full flex flex-col">
-          <p>Points</p>
-          <div class="p-2 flex items-center">
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              12
-            </p>
-            <progress
-              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 xl:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="12"
-              max="20"
-            ></progress>
-            <progress
-              class="progress bg-white w-1/2 ml-1 bg-white h-3 xl:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="8"
-              max="20"
-            ></progress>
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              8
-            </p>
-          </div>
-        </div>
-
-        <!-- BEST RACE FINISH -->
-        <div class="w-full flex flex-col">
-          <p>Best race finish</p>
-          <div class="p-2 flex items-center">
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              10
-            </p>
-            <progress
-              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 xl:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="10"
-              max="20"
-            ></progress>
-            <progress
-              class="progress bg-white w-1/2 ml-1 bg-white h-3 xl:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="10"
-              max="20"
-            ></progress>
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              10
-            </p>
-          </div>
-        </div>
-
-        <!-- HIGHEST GRID POSITION -->
-        <div class="w-full flex flex-col">
-          <p>Highest Grid Position</p>
-          <div class="p-2 flex items-center">
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              3
-            </p>
-            <progress
-              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 xl:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-content bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="17"
-              max="20"
-            ></progress>
-            <progress
-              class="progress bg-white w-1/2 ml-1 bg-white h-3 xl:h-4"
-              :class="
-                team.constructorId === 'red_bull'
-                  ? 'progress-info bg-white'
-                  : team.constructorId === 'mercedes'
-                  ? 'progress-error'
-                  : team.constructorId === 'ferrari'
-                  ? 'progress-success'
-                  : team.constructorId === 'mclaren'
-                  ? 'progress-warning'
-                  : team.constructorId === 'alpine'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alphatauri'
-                  ? 'progress-secondary'
-                  : team.constructorId === 'aston_martin'
-                  ? 'progress-accent'
-                  : team.constructorId === 'williams'
-                  ? 'progress-primary'
-                  : team.constructorId === 'alfa'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : team.constructorId === 'haas'
-                  ? 'progress-neutral-focus bg-gray-600'
-                  : 'progress-success bg-white'
-              "
-              value="3"
-              max="20"
-            ></progress>
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              17
-            </p>
-          </div>
-        </div>
-
-        <!-- DNF -->
-        <div class="w-full flex flex-col">
-          <p>DNF</p>
-          <div class="p-2 flex items-center">
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              2
-            </p>
-            <progress
-              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 xl:h-4"
+              class="progress bg-white w-1/2 ml-1 bg-white h-3 lg:h-4"
               :class="
                 team.constructorId === 'red_bull'
                   ? 'progress-info bg-white'
@@ -469,10 +282,26 @@
                   : 'progress-success bg-white'
               "
               value="2"
-              max="20"
+              max="22"
             ></progress>
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
+            >
+              2
+            </p>
+          </div>
+        </div>
+        <!-- POINTS -->
+        <div class="w-full flex flex-col">
+          <p>Points</p>
+          <div class="p-2 flex items-center">
+            <p
+              class="w-20 text-base xl:text-xl text-white font-boldHeadline text-left mr-1"
+            >
+              395.5
+            </p>
             <progress
-              class="progress bg-white w-1/2 ml-1 bg-white h-3 xl:h-4"
+              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
               :class="
                 team.constructorId === 'red_bull'
                   ? 'progress-info bg-white'
@@ -496,11 +325,260 @@
                   ? 'progress-neutral-focus bg-gray-600'
                   : 'progress-success bg-white'
               "
-              value="4"
-              max="20"
+              value="395.5"
+              max="395.5"
             ></progress>
-            <p class="w-15 text-base xl:text-xl text-white font-boldHeadline">
-              4
+            <progress
+              class="progress bg-white w-1/2 ml-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              value="190"
+              max="395.5"
+            ></progress>
+            <p
+              class="w-20 text-base xl:text-xl text-white font-boldHeadline text-right ml-1"
+            >
+              190
+            </p>
+          </div>
+        </div>
+
+        <!-- BEST RACE FINISH -->
+        <div class="w-full flex flex-col">
+          <p>Best race finish</p>
+          <div class="p-2 flex items-center justify-between">
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
+            >
+              1<span class="text-xs lg:text-lg pr-2">st</span>
+            </p>
+            <progress
+              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              value="22"
+              max="22"
+            ></progress>
+            <progress
+              class="progress bg-white w-1/2 ml-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              value="22"
+              max="22"
+            ></progress>
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
+            >
+              1<span class="text-xs lg:text-lg">st</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- HIGHEST GRID POSITION -->
+        <div class="w-full flex flex-col">
+          <p>Highest Grid Position</p>
+          <div class="p-2 flex items-center justify-between">
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
+            >
+              1<span class="text-xs lg:text-lg">st</span>
+            </p>
+            <progress
+              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              value="22"
+              max="22"
+            ></progress>
+            <progress
+              class="progress bg-white w-1/2 ml-1 bg-white h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              value="21"
+              max="22"
+            ></progress>
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
+            >
+              2<span class="text-xs lg:text-lg">nd</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- DNF -->
+        <div class="w-full flex flex-col">
+          <p>DNF</p>
+          <div class="p-2 flex items-center">
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-left"
+            >
+              3
+            </p>
+            <progress
+              class="progress bg-white w-1/2 transform rotate-180 mr-1 h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              value="3"
+              max="22"
+            ></progress>
+            <progress
+              class="progress bg-white w-1/2 ml-1 bg-white h-3 lg:h-4"
+              :class="
+                team.constructorId === 'red_bull'
+                  ? 'progress-info bg-white'
+                  : team.constructorId === 'mercedes'
+                  ? 'progress-error'
+                  : team.constructorId === 'ferrari'
+                  ? 'progress-success'
+                  : team.constructorId === 'mclaren'
+                  ? 'progress-warning'
+                  : team.constructorId === 'alpine'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alphatauri'
+                  ? 'progress-secondary'
+                  : team.constructorId === 'aston_martin'
+                  ? 'progress-accent'
+                  : team.constructorId === 'williams'
+                  ? 'progress-primary'
+                  : team.constructorId === 'alfa'
+                  ? 'progress-neutral-content bg-gray-600'
+                  : team.constructorId === 'haas'
+                  ? 'progress-neutral-focus bg-gray-600'
+                  : 'progress-success bg-white'
+              "
+              value="3"
+              max="22"
+            ></progress>
+            <p
+              class="w-15 text-base xl:text-xl text-white font-boldHeadline text-right"
+            >
+              3
             </p>
           </div>
         </div>

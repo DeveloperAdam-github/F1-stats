@@ -19,7 +19,7 @@
             >
               <div
                 v-if="lastRaceResults.Results"
-                class="w-1/2 lg:w-1/3 lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-red_bull"
+                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-red_bull"
               >
                 <p class="h-auto">
                   {{ lastRaceResults.Results[0].Driver.familyName }}
@@ -28,7 +28,7 @@
               </div>
               <div
                 v-if="lastRaceResults.Results"
-                class="w-1/2 lg:w-1/3 lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-mercedes"
+                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-mercedes"
               >
                 <p class="h-auto">
                   {{ lastRaceResults.Results[1].Driver.familyName }}
@@ -37,7 +37,7 @@
               </div>
               <div
                 v-if="lastRaceResults.Results"
-                class="w-1/2 lg:w-1/3 lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-ferrari"
+                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-ferrari"
               >
                 <p class="h-auto">
                   {{ lastRaceResults.Results[2].Driver.familyName }}

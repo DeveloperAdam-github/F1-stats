@@ -3,15 +3,17 @@
     <div class="">
       <div class="h-84vh w-full flex flex-col px-6 py-2 md:p-6">
         <team-title />
-        <div
-          class="w-auto flex pt-10 lg:pt-24 overflow-x-scroll no-scrollbar carousel"
-        >
-          <team-card
-            class=""
-            v-for="(team, index) in teams"
-            :key="index"
-            :team="team"
-          />
+        <div class="h-full flex items-center">
+          <div
+            class="w-auto flex overflow-x-scroll overflow-y-hidden no-scrollbar carousel"
+          >
+            <team-card
+              class=""
+              v-for="(team, index) in teams"
+              :key="index"
+              :team="team"
+            />
+          </div>
         </div>
       </div>
     </div>

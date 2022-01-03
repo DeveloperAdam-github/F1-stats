@@ -3,7 +3,7 @@
     <div class="">
       <!-- src="https://www.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/2col-retina/image.png" -->
       <img
-        class="w-48"
+        class="w-40 lg:w-64"
         :src="
           driverInfo.code === 'VER'
             ? 'https://www.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/2col-retina/image.png'
@@ -53,7 +53,7 @@
       />
     </div>
     <div
-      class="bg-fourth h-64 w-72 rounded-lg flex flex-col p-4 shadow-3xl shadow-white"
+      class="bg-fourth h-64 lg:h-72 w-72 lg:w-96 rounded-lg flex flex-col p-4 shadow-3xl shadow-white"
     >
       <div class="flex items-center p-2">
         <img

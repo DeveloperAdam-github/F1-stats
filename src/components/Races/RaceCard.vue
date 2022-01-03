@@ -2,7 +2,7 @@
   <div class="carousel-item flex flex-col pt-10 m-2 mx-5 pl-2 lg:mx-8 w-auto">
     <div class="pl-4 w-64 flex justify-center relative">
       <img
-        class="w-40 absolute -top-14 z-10"
+        class="w-40 absolute -top-14 z-40"
         :src="
           race.Circuit.circuitId === 'bahrain'
             ? this.trackImage.bahrain

@@ -51,7 +51,7 @@
       >
         <driver-title :driverInfo="driverInfo" />
         <p>{{ currentDriver }}</p>
-        <div class="w-full flex justify-center pt-10">
+        <div class="w-full h-full flex justify-center items-center">
           <drivers-card :driverInfo="driverInfo" />
         </div>
       </div>

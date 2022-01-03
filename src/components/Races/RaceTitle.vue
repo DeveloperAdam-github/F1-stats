@@ -1,5 +1,5 @@
 <template>
-  <div class="h-20 flex p-3 lg:mt-4">
+  <div class="h-20 flex p-3 lg:mt-4 z-10">
     <div class="h-full border-l-2 border-red-500"></div>
     <div class="h-full flex flex-col justify-start pl-3">
       <div class="text-left text-lg font-bold text-white">
