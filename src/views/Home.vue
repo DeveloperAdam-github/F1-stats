@@ -56,13 +56,15 @@
                 {{ upcomingRace.Circuit.Location.locality }}
               </p>
             </div>
-            <div class="h-full w-full flex items-center justify-center pb-20">
+            <div
+              class="h-full w-full flex items-center justify-center flex-col pb-20 uppercase"
+            >
               <div
-                class="relative flex justify-center items-center h-20 p-5 w-auto"
+                class="relative flex justify-center items-center h-14 p-5 w-auto"
               >
                 <h2
                   v-if="upcomingRace.Circuit"
-                  class="font-boldHeadline text-sm lg:text-xl text-white absolute top-8 left-5 lg:top-6 lg:left-5"
+                  class="font-boldHeadline text-sm lg:text-xl text-white absolute top-5 left-5 lg:top-4 lg:left-5"
                 >
                   {{
                     upcomingRace.Circuit.circuitId === 'bahrain'
@@ -120,52 +122,64 @@
                 >
                   {{
                     upcomingRace.Circuit.circuitId === 'bahrain'
-                      ? '26 - 28 Mar'
-                      : upcomingRace.Circuit.circuitId === 'imola'
-                      ? '16 - 18 Apr'
-                      : upcomingRace.Circuit.circuitId === 'portimao'
-                      ? '30 - 02 Apr - May'
-                      : upcomingRace.Circuit.circuitId === 'catalunya'
-                      ? '07 - 09 May'
-                      : upcomingRace.Circuit.circuitId === 'monaco'
-                      ? '20 - 23 May'
-                      : upcomingRace.Circuit.circuitId === 'BAK'
-                      ? '04 - 06 Jun'
-                      : upcomingRace.Circuit.circuitId === 'ricard'
-                      ? '18 - 20 Jun'
-                      : upcomingRace.raceName === 'Styrian Grand Prix'
-                      ? '25 - 27 Jun'
-                      : upcomingRace.raceName === 'Austrian Grand Prix'
-                      ? '02 - 04 Jul'
-                      : upcomingRace.Circuit.circuitId === 'silverstone'
-                      ? '16 - 18 Jul'
-                      : upcomingRace.Circuit.circuitId === 'hungaroring'
-                      ? '30 - 01 Jul - Aug'
-                      : upcomingRace.Circuit.circuitId === 'spa'
-                      ? '27 - 29 Aug'
-                      : upcomingRace.Circuit.circuitId === 'zandvoort'
-                      ? '03 - 05 Sep'
-                      : upcomingRace.Circuit.circuitId === 'monza'
-                      ? '10 - 12 Sep'
-                      : upcomingRace.Circuit.circuitId === 'sochi'
-                      ? '24 - 26 Sep'
-                      : upcomingRace.Circuit.circuitId === 'istanbul'
-                      ? '08 - 10 Oct'
-                      : upcomingRace.Circuit.circuitId === 'americas'
-                      ? '22 - 24 Oct'
-                      : upcomingRace.Circuit.circuitId === 'rodriguez'
-                      ? '05 - 07 Nov'
-                      : upcomingRace.Circuit.circuitId === 'interlagos'
-                      ? '12 - 14 Nov'
-                      : upcomingRace.Circuit.circuitId === 'losail'
-                      ? '19 - 21 Nov'
+                      ? '18 - 20 Mar'
                       : upcomingRace.Circuit.circuitId === 'jeddah'
-                      ? '03 - 05 Dec'
+                      ? '25 - 27 Mar'
+                      : upcomingRace.Circuit.circuitId === 'albert_park'
+                      ? '08 - 10 Apr'
+                      : upcomingRace.Circuit.circuitId === 'imola'
+                      ? '22 - 24 Apr'
+                      : upcomingRace.Circuit.circuitId === 'miami'
+                      ? '06 - 08 May'
+                      : upcomingRace.Circuit.circuitId === 'catalunya'
+                      ? '20 - 22 May'
+                      : upcomingRace.Circuit.circuitId === 'monaco'
+                      ? '27 - 29 May'
+                      : upcomingRace.raceName === 'BAK'
+                      ? '10 - 12 Jun'
+                      : upcomingRace.raceName === 'villeneuve'
+                      ? '17 - 19 Jun'
+                      : upcomingRace.Circuit.circuitId === 'silverstone'
+                      ? '01 - 03 Jul'
+                      : upcomingRace.Circuit.circuitId === 'red_bull_ring'
+                      ? '08 - 10 Jul'
+                      : upcomingRace.Circuit.circuitId === 'ricard'
+                      ? '22 - 24 Jul'
+                      : upcomingRace.Circuit.circuitId === 'hungaroring'
+                      ? '29 - 31 Jul'
+                      : upcomingRace.Circuit.circuitId === 'spa'
+                      ? '26 - 28 Aug'
+                      : upcomingRace.Circuit.circuitId === 'zandvoort'
+                      ? '02 - 04 Sep'
+                      : upcomingRace.Circuit.circuitId === 'monza'
+                      ? '09 - 11 Sep'
+                      : upcomingRace.Circuit.circuitId === 'sochi'
+                      ? '23 - 25 Sep'
+                      : upcomingRace.Circuit.circuitId === 'marina_bay'
+                      ? '30 - 02 Sep - Oct'
+                      : upcomingRace.Circuit.circuitId === 'suzuka'
+                      ? '07 - 09 Oct'
+                      : upcomingRace.Circuit.circuitId === 'austin'
+                      ? '21 - 23 Oct'
+                      : upcomingRace.Circuit.circuitId === 'rodriguez'
+                      ? '28 - 30 Oct'
+                      : upcomingRace.Circuit.circuitId === 'interlagos'
+                      ? '11 - 13 Nov'
                       : upcomingRace.Circuit.circuitId === 'yas_marina'
-                      ? '10 - 12 Dec'
+                      ? '18 - 20 Nov'
                       : ''
                   }}
                 </h2>
+              </div>
+              <div class="relative p-1">
+                <p class="font-boldHeadline text-black mb-4 lg:text-lg">
+                  {{ secondsToDhms(this.raceDate) }}
+                </p>
+                <p
+                  class="font-boldHeadline text-white absolute bottom-2.5 mb-2 ml-0.5 lg:text-lg"
+                >
+                  {{ secondsToDhms(this.raceDate) }}
+                </p>
               </div>
             </div>
           </div>
@@ -187,6 +201,7 @@ export default {
     return {
       lastRaceResults: [],
       upcomingRace: [],
+      raceDate: '',
     };
   },
   components: {
@@ -199,7 +214,7 @@ export default {
         .get('https://ergast.com/api/f1/current/last/results.json')
         .then((response) => {
           this.lastRaceResults = response.data.MRData.RaceTable.Races[0];
-          console.log(this.lastRaceResults);
+          // console.log(this.lastRaceResults);
         });
     },
     getUpcomingRace() {
@@ -207,13 +222,36 @@ export default {
         .get('https://ergast.com/api/f1/current/next.json')
         .then((response) => {
           this.upcomingRace = response.data.MRData.RaceTable.Races[0];
-          console.log(this.upcomingRace, 'upcoming');
+          // console.log(this.upcomingRace, 'upcoming');
+
+          const todaysDate = Math.floor(new Date().getTime() / 1000.0);
+          const raceDate = Math.floor(
+            new Date(response.data.MRData.RaceTable.Races[0].date).getTime() /
+              1000.0
+          );
+          const calculatedTime = raceDate - todaysDate;
+          this.raceDate = calculatedTime;
+          console.log(this.raceDate);
         });
+    },
+    secondsToDhms(seconds) {
+      seconds = Number(seconds);
+      const d = Math.floor(seconds / (3600 * 24));
+      const h = Math.floor((seconds % (3600 * 24)) / 3600);
+
+      const dDisplay =
+        d > 0
+          ? d + (d === 1 ? ' day until lights out' : ' days until lights out')
+          : '';
+      // const hDisplay = h > 0 ? h + (h === 1 ? ' hour ' : ' hours ') : '';
+
+      return dDisplay;
     },
   },
   mounted() {
     this.getLastRaceResults();
     this.getUpcomingRace();
+    // this.countdownToNextRace();
   },
 };
 </script>

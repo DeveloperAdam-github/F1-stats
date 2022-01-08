@@ -2,7 +2,7 @@
   <div class="carousel-item flex flex-col pt-10 m-2 mx-5 pl-2 lg:mx-8 w-auto">
     <div class="pl-4 w-64 flex justify-center relative">
       <img
-        class="w-40 absolute -top-14 z-40"
+        class="w-40 lg:w-48 absolute -top-14 lg:-top-20 lg:left-24 z-40"
         :src="
           race.Circuit.circuitId === 'bahrain'
             ? this.trackImage.bahrain
@@ -62,7 +62,7 @@
       }" -->
 
     <div
-      class="race-card w-72 h-96 rounded-lg flex flex-col p-4"
+      class="race-card w-72 lg:w-96 h-96 lg:h-30rem rounded-lg flex flex-col p-4"
       :style="{
         'background-image':
           race.Circuit.circuitId === 'bahrain'

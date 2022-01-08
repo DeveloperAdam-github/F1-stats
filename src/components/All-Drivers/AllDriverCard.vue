@@ -1,5 +1,7 @@
 <template>
-  <div class="pt-10 pl-2 w-72 m-2 mx-5 carousel-item flex flex-col lg:mx-8">
+  <div
+    class="pt-10 pl-2 w-72 lg:h-30rem lg:w-96 m-2 mx-5 carousel-item flex flex-col lg:mx-8"
+  >
     <router-link
       :to="{
         name: 'SingleDriver',
@@ -7,20 +9,20 @@
         query: { driver: driver.Driver.driverId },
       }"
     >
-      <div class="pl-4 relative w-64 flex right-10">
+      <div class="pl-4 relative w-64 flex right-10 lg:left-14">
         <p
           class="transform text-2xl absolute top-1 -right-15 z-10 text-black font-boldHeadline"
         >
-          <span class="text-base">#</span>{{ driver.Driver.permanentNumber }}
+          <span class="text-sm">#</span>{{ driver.Driver.permanentNumber }}
         </p>
         <p
           class="transform text-2xl absolute top-1.5 -right-14 z-10 text-red-600 font-boldHeadline"
         >
-          <span class="text-base">#</span>{{ driver.Driver.permanentNumber }}
+          <span class="text-sm">#</span>{{ driver.Driver.permanentNumber }}
         </p>
       </div>
       <div
-        class="race-card w-72 h-96 rounded-lg flex flex-col p-4"
+        class="race-card w-72 lg:w-96 h-96 lg:h-30rem rounded-lg flex flex-col p-4"
         :style="{
           'background-image':
             driver.Driver.driverId === 'max_verstappen'
@@ -104,7 +106,7 @@ export default {
       },
       // rgba(255,255,255,0.22)
       verstappen:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)), url(https://www.formula1.com/content/dam/fom-website/sutton/2020/AbuDhabi/Saturday/1290862295.jpg)',
+        'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)), url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/11/17/19/max-verstappen-1.jpg?width=982&height=726&auto=webp&quality=75)',
       hamilton:
         'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/race-winner-lewis-hamilton-of-great-britain-and-mercedes-gp-news-photo-1636925829.jpg)',
       bottas:

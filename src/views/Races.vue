@@ -4,7 +4,9 @@
       <div class="h-84vh w-full flex flex-col px-6 py-2 md:p-6">
         <race-title />
         <div class="h-full flex items-center">
-          <div class="w-auto flex overflow-x-scroll no-scrollbar carousel pt-2">
+          <div
+            class="w-auto flex overflow-x-scroll no-scrollbar carousel pt-2 lg:pt-8"
+          >
             <race-card
               class=""
               v-for="(race, index) in races"

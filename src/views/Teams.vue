@@ -5,7 +5,7 @@
         <team-title />
         <div class="h-full flex items-center">
           <div
-            class="w-auto flex overflow-x-scroll overflow-y-hidden no-scrollbar carousel"
+            class="w-auto flex overflow-x-scroll overflow-y-hidden no-scrollbar carousel pt-2 lg:pt-8"
           >
             <team-card
               class=""

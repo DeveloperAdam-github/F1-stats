@@ -4,7 +4,9 @@
       <div class="h-84vh w-full flex flex-col px-6 py-2 md:p-6">
         <driver-title />
         <div class="h-full flex items-center">
-          <div class="w-auto flex overflow-x-scroll no-scrollbar carousel">
+          <div
+            class="w-auto flex overflow-x-scroll no-scrollbar carousel pt-2 lg:pt-8"
+          >
             <all-driver-card
               v-for="(driver, index) in drivers"
               :key="index"

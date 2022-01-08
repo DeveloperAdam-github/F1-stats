@@ -20,7 +20,7 @@
       </div>
 
       <div
-        class="team-card w-72 h-96 rounded-lg flex flex-col p-4"
+        class="team-card w-72 lg:w-96 h-96 lg:h-30rem rounded-lg flex flex-col p-4"
         :style="{
           'background-image':
             team.Constructor.constructorId === 'red_bull'
