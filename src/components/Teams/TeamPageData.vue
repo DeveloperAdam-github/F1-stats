@@ -348,6 +348,7 @@
           <!-- params: { ...teamInfo.Constructor },
                   query: { team: teamInfo.Constructor.constructorId }, -->
           <button
+            @click="persist"
             class="mt-8 lg:mt-12 w-full lg:w-64 mb-4 bg-success p-2 font-boldHeadline rounded-md"
           >
             Head to Head
@@ -366,16 +367,41 @@ export default {
       team: {},
     };
   },
+  watch: {
+    team(newVal, oldVal) {
+      console.log(`Updating ${oldVal} to ${newVal}`);
+      this.team = newVal;
+    },
+  },
   methods: {
     // getTeam() {
     //   this.team = this.$props.team;
     //   console.log(this.teamInfo, 'wthf');
     // },
+    persist() {
+      localStorage.team = JSON.stringify(this.team);
+      console.log(localStorage.team, 'does this work?');
+    },
+    getLocalStorage() {
+      // console.log('setting teaminfo');
+      // if (this.teamInfo.constructorId === null && localStorage.team) {
+      // console.log('getting local storage?');
+      this.team = JSON.parse(localStorage.team);
+      console.log(
+        this.team,
+        'this.teamInfo <--- after getLocalStorage has run'
+      );
+      // }
+    },
   },
   mounted() {
     // this.getTeam();
     this.team = this.$route.params;
-    // console.log(this.teamInfo, 'wtwtwtetwetwtwtet');
+    // console.log(this.team, 'wtwtwtetwetwtwtet');
+    if (Object.keys(this.team).length === 0) {
+      this.getLocalStorage();
+      console.log(this.team, 'who is team POOOOOP');
+    }
   },
 };
 </script>

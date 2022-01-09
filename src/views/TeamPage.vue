@@ -24,20 +24,42 @@ export default {
     TeamPageTitle,
     TeamPageData,
   },
+  watch: {
+    // teamInfo(newVal, oldVal) {
+    //   console.log(`Updating ${oldVal} to ${newVal}`);
+    //   this.teamInfo = { ...newVal };
+    // },
+  },
   methods: {
     loadTeamData() {
       this.currentTeam = this.teamInfo;
       // console.log(this.currentTeam, 'who is team?');
     },
-    ifTeamISNull() {
-      this.$router.push('teams');
-    },
+    // persist() {
+    //   localStorage.team = JSON.stringify(this.teamInfo);
+    //   console.log(localStorage.team, 'does this work?');
+    // },
+    // getLocalStorage() {
+    //   // console.log('setting teaminfo');
+    //   // if (this.teamInfo.constructorId === null && localStorage.team) {
+    //   // console.log('getting local storage?');
+    //   this.teamInfo = localStorage.team;
+    //   console.log(
+    //     this.teamInfo,
+    //     'this.teamInfo <--- after getLocalStorage has run'
+    //   );
+    //   // }
+    // },
   },
   mounted() {
-    this.loadTeamData();
+    // this.loadTeamData();
     this.teamInfo = this.$route.params;
-    console.log(this.teamInfo, 'who is team');
+
     // console.log(this.$props.team, ' this the props team');
+    // if (Object.keys(this.teamInfo).length === 0) {
+    //   this.getLocalStorage();
+    //   console.log(this.teamInfo, 'who is team POOOOOP');
+    // }
   },
 };
 </script>
