@@ -2,9 +2,16 @@
   <div
     class="carousel-item flex flex-col pt-10 m-2 mx-5 pl-2 lg:mx-8 w-auto transform"
   >
-    <router-link
+    <!-- <router-link
       :to="{
         name: 'DriverBattle',
+        params: { ...team.Constructor },
+        query: { team: team.Constructor.constructorId },
+      }"
+    > -->
+    <router-link
+      :to="{
+        name: 'TeamPage',
         params: { ...team.Constructor },
         query: { team: team.Constructor.constructorId },
       }"

@@ -1,8 +1,8 @@
 <template>
-  <div class="h-screen w-screen bg-secondary overflow-hidden">
+  <div class="h-screen w-screen bg-secondary background overflow-hidden">
     <TopNav class="h-10vh lg:h-6vh" />
     <!-- <router-view class="h-80vh lg:h-84vh" /> -->
-    <router-view v-slot="{ Component }" class="h-80vh lg:h-84vh">
+    <router-view v-slot="{ Component }" class="h-80vh lg:h-84vh background">
       <transition name="route" mode="out-in">
         <component :is="Component"></component>
       </transition>
@@ -24,7 +24,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background-image: linear-gradient(rgba(1, 1, 1, 1), rgba(0, 0, 0, 0.1));
+}
+
+.background {
+  background-image: linear-gradient(rgba(1, 1, 1, 1), rgba(0, 0, 0, 0.1));
 }
 
 #nav {

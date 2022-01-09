@@ -28,13 +28,13 @@ export default {
     },
     loadTeamData() {
       this.currentTeam = this.teamInfo;
-      console.log(this.currentTeam, 'who is team?');
+      console.log(this.currentTeam, 'who is team for driver battle?');
     },
   },
   mounted() {
-    this.loadTeamData();
+    // this.loadTeamData();
     this.teamInfo = this.$route.params;
-    console.log(this.teamInfo, 'who is team');
+    console.log(this.teamInfo, 'who is team for driver battle');
   },
 };
 </script>

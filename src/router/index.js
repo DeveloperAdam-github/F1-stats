@@ -6,6 +6,7 @@ import Teams from '../views/Teams.vue';
 import Standings from '../views/Standings.vue';
 import SingleDriver from '../views/SingleDriver.vue';
 import DriverBattle from '../views/DriverBattle.vue';
+import TeamPage from '../views/TeamPage.vue';
 
 const routes = [
   {
@@ -43,6 +44,12 @@ const routes = [
     path: '/driver-battles',
     name: 'DriverBattle',
     component: DriverBattle,
+    props: true,
+  },
+  {
+    path: '/team-page',
+    name: 'TeamPage',
+    component: TeamPage,
     props: true,
   },
 ];
