@@ -86,27 +86,41 @@
 </template>
 
 <script>
+import alpine from '../../assets/Teams/alpine.jpeg';
+import redbull from '../../assets/Teams/redbull.jpeg';
+import mercedes from '../../assets/Teams/mercedes.jpeg';
+import ferrari from '../../assets/Teams/ferrari.jpeg';
+import mclaren from '../../assets/Teams/mclaren.jpeg';
+import haas from '../../assets/Teams/haas.jpeg';
+import williams2 from '../../assets/Teams/williams2.jpeg';
+import alphatauri from '../../assets/Teams/alphatauri.jpeg';
+import alfa from '../../assets/Teams/alfa.jpeg';
+import aston from '../../assets/Teams/aston.jpeg';
 export default {
+  components: {
+    alpine,
+    redbull,
+    mercedes,
+    ferrari,
+    mclaren,
+    haas,
+    williams2,
+    alphatauri,
+    alfa,
+    aston,
+  },
   data() {
     return {
-      red_bull:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.00001)),url(https://external-preview.redd.it/9_Wx7_1p5QD-YJpE_wIbxNsxFFgvQ2IkYSjyNnXVUjk.jpg?auto=webp&s=f32e9434bc52530c4f542d0f03fe9272da2cfe9b)',
-      mercedes:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://www.grandprix247.com/wp-content/uploads/2021/12/mercedes-f1-team-2021.jpg)',
-      ferrari:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://www.formula1.com/content/dam/fom-website/manual/Misc/2019-Races/AbuDhabi_2019/Post/XPB_1024633_HiRes.jpg)',
-      mclaren:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://media-cdn.mclaren.com/media/images/articles/hero/mcl_GP2122_091913EDIT_56I7762.jpg)',
-      alphatauri:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://preview.redd.it/q7pqst0q6uj61.jpg?auto=webp&s=5593969dfcff39a29dbb6d030d1bb4d49e370aac)',
-      alfa: 'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://f1i.com/wp-content/uploads/2020/12/alfa-romeo.jpg)',
-      williams:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://c8.alamy.com/comp/2FTF17Y/monte-carlo-monaco-21st-may-2021-l-to-r-nicholas-latifi-cdn-williams-racing-and-george-russell-gbr-williams-racing-at-a-team-photograph-celebrating-750-grand-prix-for-the-team-monaco-grand-prix-friday-21st-may-2021-monte-carlo-monaco-credit-james-moyalamy-live-news-2FTF17Y.jpg)',
-      haas: 'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://pbs.twimg.com/media/FGO28j-XsAUK6GR?format=jpg&name=4096x4096)',
-      alpine:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://scontent-lhr8-1.xx.fbcdn.net/v/t1.6435-9/183811827_4647460225280948_3628763664311421842_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=730e14&_nc_ohc=G5gK1tteFXgAX906kYk&_nc_ht=scontent-lhr8-1.xx&oh=00_AT9hzpwmQ0Hez6xaBzMNwhTFuQqo5-M50vCKe58AFBFXcA&oe=61DD2473)',
-      aston_martin:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(https://pbs.twimg.com/profile_banners/16143542/1639390604/1500x500)',
+      red_bull: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.00001)),url(${redbull})`,
+      mercedes: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${mercedes})`,
+      ferrari: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${ferrari})`,
+      mclaren: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${mclaren})`,
+      alphatauri: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${alphatauri})`,
+      alfa: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${alfa})`,
+      williams: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${williams2})`,
+      haas: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${haas})`,
+      alpine: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${alpine})`,
+      aston_martin: `linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(255,255,255,0.000001)),url(${aston})`,
     };
   },
   props: ['team'],

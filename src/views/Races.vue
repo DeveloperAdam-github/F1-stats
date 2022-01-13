@@ -40,8 +40,9 @@ export default {
   },
   methods: {
     getRaces() {
-      axios.get('https://ergast.com/api/f1/current.json').then((response) => {
+      axios.get('https://ergast.com/api/f1/2022.json').then((response) => {
         this.races = response.data.MRData.RaceTable.Races;
+        console.log(this.races, 'the full race season');
       });
     },
     async getFirstPlace() {

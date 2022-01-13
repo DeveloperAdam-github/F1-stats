@@ -22,8 +22,9 @@ module.exports = {
       white: '#f5f5f5',
     }),
     extend: {
-      backgroundImage: {
-        max: 'linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(https://qph.fs.quoracdn.net/main-qimg-b391f91142376d97500ed2b4c36668d5);',
+      backgroundImage: (theme) => ({
+        ...theme('images'),
+        max: "linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(1, 1, 1, 0.10)),url('/src/assets/Drivers/max.jpeg')",
         lewis:
           'linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(https://static.independent.co.uk/2021/05/09/15/1317116893.jpg?width=982&height=726&auto=webp&quality=75);',
         bottas:
@@ -104,7 +105,7 @@ module.exports = {
           'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.40)),url(https://files.gpblog.com/news/2021/05/15/v2_large_c024ea95476bd36c8d000148695603da9bc5984c.jpg)',
         kubicaBattle:
           'linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.40)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/08/18101104/robert-kubica-alfa-romeo-garage-hungary-planetf1.jpg)',
-      },
+      }),
       fontFamily: {
         headline: ['F1-Regular'],
         boldHeadline: ['F1-Bold'],

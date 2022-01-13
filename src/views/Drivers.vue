@@ -33,7 +33,7 @@ export default {
   methods: {
     getDrivers() {
       axios
-        .get('https://ergast.com/api/f1/current/driverStandings.json')
+        .get('https://ergast.com/api/f1/2022/driverStandings.json')
         .then((response) => {
           this.drivers =
             response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;

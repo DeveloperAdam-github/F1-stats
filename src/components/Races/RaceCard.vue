@@ -46,6 +46,16 @@
             ? this.trackImage.jeddah
             : race.Circuit.circuitId === 'yas_marina'
             ? this.trackImage.yas_marina
+            : race.Circuit.circuitId === 'albert_park'
+            ? this.trackImage.albert_park
+            : race.Circuit.circuitId === 'miami'
+            ? this.trackImage.miami
+            : race.Circuit.circuitId === 'villeneuve'
+            ? this.trackImage.villeneuve
+            : race.Circuit.circuitId === 'marina_bay'
+            ? this.trackImage.marina_bay
+            : race.Circuit.circuitId === 'suzuka'
+            ? this.trackImage.suzuka
             : ''
         "
         alt=""
@@ -107,6 +117,16 @@
             ? this.jeddah
             : race.Circuit.circuitId === 'yas_marina'
             ? this.yas_marina
+            : race.Circuit.circuitId === 'albert_park'
+            ? this.albert_park
+            : race.Circuit.circuitId === 'miami'
+            ? this.miami
+            : race.Circuit.circuitId === 'villeneuve'
+            ? this.villeneuve
+            : race.Circuit.circuitId === 'marina_bay'
+            ? this.marina
+            : race.Circuit.circuitId === 'suzuka'
+            ? this.suzuka
             : '',
       }"
     >
@@ -120,49 +140,55 @@
         <p class="text-gray-300 font-headline text-xs">
           {{
             race.Circuit.circuitId === 'bahrain'
-              ? '26-28 Mar'
+              ? '18-20 Mar'
+              : race.Circuit.circuitId === 'albert_park'
+              ? '08-10 Apr'
               : race.Circuit.circuitId === 'imola'
-              ? '16-18 Apr'
+              ? '22-24 Apr'
+              : race.Circuit.circuitId === 'miami'
+              ? '06-08 May'
               : race.Circuit.circuitId === 'portimao'
               ? '30-02 Apr-May'
               : race.Circuit.circuitId === 'catalunya'
-              ? '07-09 May'
+              ? '20-22 May'
               : race.Circuit.circuitId === 'monaco'
-              ? '20-23 May'
+              ? '27-29 May'
               : race.Circuit.circuitId === 'BAK'
-              ? '04-06 Jun'
+              ? '10-12 Jun'
+              : race.Circuit.circuitId === 'villeneuve'
+              ? '17-19 Jun'
               : race.Circuit.circuitId === 'ricard'
-              ? '18-20 Jun'
-              : race.raceName === 'Styrian Grand Prix'
-              ? '25-27 Jun'
+              ? '22-24 Jul'
               : race.raceName === 'Austrian Grand Prix'
-              ? '02-04 Jul'
+              ? '08-10 Jul'
               : race.Circuit.circuitId === 'silverstone'
-              ? '16-18 Jul'
+              ? '01-03 Jul'
               : race.Circuit.circuitId === 'hungaroring'
-              ? '30-01 Jul-Aug'
+              ? '29-31 Jul'
               : race.Circuit.circuitId === 'spa'
-              ? '27-29 Aug'
+              ? '26-28 Aug'
               : race.Circuit.circuitId === 'zandvoort'
-              ? '03-05 Sep'
+              ? '02-04 Sep'
               : race.Circuit.circuitId === 'monza'
-              ? '10-12 Sep'
+              ? '09-11 Sep'
               : race.Circuit.circuitId === 'sochi'
-              ? '24-26 Sep'
-              : race.Circuit.circuitId === 'istanbul'
-              ? '08-10 Oct'
+              ? '23-25 Sep'
+              : race.Circuit.circuitId === 'sochi'
+              ? '23-25 Sep'
+              : race.Circuit.circuitId === 'marina_bay'
+              ? '30-02 Sep-Oct'
+              : race.Circuit.circuitId === 'suzuka'
+              ? '07-09 Oct'
               : race.Circuit.circuitId === 'americas'
-              ? '22-24 Oct'
+              ? '21-23 Oct'
               : race.Circuit.circuitId === 'rodriguez'
-              ? '05-07 Nov'
+              ? '28-30 Oct'
               : race.Circuit.circuitId === 'interlagos'
-              ? '12-14 Nov'
-              : race.Circuit.circuitId === 'losail'
-              ? '19-21 Nov'
+              ? '11-13 Nov'
               : race.Circuit.circuitId === 'jeddah'
-              ? '03-05 Dec'
+              ? '25-27 Mar'
               : race.Circuit.circuitId === 'yas_marina'
-              ? '10-12 Dec'
+              ? '18-20 Nov'
               : ''
           }}
         </p>
@@ -190,6 +216,32 @@
 
 <script>
 import axios from 'axios';
+import albert from '../../assets/Circuits/albert.jpeg';
+import americas from '../../assets/Circuits/americas.jpeg';
+import bahrain from '../../assets/Circuits/bahrain.jpeg';
+import baku from '../../assets/Circuits/baku.jpeg';
+import catalunya from '../../assets/Circuits/catalunya.jpeg';
+import circuit_gilles from '../../assets/Circuits/circuit_gilles.jpeg';
+import hungaroring from '../../assets/Circuits/hungaroring.jpeg';
+import imola from '../../assets/Circuits/imola.jpeg';
+import interlagos from '../../assets/Circuits/interlagos.jpeg';
+import istanbul from '../../assets/Circuits/istanbul.jpeg';
+import jeddah from '../../assets/Circuits/jeddah.jpeg';
+import losail from '../../assets/Circuits/losail.jpeg';
+import marina from '../../assets/Circuits/marina.jpeg';
+import miami from '../../assets/Circuits/miami.jpeg';
+import monaco from '../../assets/Circuits/monaco.jpeg';
+import monza from '../../assets/Circuits/monza.jpeg';
+import portimao from '../../assets/Circuits/portimao.jpeg';
+import red_bull_ring from '../../assets/Circuits/red_bull_ring.jpeg';
+import ricard from '../../assets/Circuits/ricard.jpeg';
+import rodriguez from '../../assets/Circuits/rodriguez.jpeg';
+import silverstone from '../../assets/Circuits/silverstone.jpeg';
+import sochi from '../../assets/Circuits/sochi.jpeg';
+import spa from '../../assets/Circuits/spa.jpeg';
+import suzuka from '../../assets/Circuits/suzuka.jpeg';
+import yas_marina from '../../assets/Circuits/yas_marina.jpeg';
+import zandvoort from '../../assets/Circuits/zandvoort.jpeg';
 
 export default {
   data() {
@@ -237,47 +289,43 @@ export default {
           'https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Saudi%20Arabia.png.transform/2col-retina/image.png',
         yas_marina:
           'https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Abu%20Dhabi.png.transform/2col-retina/image.png',
+        albert_park:
+          'https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Australia.png.transform/2col-retina/image.png',
+        miami:
+          'https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Miami.png.transform/2col-retina/image.png',
+        villeneuve:
+          'https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Canada.png.transform/2col-retina/image.png',
+        marina_bay:
+          'https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Singapore.png.transform/2col-retina/image.png',
+        suzuka:
+          'https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Japan.png.transform/2col-retina/image.png',
       },
-      bahrain:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)), url(https://www.telegraph.co.uk/content/dam/travel/Spark/bahrain-grand-prix/start-of-bahrain-grand-prix-2017-xlarge.jpg)',
-      imola:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Emilia%20Romagna.jpg.transform/12col-retina/image.jpg)',
-      portimao:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Portugal.jpg.transform/12col-retina/image.jpg)',
-      catalunya:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Spain.jpg.transform/fullbleed-retina/image.jpg)',
-      monaco:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Monaco.jpg.transform/fullbleed-retina/image.jpg)',
-      BAK: 'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Azerbaijan.jpg.transform/fullbleed-retina/image.jpg)',
-      ricard:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/France.jpg.transform/fullbleed-retina/image.jpg)',
-      red_bull_ring:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Styria.jpg.transform/fullbleed-retina/image.jpg)',
-      silverstone:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Great%20Britain.jpg.transform/fullbleed-retina/image.jpg)',
-      hungaroring:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Hungary.jpg.transform/fullbleed-retina/image.jpg)',
-      spa: 'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Belgium.jpg.transform/fullbleed-retina/image.jpg)',
-      zandvoort:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Netherlands.jpg.transform/fullbleed-retina/image.jpg)',
-      monza:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Italy.jpg.transform/fullbleed-retina/image.jpg)',
-      sochi:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Russia.jpg.transform/fullbleed-retina/image.jpg)',
-      istanbul:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Turkey.jpg.transform/fullbleed-retina/image.jpg)',
-      americas:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/USA.jpg.transform/fullbleed-retina/image.jpg)',
-      rodriguez:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Mexico.jpg.transform/fullbleed-retina/image.jpg)',
-      interlagos:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Brazil.jpg.transform/fullbleed-retina/image.jpg)',
-      losail:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Qatar.jpg.transform/fullbleed-retina/image.jpg)',
-      jeddah:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Racehub%20header%20images%2016x9/Saudi_Arabia.jpg.transform/fullbleed-retina/image.jpg)',
-      yas_marina:
-        'linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(https://www.urbanrealm.com/blogs/media/blogs/pauls/yashotelabudhabi10.jpg?mtime=1530381789)',
+      bahrain: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)), url(${bahrain})`,
+      imola: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${imola})`,
+      portimao: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${portimao})`,
+      catalunya: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${catalunya})`,
+      monaco: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${monaco})`,
+      BAK: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${baku})`,
+      ricard: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${ricard})`,
+      red_bull_ring: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${red_bull_ring})`,
+      silverstone: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${silverstone})`,
+      hungaroring: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${hungaroring})`,
+      spa: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${spa})`,
+      zandvoort: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${zandvoort})`,
+      monza: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${monza})`,
+      sochi: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${sochi})`,
+      istanbul: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${istanbul})`,
+      americas: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${americas})`,
+      rodriguez: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${rodriguez})`,
+      interlagos: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${interlagos})`,
+      losail: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${losail})`,
+      jeddah: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${jeddah})`,
+      yas_marina: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${yas_marina})`,
+      albert_park: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${albert})`,
+      miami: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${miami})`,
+      villeneuve: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${circuit_gilles})`,
+      suzuka: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${suzuka})`,
+      marina: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${marina})`,
     };
   },
   props: ['race', 'first', 'second', 'third', 'secondPlace'],
