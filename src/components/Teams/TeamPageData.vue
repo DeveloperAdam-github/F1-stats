@@ -229,29 +229,30 @@
         <div class="w-1/2 p-1 flex flex-col items-center">
           <div
             class="bg-cover m-1 bg-center h-36 lg:h-72 w-full lg:w-64 flex rounded-md flex-col"
-            :class="
-              team.constructorId === 'red_bull'
-                ? 'bg-maxBattle'
-                : team.constructorId === 'mercedes'
-                ? 'bg-hamiltonBattle'
-                : team.constructorId === 'ferrari'
-                ? 'bg-sainzBattle'
-                : team.constructorId === 'mclaren'
-                ? 'bg-norrisBattle'
-                : team.constructorId === 'alpine'
-                ? 'bg-oconBattle'
-                : team.constructorId === 'alphatauri'
-                ? 'bg-tsunodaBattle'
-                : team.constructorId === 'aston_martin'
-                ? 'bg-vettelBattle'
-                : team.constructorId === 'williams'
-                ? 'bg-russellBattle'
-                : team.constructorId === 'alfa'
-                ? 'bg-raikkonenBattle'
-                : team.constructorId === 'haas'
-                ? 'bg-mazepinBattle'
-                : 'bg-maxBattle'
-            "
+            :style="{
+              'background-image':
+                team.constructorId === 'red_bull'
+                  ? this.verstappen
+                  : team.constructorId === 'mercedes'
+                  ? this.hamilton
+                  : team.constructorId === 'ferrari'
+                  ? this.sainz
+                  : team.constructorId === 'mclaren'
+                  ? this.norris
+                  : team.constructorId === 'alpine'
+                  ? this.ocon
+                  : team.constructorId === 'alphatauri'
+                  ? this.tsunoda
+                  : team.constructorId === 'aston_martin'
+                  ? this.vettel
+                  : team.constructorId === 'williams'
+                  ? this.albon
+                  : team.constructorId === 'alfa'
+                  ? this.zhou
+                  : team.constructorId === 'haas'
+                  ? this.mazepin
+                  : 'bg-maxBattle',
+            }"
           ></div>
           <div
             class="w-32 lg:w-56 mt-2 bg-transparent p-2 font-headline font-bold text-xxs lg:text-lg"
@@ -272,9 +273,9 @@
                 : team.constructorId === 'aston_martin'
                 ? 'Sebestian Vettel'
                 : team.constructorId === 'williams'
-                ? 'George Russell'
+                ? 'Alexandar Albon'
                 : team.constructorId === 'alfa'
-                ? 'Kimi Raikkonen'
+                ? 'Guanyu Zhou'
                 : team.constructorId === 'haas'
                 ? 'Nikita Mazepin'
                 : ''
@@ -284,29 +285,30 @@
         <div class="flex p-1 w-1/2 flex-col items-center">
           <div
             class="bg-cover m-1 bg-center h-36 lg:h-72 w-full lg:w-64 flex rounded-md flex-col"
-            :class="
-              team.constructorId === 'red_bull'
-                ? 'bg-perezBattle'
-                : team.constructorId === 'mercedes'
-                ? 'bg-bottasBattle'
-                : team.constructorId === 'ferrari'
-                ? 'bg-leclercBattle'
-                : team.constructorId === 'mclaren'
-                ? 'bg-ricciardoBattle'
-                : team.constructorId === 'alpine'
-                ? 'bg-alonsoBattle'
-                : team.constructorId === 'alphatauri'
-                ? 'bg-gaslyBattle'
-                : team.constructorId === 'aston_martin'
-                ? 'bg-strollBattle'
-                : team.constructorId === 'williams'
-                ? 'bg-latifiBattle'
-                : team.constructorId === 'alfa'
-                ? 'bg-giovinazziBattle'
-                : team.constructorId === 'haas'
-                ? 'bg-mickBattle bg-top'
-                : 'bg-bottasBattle'
-            "
+            :style="{
+              'background-image':
+                team.constructorId === 'red_bull'
+                  ? this.perez
+                  : team.constructorId === 'mercedes'
+                  ? this.russell
+                  : team.constructorId === 'ferrari'
+                  ? this.leclerc
+                  : team.constructorId === 'mclaren'
+                  ? this.ricciardo
+                  : team.constructorId === 'alpine'
+                  ? this.alonso
+                  : team.constructorId === 'alphatauri'
+                  ? this.gasly
+                  : team.constructorId === 'aston_martin'
+                  ? this.stroll
+                  : team.constructorId === 'williams'
+                  ? this.latifi
+                  : team.constructorId === 'alfa'
+                  ? this.bottas
+                  : team.constructorId === 'haas'
+                  ? this.mick
+                  : 'bg-bottasBattle',
+            }"
           ></div>
           <div
             class="w-28 lg:w-56 mt-2 bg-transparent p-2 font-headline font-bold text-xxs lg:text-lg"
@@ -315,7 +317,7 @@
               team.constructorId === 'red_bull'
                 ? 'Sergio Perez'
                 : team.constructorId === 'mercedes'
-                ? 'Valterri Bottas'
+                ? 'George Russell'
                 : team.constructorId === 'ferrari'
                 ? 'Charles Leclerc'
                 : team.constructorId === 'mclaren'
@@ -329,7 +331,7 @@
                 : team.constructorId === 'williams'
                 ? 'Nicholas Latifi'
                 : team.constructorId === 'alfa'
-                ? 'Antonio Giovinazzi'
+                ? 'Valterri Bottas'
                 : team.constructorId === 'haas'
                 ? 'Mick Schumacher'
                 : ''
@@ -360,11 +362,51 @@
 </template>
 
 <script>
+import max from '../../assets/Drivers/DriversBattle/max.jpeg';
+import bottas from '../../assets/Drivers/DriversBattle/bottas.jpeg';
+import leclerc from '../../assets/Drivers/DriversBattle/leclerc.jpeg';
+import lewis from '../../assets/Drivers/DriversBattle/lewis.jpeg';
+import alex from '../../assets/Drivers/DriversBattle/alex.jpeg';
+import alonso from '../../assets/Drivers/DriversBattle/alonso.jpeg';
+import latifi from '../../assets/Drivers/DriversBattle/latifi.jpeg';
+import gasly from '../../assets/Drivers/DriversBattle/gasly.jpeg';
+import mazepin from '../../assets/Drivers/DriversBattle/mazepin.jpeg';
+import mick from '../../assets/Drivers/DriversBattle/mick.jpeg';
+import norris from '../../assets/Drivers/DriversBattle/norris.jpeg';
+import ocon from '../../assets/Drivers/DriversBattle/ocon.jpeg';
+import perez from '../../assets/Drivers/DriversBattle/perez.jpeg';
+import ricciardo from '../../assets/Drivers/DriversBattle/ricciardo.jpeg';
+import russell from '../../assets/Drivers/DriversBattle/russell.jpeg';
+import sainz from '../../assets/Drivers/DriversBattle/sainz.jpg';
+import stroll from '../../assets/Drivers/DriversBattle/stroll.jpeg';
+import yuki from '../../assets/Drivers/DriversBattle/yuki.jpeg';
+import vettel from '../../assets/Drivers/DriversBattle/vettel.jpeg';
+import zhou from '../../assets/Drivers/DriversBattle/zhou.jpeg';
 export default {
   // props: ['team'],
   data() {
     return {
       team: {},
+      verstappen: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)), url(${max})`,
+      hamilton: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${lewis})`,
+      bottas: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${bottas})`,
+      perez: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${perez})`,
+      sainz: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${sainz})`,
+      norris: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${norris})`,
+      leclerc: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${leclerc})`,
+      ricciardo: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${ricciardo})`,
+      gasly: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${gasly})`,
+      alonso: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${alonso})`,
+      ocon: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${ocon})`,
+      vettel: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${vettel})`,
+      stroll: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${stroll})`,
+      tsunoda: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${yuki})`,
+      russell: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${russell})`,
+      zhou: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${zhou})`,
+      latifi: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${latifi})`,
+      albon: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${alex})`,
+      mick: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${mick})`,
+      mazepin: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${mazepin})`,
     };
   },
   watch: {
