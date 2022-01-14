@@ -196,9 +196,9 @@
       <div
         class="flex flex-col text-white font-headline text-xs h-full justify-end pb-4"
       >
-        <div class="flex justify-between">
+        <!-- <div class="flex justify-between">
           <p v-if="first">{{ first.Results[0].Driver.familyName }}</p>
-          <!-- {{ first }} -->
+
           <p class="font-boldHeadline">1st</p>
         </div>
         <div class="flex justify-between">
@@ -208,7 +208,7 @@
         <div class="flex justify-between">
           <p v-if="third">{{ third.Results[0].Driver.familyName }}</p>
           <p class="font-boldHeadline">3rd</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

@@ -2,5 +2,9 @@
 	"appId": "com.developeradam.app",
 	"appName": "Formula GP",
 	"webDir": "dist",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+    "server": {
+      "url": "http://192.168.1.68:8101",
+      "cleartext": true
+    },
 }

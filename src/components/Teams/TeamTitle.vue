@@ -11,7 +11,7 @@
         class="text-xs lg:text-lg text-gray-400 flex-wrap lg:flex-nowrap w-4/5 text-left font-sans lg:w-full"
       >
         <p>
-          The full Constructors line up for the 2021 season. Click a card to see
+          The full Constructors line up for the 2022 season. Click a card to see
           the drivers go head to head
         </p>
       </div>

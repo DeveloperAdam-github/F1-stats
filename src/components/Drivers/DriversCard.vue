@@ -128,6 +128,8 @@
       <mick-stats v-if="driverInfo.code === 'MSC'" />
       <kubica-stats v-if="driverInfo.code === 'KUB'" />
       <mazepin-stats v-if="driverInfo.code === 'MAZ'" />
+      <albon-stats v-if="driverInfo.code === 'ALB'" />
+      <zhou-stats v-if="driverInfo.code === 'ZHO'" />
 
       <div
         v-else-if="driverInfo === null"
@@ -180,6 +182,8 @@ import GiovinazziStats from './Drivers-Stat-Card/GiovinazziStats.vue';
 import MickStats from './Drivers-Stat-Card/MickStats.vue';
 import KubicaStats from './Drivers-Stat-Card/KubicaStats.vue';
 import MazepinStats from './Drivers-Stat-Card/MazepinStats.vue';
+import AlbonStats from './Drivers-Stat-Card/AlbonStats.vue';
+import ZhouStats from './Drivers-Stat-Card/ZhouStats.vue';
 
 export default {
   components: {
@@ -204,6 +208,8 @@ export default {
     MazepinStats,
     KubicaStats,
     StrollStats,
+    AlbonStats,
+    ZhouStats,
   },
   props: ['driverInfo'],
   data() {

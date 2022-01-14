@@ -10,7 +10,7 @@
       <div
         class="text-xs lg:text-lg text-gray-400 flex-wrap lg:flex-nowrap w-4/5 text-left font-sans lg:w-full"
       >
-        <p>2021 season Grand Prix race calendar</p>
+        <p>2022 season Grand Prix race calendar</p>
       </div>
     </div>
   </div>

@@ -89,9 +89,13 @@
           the Haas team, but don’t be fooled into thinking he hasn’t also got
           the driving chops to go with it.
         </p>
-        <p v-if="driverInfo.code === 'KUB'">
-          Robert Kubica got his first car at the age of four: “it had a
-          four-stroke engine, no horsepower but still could do about 40kph”.
+        <p v-if="driverInfo.code === 'ALB'">
+          Alexandar Albon has had a tough time in Formula One, but he is back in
+          2022 with Williams, will he be able to bounce back after tough times?
+        </p>
+        <p v-if="driverInfo.code === 'ZHO'">
+          Season rookie, Guanyu Zhou is set to take place in first Formula One
+          grand prix season.
         </p>
       </div>
     </div>

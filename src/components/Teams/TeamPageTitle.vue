@@ -11,7 +11,7 @@
         class="text-xs lg:text-lg text-gray-400 flex-wrap lg:flex-nowrap w-4/5 text-left font-sans lg:w-full"
       >
         <p>
-          The home of {{ team.name }} checkout the teams 2021 car and driver
+          The home of {{ team.name }} checkout the teams 2022 car and driver
           line up below.
         </p>
       </div>
