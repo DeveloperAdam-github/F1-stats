@@ -22,6 +22,9 @@ module.exports = {
       white: '#f5f5f5',
     }),
     extend: {
+      colors: {
+        purple: '#5A1F6A',
+      },
       backgroundImage: (theme) => ({
         ...theme('images'),
         max: "linear-gradient(to bottom right, rgba(1,1,1,0.75), rgba(1, 1, 1, 0.10)),url('/src/assets/Drivers/max.jpeg')",

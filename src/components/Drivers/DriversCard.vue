@@ -39,8 +39,6 @@
             ? 'https://www.formula1.com/content/dam/fom-website/drivers/K/KIMRAI01_Kimi_R%C3%A4ikk%C3%B6nen/kimrai01.png.transform/2col-retina/image.png'
             : driverInfo.code === 'LAT'
             ? 'https://www.formula1.com/content/dam/fom-website/drivers/N/NICLAF01_Nicholas_Latifi/niclaf01.png.transform/2col-retina/image.png'
-            : driverInfo.code === 'ALB'
-            ? 'https://www.formula1.com/content/dam/fom-website/drivers/A/ALEALB01_Alexandar_Albon/alealb01.png.transform/2col-retina/image.png'
             : driverInfo.code === 'MSC'
             ? 'https://www.formula1.com/content/dam/fom-website/drivers/M/MICSCH02_Mick_Schumacher/micsch02.png.transform/2col-retina/image.png'
             : driverInfo.code === 'MAZ'

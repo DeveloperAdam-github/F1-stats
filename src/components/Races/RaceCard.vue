@@ -1,68 +1,75 @@
 <template>
   <div class="carousel-item flex flex-col pt-10 m-2 mx-5 pl-2 lg:mx-8 w-auto">
-    <div class="pl-4 w-64 flex justify-center relative">
-      <img
-        class="w-40 lg:w-48 absolute -top-14 lg:-top-20 lg:left-24 z-40"
-        :src="
-          race.Circuit.circuitId === 'bahrain'
-            ? this.trackImage.bahrain
-            : race.Circuit.circuitId === 'imola'
-            ? this.trackImage.imola
-            : race.Circuit.circuitId === 'portimao'
-            ? this.trackImage.portimao
-            : race.Circuit.circuitId === 'catalunya'
-            ? this.trackImage.catalunya
-            : race.Circuit.circuitId === 'monaco'
-            ? this.trackImage.monaco
-            : race.Circuit.circuitId === 'BAK'
-            ? this.trackImage.BAK
-            : race.Circuit.circuitId === 'ricard'
-            ? this.trackImage.ricard
-            : race.Circuit.circuitId === 'red_bull_ring'
-            ? this.trackImage.red_bull_ring
-            : race.Circuit.circuitId === 'silverstone'
-            ? this.trackImage.silverstone
-            : race.Circuit.circuitId === 'hungaroring'
-            ? this.trackImage.hungaroring
-            : race.Circuit.circuitId === 'spa'
-            ? this.trackImage.spa
-            : race.Circuit.circuitId === 'zandvoort'
-            ? this.trackImage.zandvoort
-            : race.Circuit.circuitId === 'monza'
-            ? this.trackImage.monza
-            : race.Circuit.circuitId === 'sochi'
-            ? this.trackImage.sochi
-            : race.Circuit.circuitId === 'istanbul'
-            ? this.trackImage.istanbul
-            : race.Circuit.circuitId === 'americas'
-            ? this.trackImage.americas
-            : race.Circuit.circuitId === 'rodriguez'
-            ? this.trackImage.rodriguez
-            : race.Circuit.circuitId === 'interlagos'
-            ? this.trackImage.interlagos
-            : race.Circuit.circuitId === 'losail'
-            ? this.trackImage.losail
-            : race.Circuit.circuitId === 'jeddah'
-            ? this.trackImage.jeddah
-            : race.Circuit.circuitId === 'yas_marina'
-            ? this.trackImage.yas_marina
-            : race.Circuit.circuitId === 'albert_park'
-            ? this.trackImage.albert_park
-            : race.Circuit.circuitId === 'miami'
-            ? this.trackImage.miami
-            : race.Circuit.circuitId === 'villeneuve'
-            ? this.trackImage.villeneuve
-            : race.Circuit.circuitId === 'marina_bay'
-            ? this.trackImage.marina_bay
-            : race.Circuit.circuitId === 'suzuka'
-            ? this.trackImage.suzuka
-            : ''
-        "
-        alt=""
-      />
-    </div>
+    <router-link
+      :to="{
+        name: 'SingleRace',
+        params: { ...race.Circuit },
+        query: { race: race.Circuit.circuitId },
+      }"
+    >
+      <div class="pl-4 w-64 flex justify-center relative">
+        <img
+          class="w-40 lg:w-48 absolute -top-14 lg:-top-20 lg:left-24 z-40"
+          :src="
+            race.Circuit.circuitId === 'bahrain'
+              ? this.trackImage.bahrain
+              : race.Circuit.circuitId === 'imola'
+              ? this.trackImage.imola
+              : race.Circuit.circuitId === 'portimao'
+              ? this.trackImage.portimao
+              : race.Circuit.circuitId === 'catalunya'
+              ? this.trackImage.catalunya
+              : race.Circuit.circuitId === 'monaco'
+              ? this.trackImage.monaco
+              : race.Circuit.circuitId === 'BAK'
+              ? this.trackImage.BAK
+              : race.Circuit.circuitId === 'ricard'
+              ? this.trackImage.ricard
+              : race.Circuit.circuitId === 'red_bull_ring'
+              ? this.trackImage.red_bull_ring
+              : race.Circuit.circuitId === 'silverstone'
+              ? this.trackImage.silverstone
+              : race.Circuit.circuitId === 'hungaroring'
+              ? this.trackImage.hungaroring
+              : race.Circuit.circuitId === 'spa'
+              ? this.trackImage.spa
+              : race.Circuit.circuitId === 'zandvoort'
+              ? this.trackImage.zandvoort
+              : race.Circuit.circuitId === 'monza'
+              ? this.trackImage.monza
+              : race.Circuit.circuitId === 'sochi'
+              ? this.trackImage.sochi
+              : race.Circuit.circuitId === 'istanbul'
+              ? this.trackImage.istanbul
+              : race.Circuit.circuitId === 'americas'
+              ? this.trackImage.americas
+              : race.Circuit.circuitId === 'rodriguez'
+              ? this.trackImage.rodriguez
+              : race.Circuit.circuitId === 'interlagos'
+              ? this.trackImage.interlagos
+              : race.Circuit.circuitId === 'losail'
+              ? this.trackImage.losail
+              : race.Circuit.circuitId === 'jeddah'
+              ? this.trackImage.jeddah
+              : race.Circuit.circuitId === 'yas_marina'
+              ? this.trackImage.yas_marina
+              : race.Circuit.circuitId === 'albert_park'
+              ? this.trackImage.albert_park
+              : race.Circuit.circuitId === 'miami'
+              ? this.trackImage.miami
+              : race.Circuit.circuitId === 'villeneuve'
+              ? this.trackImage.villeneuve
+              : race.Circuit.circuitId === 'marina_bay'
+              ? this.trackImage.marina_bay
+              : race.Circuit.circuitId === 'suzuka'
+              ? this.trackImage.suzuka
+              : ''
+          "
+          alt=""
+        />
+      </div>
 
-    <!-- :style="{
+      <!-- :style="{
         'background-image':
           race.Circuit.circuitId === 'bahrain'
             ? 'url(https://i.guim.co.uk/img/media/fc002a7021125efe95a2681c424a8e90ae5898d4/174_0_5164_3100/master/5164.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=d08c652e0f1a1954b1c41aead1b4e681)'
@@ -71,132 +78,132 @@
             : 'url(https://www.urbanrealm.com/blogs/media/blogs/pauls/yashotelabudhabi10.jpg?mtime=1530381789)',
       }" -->
 
-    <div
-      class="race-card w-72 lg:w-96 h-96 lg:h-30rem rounded-lg flex flex-col p-4"
-      :style="{
-        'background-image':
-          race.Circuit.circuitId === 'bahrain'
-            ? this.bahrain
-            : race.Circuit.circuitId === 'imola'
-            ? this.imola
-            : race.Circuit.circuitId === 'portimao'
-            ? this.portimao
-            : race.Circuit.circuitId === 'catalunya'
-            ? this.catalunya
-            : race.Circuit.circuitId === 'monaco'
-            ? this.monaco
-            : race.Circuit.circuitId === 'BAK'
-            ? this.BAK
-            : race.Circuit.circuitId === 'ricard'
-            ? this.ricard
-            : race.Circuit.circuitId === 'red_bull_ring'
-            ? this.red_bull_ring
-            : race.Circuit.circuitId === 'silverstone'
-            ? this.silverstone
-            : race.Circuit.circuitId === 'hungaroring'
-            ? this.hungaroring
-            : race.Circuit.circuitId === 'spa'
-            ? this.spa
-            : race.Circuit.circuitId === 'zandvoort'
-            ? this.zandvoort
-            : race.Circuit.circuitId === 'monza'
-            ? this.monza
-            : race.Circuit.circuitId === 'sochi'
-            ? this.sochi
-            : race.Circuit.circuitId === 'istanbul'
-            ? this.istanbul
-            : race.Circuit.circuitId === 'americas'
-            ? this.americas
-            : race.Circuit.circuitId === 'rodriguez'
-            ? this.rodriguez
-            : race.Circuit.circuitId === 'interlagos'
-            ? this.interlagos
-            : race.Circuit.circuitId === 'losail'
-            ? this.losail
-            : race.Circuit.circuitId === 'jeddah'
-            ? this.jeddah
-            : race.Circuit.circuitId === 'yas_marina'
-            ? this.yas_marina
-            : race.Circuit.circuitId === 'albert_park'
-            ? this.albert_park
-            : race.Circuit.circuitId === 'miami'
-            ? this.miami
-            : race.Circuit.circuitId === 'villeneuve'
-            ? this.villeneuve
-            : race.Circuit.circuitId === 'marina_bay'
-            ? this.marina
-            : race.Circuit.circuitId === 'suzuka'
-            ? this.suzuka
-            : '',
-      }"
-    >
-      <div class="flex flex-col p-2 mt-10">
-        <h2 class="font-boldHeadline text-white uppercase">
-          {{ race.raceName }}
-        </h2>
-        <h2 class="font-boldHeadline text-sm text-white">
-          {{ race.Circuit.circuitName }}
-        </h2>
-        <p class="text-gray-300 font-headline text-xs">
-          {{
-            race.Circuit.circuitId === 'bahrain'
-              ? '18-20 Mar'
-              : race.Circuit.circuitId === 'albert_park'
-              ? '08-10 Apr'
-              : race.Circuit.circuitId === 'imola'
-              ? '22-24 Apr'
-              : race.Circuit.circuitId === 'miami'
-              ? '06-08 May'
-              : race.Circuit.circuitId === 'portimao'
-              ? '30-02 Apr-May'
-              : race.Circuit.circuitId === 'catalunya'
-              ? '20-22 May'
-              : race.Circuit.circuitId === 'monaco'
-              ? '27-29 May'
-              : race.Circuit.circuitId === 'BAK'
-              ? '10-12 Jun'
-              : race.Circuit.circuitId === 'villeneuve'
-              ? '17-19 Jun'
-              : race.Circuit.circuitId === 'ricard'
-              ? '22-24 Jul'
-              : race.raceName === 'Austrian Grand Prix'
-              ? '08-10 Jul'
-              : race.Circuit.circuitId === 'silverstone'
-              ? '01-03 Jul'
-              : race.Circuit.circuitId === 'hungaroring'
-              ? '29-31 Jul'
-              : race.Circuit.circuitId === 'spa'
-              ? '26-28 Aug'
-              : race.Circuit.circuitId === 'zandvoort'
-              ? '02-04 Sep'
-              : race.Circuit.circuitId === 'monza'
-              ? '09-11 Sep'
-              : race.Circuit.circuitId === 'sochi'
-              ? '23-25 Sep'
-              : race.Circuit.circuitId === 'sochi'
-              ? '23-25 Sep'
-              : race.Circuit.circuitId === 'marina_bay'
-              ? '30-02 Sep-Oct'
-              : race.Circuit.circuitId === 'suzuka'
-              ? '07-09 Oct'
-              : race.Circuit.circuitId === 'americas'
-              ? '21-23 Oct'
-              : race.Circuit.circuitId === 'rodriguez'
-              ? '28-30 Oct'
-              : race.Circuit.circuitId === 'interlagos'
-              ? '11-13 Nov'
-              : race.Circuit.circuitId === 'jeddah'
-              ? '25-27 Mar'
-              : race.Circuit.circuitId === 'yas_marina'
-              ? '18-20 Nov'
-              : ''
-          }}
-        </p>
-      </div>
       <div
-        class="flex flex-col text-white font-headline text-xs h-full justify-end pb-4"
+        class="race-card w-72 lg:w-96 h-96 lg:h-30rem rounded-lg flex flex-col p-4"
+        :style="{
+          'background-image':
+            race.Circuit.circuitId === 'bahrain'
+              ? this.bahrain
+              : race.Circuit.circuitId === 'imola'
+              ? this.imola
+              : race.Circuit.circuitId === 'portimao'
+              ? this.portimao
+              : race.Circuit.circuitId === 'catalunya'
+              ? this.catalunya
+              : race.Circuit.circuitId === 'monaco'
+              ? this.monaco
+              : race.Circuit.circuitId === 'BAK'
+              ? this.BAK
+              : race.Circuit.circuitId === 'ricard'
+              ? this.ricard
+              : race.Circuit.circuitId === 'red_bull_ring'
+              ? this.red_bull_ring
+              : race.Circuit.circuitId === 'silverstone'
+              ? this.silverstone
+              : race.Circuit.circuitId === 'hungaroring'
+              ? this.hungaroring
+              : race.Circuit.circuitId === 'spa'
+              ? this.spa
+              : race.Circuit.circuitId === 'zandvoort'
+              ? this.zandvoort
+              : race.Circuit.circuitId === 'monza'
+              ? this.monza
+              : race.Circuit.circuitId === 'sochi'
+              ? this.sochi
+              : race.Circuit.circuitId === 'istanbul'
+              ? this.istanbul
+              : race.Circuit.circuitId === 'americas'
+              ? this.americas
+              : race.Circuit.circuitId === 'rodriguez'
+              ? this.rodriguez
+              : race.Circuit.circuitId === 'interlagos'
+              ? this.interlagos
+              : race.Circuit.circuitId === 'losail'
+              ? this.losail
+              : race.Circuit.circuitId === 'jeddah'
+              ? this.jeddah
+              : race.Circuit.circuitId === 'yas_marina'
+              ? this.yas_marina
+              : race.Circuit.circuitId === 'albert_park'
+              ? this.albert_park
+              : race.Circuit.circuitId === 'miami'
+              ? this.miami
+              : race.Circuit.circuitId === 'villeneuve'
+              ? this.villeneuve
+              : race.Circuit.circuitId === 'marina_bay'
+              ? this.marina
+              : race.Circuit.circuitId === 'suzuka'
+              ? this.suzuka
+              : '',
+        }"
       >
-        <!-- <div class="flex justify-between">
+        <div class="flex flex-col p-2 mt-10">
+          <h2 class="font-boldHeadline text-white uppercase">
+            {{ race.raceName }}
+          </h2>
+          <h2 class="font-boldHeadline text-sm text-white">
+            {{ race.Circuit.circuitName }}
+          </h2>
+          <p class="text-gray-300 font-headline text-xs">
+            {{
+              race.Circuit.circuitId === 'bahrain'
+                ? '18-20 Mar'
+                : race.Circuit.circuitId === 'albert_park'
+                ? '08-10 Apr'
+                : race.Circuit.circuitId === 'imola'
+                ? '22-24 Apr'
+                : race.Circuit.circuitId === 'miami'
+                ? '06-08 May'
+                : race.Circuit.circuitId === 'portimao'
+                ? '30-02 Apr-May'
+                : race.Circuit.circuitId === 'catalunya'
+                ? '20-22 May'
+                : race.Circuit.circuitId === 'monaco'
+                ? '27-29 May'
+                : race.Circuit.circuitId === 'BAK'
+                ? '10-12 Jun'
+                : race.Circuit.circuitId === 'villeneuve'
+                ? '17-19 Jun'
+                : race.Circuit.circuitId === 'ricard'
+                ? '22-24 Jul'
+                : race.raceName === 'Austrian Grand Prix'
+                ? '08-10 Jul'
+                : race.Circuit.circuitId === 'silverstone'
+                ? '01-03 Jul'
+                : race.Circuit.circuitId === 'hungaroring'
+                ? '29-31 Jul'
+                : race.Circuit.circuitId === 'spa'
+                ? '26-28 Aug'
+                : race.Circuit.circuitId === 'zandvoort'
+                ? '02-04 Sep'
+                : race.Circuit.circuitId === 'monza'
+                ? '09-11 Sep'
+                : race.Circuit.circuitId === 'sochi'
+                ? '23-25 Sep'
+                : race.Circuit.circuitId === 'sochi'
+                ? '23-25 Sep'
+                : race.Circuit.circuitId === 'marina_bay'
+                ? '30-02 Sep-Oct'
+                : race.Circuit.circuitId === 'suzuka'
+                ? '07-09 Oct'
+                : race.Circuit.circuitId === 'americas'
+                ? '21-23 Oct'
+                : race.Circuit.circuitId === 'rodriguez'
+                ? '28-30 Oct'
+                : race.Circuit.circuitId === 'interlagos'
+                ? '11-13 Nov'
+                : race.Circuit.circuitId === 'jeddah'
+                ? '25-27 Mar'
+                : race.Circuit.circuitId === 'yas_marina'
+                ? '18-20 Nov'
+                : ''
+            }}
+          </p>
+        </div>
+        <div
+          class="flex flex-col text-white font-headline text-xs h-full justify-end pb-4"
+        >
+          <!-- <div class="flex justify-between">
           <p v-if="first">{{ first.Results[0].Driver.familyName }}</p>
 
           <p class="font-boldHeadline">1st</p>
@@ -209,8 +216,9 @@
           <p v-if="third">{{ third.Results[0].Driver.familyName }}</p>
           <p class="font-boldHeadline">3rd</p>
         </div> -->
+        </div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
