@@ -326,7 +326,7 @@ export default {
         headers: {
           'x-rapidapi-host': 'f1-live-motorsport-data.p.rapidapi.com',
           'x-rapidapi-key':
-            '2d87f76fe4msh4a13017f02a8ef8p19b543jsn8c4f93d2b74d',
+            '3473e9306amshb366e69081a5fcfp1a12bcjsn82243f92310b',
         },
       };
 
