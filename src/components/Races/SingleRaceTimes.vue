@@ -5,10 +5,10 @@
       <div class="flex w-full items-center text-xxs font-headline">
         <p>18th March</p>
         <p class="mx-1">13:00</p>
-        <span class="border-red-600 border-r-2 h-3 mb-0.5 mx-1"></span>
-        <p class="text-purple font-bold">
+        <span class="h-3 mb-0.5 mx-1"></span>
+        <!-- <p class="text-purple font-bold">
           <i class="fas fa-stopwatch mx-1"></i>Max Verstappen
-        </p>
+        </p> -->
       </div>
       <div class="flex w-full items-center">
         <i class="fas fa-cog mr-2"></i>
@@ -22,10 +22,10 @@
       <div class="flex w-full items-center text-xxs font-headline">
         <p>18th March</p>
         <p class="mx-1">17:00</p>
-        <span class="border-red-600 border-r-2 h-3 mb-0.5 mx-1"></span>
-        <p class="text-purple font-bold">
+        <span class="h-3 mb-0.5 mx-1"></span>
+        <!-- <p class="text-purple font-bold">
           <i class="fas fa-stopwatch mx-1"></i>Lewis Hamilton
-        </p>
+        </p> -->
       </div>
       <div class="flex w-full items-center">
         <i class="fas fa-cog mr-2"></i>
@@ -39,10 +39,10 @@
       <div class="flex w-full items-center text-xxs font-headline">
         <p>19th March</p>
         <p class="mx-1">13:00</p>
-        <span class="border-red-600 border-r-2 h-3 mb-0.5 mx-1"></span>
-        <p class="text-purple font-bold">
+        <span class="h-3 mb-0.5 mx-1"></span>
+        <!-- <p class="text-purple font-bold">
           <i class="fas fa-stopwatch mx-1"></i>Max Verstappen
-        </p>
+        </p> -->
       </div>
       <div class="flex w-full items-center">
         <i class="fas fa-cog mr-2"></i>
@@ -55,10 +55,14 @@
     <div class="h-20 w-full flex flex-col">
       <div class="flex w-full items-center text-xxs font-headline">
         <p>19th March</p>
-        <p class="mx-1">15:00</p>
+        <p class="mx-1" v-if="qualifyingResults">
+          {{ qualifyingResults.time }}
+        </p>
         <span class="border-red-600 border-r-2 h-3 mb-0.5 mx-1"></span>
-        <p class="text-purple font-bold">
-          <i class="fas fa-stopwatch mx-1"></i>Max Verstappen
+        <p class="text-purple font-bold" v-if="qualifyingResults">
+          <i class="fas fa-stopwatch mx-1"></i
+          >{{ qualifyingResults.QualifyingResults[0].Driver.familyName }}{{ ' '
+          }}{{ qualifyingResults.QualifyingResults[0].Q3 }}
         </p>
       </div>
       <div class="flex w-full items-center">
@@ -88,7 +92,33 @@
 </template>
 
 <script>
-export default {};
+import axios from 'axios';
+export default {
+  data() {
+    return {
+      round: '',
+      qualifyingResults: '',
+    };
+  },
+  props: ['circuit'],
+  methods: {
+    getQualifyingData() {
+      axios
+        .get(
+          `https://ergast.com/api/f1/current/${this.$route.params.round}/qualifying.json`
+        )
+        .then((response) => {
+          this.qualifyingResults = response.data.MRData.RaceTable.Races[0];
+          console.log(response, 'the qualifying response');
+        });
+    },
+  },
+  mounted() {
+    this.getQualifyingData();
+    this.round = this.$route.params.round;
+    console.log(this.round, 'the round from inside the times?');
+  },
+};
 </script>
 
 <style></style>

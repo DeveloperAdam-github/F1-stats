@@ -250,7 +250,7 @@
                   : team.constructorId === 'alfa'
                   ? this.zhou
                   : team.constructorId === 'haas'
-                  ? this.mazepin
+                  ? this.magnussen
                   : 'bg-maxBattle',
             }"
           ></div>
@@ -277,7 +277,7 @@
                 : team.constructorId === 'alfa'
                 ? 'Guanyu Zhou'
                 : team.constructorId === 'haas'
-                ? 'Nikita Mazepin'
+                ? 'Kevin Magnussen'
                 : ''
             }}
           </div>
@@ -382,6 +382,7 @@ import stroll from '../../assets/Drivers/DriversBattle/stroll.jpeg';
 import yuki from '../../assets/Drivers/DriversBattle/yuki.jpeg';
 import vettel from '../../assets/Drivers/DriversBattle/vettel.jpeg';
 import zhou from '../../assets/Drivers/DriversBattle/zhou.jpeg';
+import magnussen from '../../assets/Drivers/DriversBattle/kmag.jpeg';
 export default {
   // props: ['team'],
   data() {
@@ -398,6 +399,7 @@ export default {
       gasly: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${gasly})`,
       alonso: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${alonso})`,
       ocon: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${ocon})`,
+      magnussen: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${magnussen})`,
       vettel: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${vettel})`,
       stroll: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${stroll})`,
       tsunoda: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${yuki})`,

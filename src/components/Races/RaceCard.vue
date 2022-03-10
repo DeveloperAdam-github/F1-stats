@@ -3,7 +3,7 @@
     <router-link
       :to="{
         name: 'SingleRace',
-        params: { ...race.Circuit },
+        params: { ...race.Circuit, ...race },
         query: { race: race.Circuit.circuitId },
       }"
     >

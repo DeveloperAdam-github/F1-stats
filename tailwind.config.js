@@ -24,6 +24,7 @@ module.exports = {
     extend: {
       colors: {
         purple: '#5A1F6A',
+        third: '#FF2E0C',
       },
       backgroundImage: (theme) => ({
         ...theme('images'),

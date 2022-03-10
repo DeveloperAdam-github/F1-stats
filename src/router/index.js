@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
+import LiveDetails from '../views/LiveDetails.vue';
 import Drivers from '../views/Drivers.vue';
 import Races from '../views/Races.vue';
 import SingleRace from '../views/SingleRace.vue';
@@ -14,6 +15,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/live',
+    name: 'LiveDetails',
+    component: LiveDetails,
   },
   {
     path: '/drivers',

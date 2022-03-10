@@ -1,6 +1,7 @@
 <template>
   <div
-    class="pt-10 pl-2 w-72 lg:h-30rem lg:w-96 m-2 mx-5 carousel-item flex flex-col lg:mx-8"
+    class="pt-10 pl-2 w-72 lg:h-30rem lg:w-96 m-2 mx-5 carousel-item flex-col lg:mx-8"
+    :class="driver.Driver.driverId === 'mazepin' ? 'hidden' : 'flex'"
   >
     <router-link
       :to="{
@@ -14,11 +15,13 @@
           class="transform text-2xl absolute top-1 -right-15 z-10 text-black font-boldHeadline"
         >
           <span class="text-sm">#</span>{{ driver.Driver.permanentNumber }}
+          {{ driver.Driver.driverId === 'zhou' ? '24' : '' }}
         </p>
         <p
           class="transform text-2xl absolute top-1.5 -right-14 z-10 text-red-600 font-boldHeadline"
         >
-          <span class="text-sm">#</span>{{ driver.Driver.permanentNumber }}
+          <span class="text-sm">#</span>{{ driver.Driver.permanentNumber
+          }}{{ driver.Driver.driverId === 'zhou' ? '24' : '' }}
         </p>
       </div>
       <div
@@ -43,6 +46,8 @@
               ? this.ricciardo
               : driver.Driver.driverId === 'gasly'
               ? this.gasly
+              : driver.Driver.driverId === 'kevin_magnussen'
+              ? this.magnussen
               : driver.Driver.driverId === 'alonso'
               ? this.alonso
               : driver.Driver.driverId === 'ocon'
@@ -63,8 +68,6 @@
               ? this.zhou
               : driver.Driver.driverId === 'mick_schumacher'
               ? this.mick_schumacher
-              : driver.Driver.driverId === 'mazepin'
-              ? this.mazepin
               : driver.Driver.driverId === 'kubica'
               ? this.kubica
               : '',
@@ -114,6 +117,7 @@ import stroll from '../../assets/Drivers/DriversBattle/stroll.jpeg';
 import yuki from '../../assets/Drivers/DriversBattle/yuki.jpeg';
 import vettel from '../../assets/Drivers/DriversBattle/vettel.jpeg';
 import zhou from '../../assets/Drivers/DriversBattle/zhou.jpeg';
+import magnussen from '../../assets/Drivers/DriversBattle/kmag.jpeg';
 
 export default {
   data() {
@@ -135,6 +139,7 @@ export default {
       leclerc: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${leclerc})`,
       ricciardo: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${ricciardo})`,
       gasly: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${gasly})`,
+      magnussen: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${magnussen})`,
       alonso: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${alonso})`,
       ocon: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${ocon})`,
       vettel: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${vettel})`,

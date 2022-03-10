@@ -1,82 +1,128 @@
 <template>
-  <div
-    class="bottom-0 h-10vh font-headline w-full flex items-center p-2 bg-secondary text-gray-400 text-xxs sm:text-xs lg:text-base carousel"
-  >
-    <div class="w-1/5 mx-1 carousel-item flex justify-center">
-      <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Home' }">
-        <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span>
-        Home
-      </router-link>
-    </div>
-    <div
-      class="w-1/5 mx-1 carousel-item flex items-center justify-center"
-      v-if="sessionActive"
-    >
-      <router-link
-        class="flex items-center mx-2 p-1"
-        :to="{ name: 'LiveDetails' }"
+  <div class="w-full bg-secondary">
+    <div class="">
+      <div
+        class="live-page h-80vh lg:h-84vh w-full flex flex-col px-6 py-2 md:p-6 text-white"
       >
-        <!-- <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span> -->
-        Live
-        <i class="fa-solid fa-circle text-xxs mt-0.5 ml-1 live-span"></i>
-      </router-link>
-    </div>
-    <div class="w-1/5 mx-1 carousel-item flex justify-center">
-      <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Drivers' }">
-        <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span>
-        Drivers
-      </router-link>
-    </div>
-    <div class="w-1/5 mx-1 carousel-item flex justify-center">
-      <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Races' }">
-        <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span
-        >Races</router-link
-      >
-    </div>
-    <div class="w-1/5 mx-1 carousel-item flex justify-center">
-      <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Teams' }">
-        <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span
-        >Teams</router-link
-      >
-    </div>
-    <div class="w-1/5 mx-1 carousel-item flex justify-center">
-      <router-link
-        class="flex items-center mx-2 p-1"
-        :to="{ name: 'Standings' }"
-      >
-        <span class="text-3xl opacity-0 mr-1 mb-1">&#183;</span
-        >Standings</router-link
-      >
+        <live-stats-title :sessionData="sessionData" />
+        <div class="w-full h-full flex flex-col items-center pt-5">
+          <live-stats-map :sessionData="sessionData" />
+          <div
+            class="w-full flex h-20 items-center justify-between text-xs font-headline flex-wrap"
+          >
+            <p
+              class="m-1 cursor-pointer transition-all text-xs lg:text-lg"
+              :class="leaderBoard === true ? 'underline text-third' : ''"
+              @click="
+                (this.leaderBoard = true),
+                  (this.pitStops = false),
+                  (this.fastestLaps = false)
+              "
+            >
+              LeaderBoard
+            </p>
+            <p
+              class="m-1 cursor-pointer transition-all text-xs lg:text-lg"
+              :class="pitStops === true ? 'underline text-third' : ''"
+              @click="
+                (this.leaderBoard = false),
+                  (this.pitStops = true),
+                  (this.fastestLaps = false)
+              "
+            >
+              Pit Stops
+            </p>
+            <p
+              class="m-1 cursor-pointer transition-all text-xs lg:text-lg"
+              :class="fastestLaps === true ? 'underline text-third' : ''"
+              @click="
+                (this.leaderBoard = false),
+                  (this.pitStops = false),
+                  (this.fastestLaps = true)
+              "
+            >
+              Top Speeds
+            </p>
+          </div>
+
+          <div class="w-full px-2 flex h-96 flex-col overflow-auto">
+            <transition name="component" mode="out-in">
+              <leader-board v-if="leaderBoard" :sessionData="sessionData" />
+            </transition>
+
+            <transition name="component" mode="out-in">
+              <pit-stops v-if="pitStops" :sessionData="sessionData" />
+            </transition>
+
+            <transition name="component" mode="out-in">
+              <fastest-lap v-if="fastestLaps" :sessionData="sessionData" />
+            </transition>
+          </div>
+
+          <!-- <div
+            class="w-full px-2 flex flex-col h-96 overflow-scroll"
+            v-if="pitStops"
+          >
+            <pit-stops />
+          </div> -->
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+import FastestLap from '../components/LiveStats/FastestLap.vue';
+import LeaderBoard from '../components/LiveStats/LeaderBoard.vue';
+import LiveStatsMap from '../components/LiveStats/LiveStatsMap.vue';
+import LiveStatsTitle from '../components/LiveStats/LiveStatsTitle.vue';
+import PitStops from '../components/LiveStats/PitStops.vue';
 export default {
+  components: {
+    LiveStatsTitle,
+    LiveStatsMap,
+    LeaderBoard,
+    PitStops,
+    FastestLap,
+  },
   data() {
     return {
-      sessionActive: false,
+      leaderBoard: true,
+      pitStops: false,
+      fastestLaps: false,
+      sessionId: 3093,
+      isTimerON: false,
+      interval: '',
+      countdown: '',
+      sessionData: null,
+      driverData: [],
+      red_bull: '#0600ef',
+      mercedes: '#00D2BE',
+      ferrari: '#DC0000',
+      mclaren: '#FF9800',
+      alphatauri: '#2B4562',
+      alfa: '#900000',
+      haas: '#FFF',
+      alpine: '#0090FF',
+      aston_martin: '#006F62',
+      williams: '#005AFF',
     };
   },
   methods: {
-    isLive() {
+    getTimeToFeedInSessionId() {
       var todaysDateInUTC = new Date().getTime();
-
-      // Bahrain Practice Sessions
-      // var bahrainPractice2 = new Date('11 Mar 2022 09:00').toUTCString();
-      // var bahrainPractice2Finish = new Date('11 Mar 2022 15:20').toUTCString();
-
       // Bahrain Start & Finish Times.
-      var bahrainStartDate = new Date('10 Mar 2022 15:00').getTime();
-      var bahrainFinishDate = new Date('12 Mar 2022 23:18').getTime();
+      var bahrainStartDate = new Date('20 Mar 2022 15:00').getTime();
+      var bahrainFinishDate = new Date('20 Mar 2022 18:18').getTime();
 
       // Saudi Arabia Start & Finish Times.
       var saudiStartDate = new Date('27 Mar 2022 18:00').getTime();
       var saudiFinishDate = new Date('27 Mar 2022 21:00').getTime();
 
       // Australia Start & Finish Times.
-      var australiaStartDate = new Date('10 Apr 2022 06:00').getTime();
-      var australiaFinishDate = new Date('10 Apri 2022 09:30').getTime();
+      var australiaStartDate = new Date('27 Mar 2022 18:00').getTime();
+      var australiaFinishDate = new Date('27 Mar 2022 21:00').getTime();
 
       // Emilia-Romagna Start & Finish Times.
       var emiliaStartDate = new Date('24th Apr 2022 14:00').getTime();
@@ -155,155 +201,180 @@ export default {
       var abudhabiFinishDate = new Date('20th Nov 2022 17:00').getTime();
 
       if (
-        // 10 > 2
         todaysDateInUTC >= bahrainStartDate &&
         todaysDateInUTC <= bahrainFinishDate
       ) {
-        this.sessionActive = true;
-        console.log('hellloooo 🚀');
+        this.sessionId = 3111;
       } else if (
         todaysDateInUTC >= saudiStartDate &&
         todaysDateInUTC <= saudiFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3120;
       } else if (
         todaysDateInUTC >= australiaStartDate &&
         todaysDateInUTC <= australiaFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3129;
       } else if (
         todaysDateInUTC >= emiliaStartDate &&
         todaysDateInUTC <= emiliaFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3138;
       } else if (
         todaysDateInUTC >= miamiStartDate &&
         todaysDateInUTC <= miamiFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3147;
       } else if (
         todaysDateInUTC >= spainStartDate &&
         todaysDateInUTC <= spainFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3156;
       } else if (
         todaysDateInUTC >= monacoStartDate &&
         todaysDateInUTC <= monacoFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3165;
       } else if (
         todaysDateInUTC >= azerbaijanStartDate &&
         todaysDateInUTC <= azerbaijanFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3174;
       } else if (
         todaysDateInUTC >= canadaStartDate &&
         todaysDateInUTC <= canadaFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3183;
       } else if (
         todaysDateInUTC >= greatbritainStartDate &&
         todaysDateInUTC <= greatbritainFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3192;
       } else if (
         todaysDateInUTC >= austriaStartDate &&
         todaysDateInUTC <= austriaFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3201;
       } else if (
         todaysDateInUTC >= franceStartDate &&
         todaysDateInUTC <= franceFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3210;
       } else if (
         todaysDateInUTC >= hungaryStartDate &&
         todaysDateInUTC <= hungaryFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3219;
       } else if (
         todaysDateInUTC >= belgiumStartDate &&
         todaysDateInUTC <= belgiumFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3228;
       } else if (
         todaysDateInUTC >= netherlandsStartDate &&
         todaysDateInUTC <= netherlandsFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3237;
       } else if (
         todaysDateInUTC >= italyStartDate &&
         todaysDateInUTC <= italyFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3246;
       } else if (
         todaysDateInUTC >= singaporeStartDate &&
         todaysDateInUTC <= singaporeFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3255;
       } else if (
         todaysDateInUTC >= japanStartDate &&
         todaysDateInUTC <= japanFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3264;
       } else if (
         todaysDateInUTC >= usaStartDate &&
         todaysDateInUTC <= usaFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3273;
       } else if (
         todaysDateInUTC >= mexicoStartDate &&
         todaysDateInUTC <= mexicoFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3282;
       } else if (
         todaysDateInUTC >= brazilStartDate &&
         todaysDateInUTC <= brazilFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3300;
       } else if (
         todaysDateInUTC >= abudhabiStartDate &&
         todaysDateInUTC <= abudhabiFinishDate
       ) {
-        this.sessionActive = true;
+        this.sessionId = 3309;
       } else {
-        this.sessionActive = false;
+        this.stopInterval();
       }
-      console.log(this.sessionActive, 'is the session active?');
-      console.log(todaysDateInUTC, 'todays date');
-      console.log(bahrainStartDate, 'date1', bahrainFinishDate, 'date 2');
+      this.getLiveData();
+    },
+    stopInterval() {
+      console.log('stopping');
+      clearInterval(this.interval);
+    },
+    getLiveData() {
+      var options = {
+        method: 'GET',
+        url: `https://f1-live-motorsport-data.p.rapidapi.com/session/${this.sessionId}`,
+        headers: {
+          'x-rapidapi-host': 'f1-live-motorsport-data.p.rapidapi.com',
+          'x-rapidapi-key':
+            '2d87f76fe4msh4a13017f02a8ef8p19b543jsn8c4f93d2b74d',
+        },
+      };
+
+      axios
+        .request(options)
+        .then((response) => {
+          console.log(response.data);
+          this.sessionData = response.data;
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+      console.log('👑');
     },
   },
+  beforeDestroy() {
+    clearInterval(this.interval);
+  },
   mounted() {
-    this.isLive();
+    this.getTimeToFeedInSessionId();
+    this.interval = setInterval(() => {
+      this.getTimeToFeedInSessionId();
+    }, 20 * 100000);
   },
 };
 </script>
 
-<style scoped>
-/* .router-link {
-  width: auto;
-  padding: 2px;
-  margin: 2px;
-  display: flex;
-  align-items: center;
-} */
-.router-link-active {
-  color: white;
-  font-weight: bold;
-
-  /* transition: font-weight 0.3s linear; */
+<style>
+.live-page {
+  background-image: linear-gradient(rgba(1, 1, 1, 1), rgba(0, 0, 0, 0.1));
 }
 
-.live-span {
-  font-weight: bold;
-  opacity: 100;
-  color: #ff2e0c;
+/* Route transitions */
+.component-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
 }
 
-.router-link-active span {
-  font-weight: bold;
-  opacity: 100;
-  color: #ff2e0c;
+.component-enter-active {
+  transition: all 0.4s ease-in-out;
+}
+
+.component-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.component-leave-active {
+  transition: all 0.4s ease-in-out;
 }
 </style>
