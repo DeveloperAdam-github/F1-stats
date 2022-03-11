@@ -84,10 +84,9 @@
           – but carrying the Schumacher name is surely an extra level of
           pressure for Mick.
         </p>
-        <p v-if="driverInfo.code === 'MAZ'">
-          Nikita Mazepin might be bringing a healthy chunk of budget with him to
-          the Haas team, but don’t be fooled into thinking he hasn’t also got
-          the driving chops to go with it.
+        <p v-if="driverInfo.code === 'MAG'">
+          Kevin Magnussen, thrust back into F1 after missing a season, can Kevin
+          set a bench mark for his partner this year?
         </p>
         <p v-if="driverInfo.code === 'ALB'">
           Alexandar Albon has had a tough time in Formula One, but he is back in

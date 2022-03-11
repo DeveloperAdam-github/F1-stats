@@ -41,10 +41,12 @@
             ? 'https://www.formula1.com/content/dam/fom-website/drivers/N/NICLAF01_Nicholas_Latifi/niclaf01.png.transform/2col-retina/image.png'
             : driverInfo.code === 'MSC'
             ? 'https://www.formula1.com/content/dam/fom-website/drivers/M/MICSCH02_Mick_Schumacher/micsch02.png.transform/2col-retina/image.png'
-            : driverInfo.code === 'MAZ'
-            ? 'https://www.formula1.com/content/dam/fom-website/drivers/N/NIKMAZ01_Nikita_Mazepin/nikmaz01.png.transform/2col-retina/image.png'
-            : driverInfo.code === 'KUB'
-            ? 'https://www.formula1.com/content/dam/fom-website/drivers/R/ROBKUB01_Robert_Kubica/robkub01.png.transform/2col-retina/image.png'
+            : driverInfo.code === 'MAG'
+            ? 'https://www.formula1.com/content/dam/fom-website/drivers/N/KEVMAG01_Kevin_Magnussen/kevmag01.png.transform/2col-retina/image.png'
+            : driverInfo.code === 'ALB'
+            ? 'https://www.formula1.com/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/2col-retina/image.png'
+            : driverInfo.code === 'ZHO'
+            ? 'https://www.formula1.com/content/dam/fom-website/drivers/G/GUAZHO01_Guanyu_Zhou/guazho01.png.transform/2col-retina/image.png'
             : ''
         "
         alt=""
@@ -95,8 +97,8 @@
               ? 'https://www.formula1.com/content/dam/fom-website/flags/Thailand.jpg.transform/2col-retina/image.jpg'
               : driverInfo.code === 'MSC'
               ? 'https://www.formula1.com/content/dam/fom-website/flags/Germany.jpg.transform/2col-retina/image.jpg'
-              : driverInfo.code === 'MAZ'
-              ? ''
+              : driverInfo.code === 'MAG'
+              ? 'https://www.formula1.com/content/dam/fom-website/flags/Denmark.jpg.transform/2col-retina/image.jpg'
               : ''
           "
           alt=""
@@ -128,6 +130,7 @@
       <mazepin-stats v-if="driverInfo.code === 'MAZ'" />
       <albon-stats v-if="driverInfo.code === 'ALB'" />
       <zhou-stats v-if="driverInfo.code === 'ZHO'" />
+      <kevin-stats v-if="driverInfo.code === 'MAG'" />
 
       <div
         v-else-if="driverInfo === null"
@@ -182,6 +185,7 @@ import KubicaStats from './Drivers-Stat-Card/KubicaStats.vue';
 import MazepinStats from './Drivers-Stat-Card/MazepinStats.vue';
 import AlbonStats from './Drivers-Stat-Card/AlbonStats.vue';
 import ZhouStats from './Drivers-Stat-Card/ZhouStats.vue';
+import KevinStats from './Drivers-Stat-Card/KevinStats.vue';
 
 export default {
   components: {
@@ -208,6 +212,7 @@ export default {
     StrollStats,
     AlbonStats,
     ZhouStats,
+    KevinStats,
   },
   props: ['driverInfo'],
   data() {

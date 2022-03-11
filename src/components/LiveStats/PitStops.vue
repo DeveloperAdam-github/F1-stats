@@ -6,7 +6,7 @@
         class="w-full border-b-2 lg:border-b-4 border-r-2 lg:border-r-4 border-gray-800 rounded-br-lg h-6 md:h-10 my-2 flex px-1 items-center text-xs md:text-lg"
       >
         <div class="font-boldHeadline w-11 text-left pl-1 text-xs md:text-base">
-          #1
+          #{{ driver.position }}
         </div>
         <div
           class="border-r-2 lg:border-r-4 h-4 md:h-5 mr-2 w-2"

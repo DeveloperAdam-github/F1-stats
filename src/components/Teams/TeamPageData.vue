@@ -2,30 +2,30 @@
   <div
     class="h-full flex items-center overflow-y-scroll flex-col p-2 lg:p-10 pt-2"
   >
-    <!-- https://www.formula1.com/content/dam/fom-website/teams/2021-Team-Pages/teamcar-ferrari.png.transform/2col-retina/image.png" -->
+    <!-- https://www.formula1.com/content/dam/fom-website/teams/2022-Team-Pages/teamcar-ferrari.png.transform/2col-retina/image.png" -->
     <img
       class="h-40 p-4"
       :src="
         team.constructorId === 'mercedes'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/mercedes.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/mercedes.png.transform/4col-retina/image.png'
           : team.constructorId === 'red_bull'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/red-bull-racing.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/red-bull-racing.png.transform/4col-retina/image.png'
           : team.constructorId === 'ferrari'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021-Team-Pages/teamcar-ferrari.png.transform/2col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022-Team-Pages/teamcar-ferrari.png.transform/2col-retina/image.png'
           : team.constructorId === 'mclaren'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/mclaren.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/mclaren.png.transform/4col-retina/image.png'
           : team.constructorId === 'alpine'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/alpine.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/alpine.png.transform/4col-retina/image.png'
           : team.constructorId === 'alphatauri'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/alphatauri.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/alphatauri.png.transform/4col-retina/image.png'
           : team.constructorId === 'aston_martin'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/aston-martin.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/aston-martin.png.transform/4col-retina/image.png'
           : team.constructorId === 'williams'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/williams.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/williams.png.transform/4col-retina/image.png'
           : team.constructorId === 'alfa'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/alfa-romeo-racing.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/alfa-romeo-racing.png.transform/4col-retina/image.png'
           : team.constructorId === 'haas'
-          ? 'https://www.formula1.com/content/dam/fom-website/teams/2021/haas-f1-team.png.transform/4col-retina/image.png'
+          ? 'https://www.formula1.com/content/dam/fom-website/teams/2022/haas-f1-team.png.transform/4col-retina/image.png'
           : ''
       "
       alt=""
@@ -116,7 +116,7 @@
     >
       <p class="mt-2">
         Alpine may be a relatively new name to Formula 1, but Renault’s famous
-        sportscar arm has plenty of motorsport heritage. The 2021 rebrand of the
+        sportscar arm has plenty of motorsport heritage. The 2022 rebrand of the
         team marked the next step in Renault’s F1 revival, begun in 2016 with
         the takeover of the then-Lotus squad.
       </p>

@@ -23,11 +23,11 @@
               : team.constructorId === 'aston_martin'
               ? this.vettel
               : team.constructorId === 'williams'
-              ? this.russell
+              ? this.albon
               : team.constructorId === 'alfa'
               ? this.zhou
               : team.constructorId === 'haas'
-              ? this.mazepin
+              ? this.magnussen
               : 'bg-maxBattle',
         }"
       ></div>
@@ -39,7 +39,7 @@
             team.constructorId === 'red_bull'
               ? this.perez
               : team.constructorId === 'mercedes'
-              ? this.bottas
+              ? this.russell
               : team.constructorId === 'ferrari'
               ? this.leclerc
               : team.constructorId === 'mclaren'
@@ -53,7 +53,7 @@
               : team.constructorId === 'williams'
               ? this.latifi
               : team.constructorId === 'alfa'
-              ? this.albon
+              ? this.bottas
               : team.constructorId === 'haas'
               ? this.mick
               : 'bg-bottasBattle',
@@ -113,11 +113,11 @@
             : team.constructorId === 'aston_martin'
             ? 'Vettel'
             : team.constructorId === 'williams'
-            ? 'Russell'
+            ? 'Albon'
             : team.constructorId === 'alfa'
-            ? 'Raikonnen'
+            ? 'Zhou'
             : team.constructorId === 'haas'
-            ? 'Mazepin'
+            ? 'Magnussen'
             : ''
         }}
       </p>
@@ -126,7 +126,7 @@
           team.constructorId === 'red_bull'
             ? 'Perez'
             : team.constructorId === 'mercedes'
-            ? 'Bottas'
+            ? 'Russell'
             : team.constructorId === 'ferrari'
             ? 'Leclerc'
             : team.constructorId === 'mclaren'
@@ -140,7 +140,7 @@
             : team.constructorId === 'williams'
             ? 'Latifi'
             : team.constructorId === 'alfa'
-            ? 'Giovinazzi'
+            ? 'Bottas'
             : team.constructorId === 'haas'
             ? 'Schumacher'
             : ''
@@ -876,6 +876,7 @@ import stroll from '../../assets/Drivers/DriversBattle/stroll.jpeg';
 import yuki from '../../assets/Drivers/DriversBattle/yuki.jpeg';
 import vettel from '../../assets/Drivers/DriversBattle/vettel.jpeg';
 import zhou from '../../assets/Drivers/DriversBattle/zhou.jpeg';
+import magnussen from '../../assets/Drivers/DriversBattle/kmag.jpeg';
 export default {
   props: ['team'],
   data() {
@@ -900,7 +901,7 @@ export default {
       latifi: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${latifi})`,
       albon: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${alex})`,
       mick: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${mick})`,
-      mazepin: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${mazepin})`,
+      magnussen: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${magnussen})`,
       kubica: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(https://d3cm515ijfiu6w.cloudfront.net/wp-content/uploads/2021/08/18101104/robert-kubica-alfa-romeo-garage-hungary-planetf1.jpg)`,
     };
   },

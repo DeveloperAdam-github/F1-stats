@@ -43,8 +43,8 @@
               ? this.albon
               : driverInfo.code === 'MSC'
               ? this.mick
-              : driverInfo.code === 'MAZ'
-              ? this.mazepin
+              : driverInfo.code === 'MAG'
+              ? this.magnussen
               : driverInfo.code === 'KUB'
               ? this.kubica
               : '',
@@ -83,6 +83,7 @@ import vettel from '../assets/Drivers/vettel.jpeg';
 import zhou from '../assets/Drivers/zhou.jpeg';
 import mick from '../assets/Drivers/mick.jpeg';
 import albon from '../assets/Drivers/albon.jpeg';
+import magnussen from '../assets/Drivers/magnussen.jpeg';
 export default {
   components: {
     DriverTitle,
@@ -106,6 +107,7 @@ export default {
     vettel,
     zhou,
     albon,
+    magnussen,
   },
   data() {
     return {
@@ -130,7 +132,7 @@ export default {
       latifi: `linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(${latifi})`,
       zhou: `linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(${zhou})`,
       mick: `linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(${mick})`,
-      mazepin: `linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(${mazepin})`,
+      magnussen: `linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(${magnussen})`,
       // kubica: `linear-gradient(rgba(1, 1, 1, 100),rgba(1, 1, 1, 0.10)),url(https://cdn-1.motorsport.com/static/img/amp/4900000/4980000/4981000/4981700/4981771/s6_1008021/1008021.jpg)`,
     };
   },
