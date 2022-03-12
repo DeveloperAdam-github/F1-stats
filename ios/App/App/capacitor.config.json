@@ -3,8 +3,4 @@
 	"appName": "Formula GP",
 	"webDir": "dist",
 	"bundledWebRuntime": false,
-	"server": {
-		"url": "http://localhost:8080",
-		"cleartext": true
-	}
 }

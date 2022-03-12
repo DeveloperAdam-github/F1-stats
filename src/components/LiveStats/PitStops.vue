@@ -38,7 +38,7 @@
         <div class="font-headline w-full flex">
           <p>{{ driver.name }}</p>
         </div>
-        <div class="right-0 w-20 font-headline text-left">
+        <div class="right-0 w-32 font-headline text-left">
           {{ driver.stops }} Stops
         </div>
       </div>
