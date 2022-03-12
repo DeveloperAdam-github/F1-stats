@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="sessionData"
-    class="w-full h-24 md:h-32 lg:h-40 bg-cover flex items-center justify-center relative"
+    class="w-full h-24 md:h-32 lg:h-56 bg-cover flex items-center justify-center relative"
     :style="{
       'background-image':
         sessionData.results.race.name === 'Styrian Grand Prix'
@@ -63,7 +63,7 @@
       {{ sessionData.results.session.general.session_name }}
     </h2>
     <div
-      class="absolute w-full bottom-0 text-xxs font-boldHeadline flex items-center px-4 justify-around"
+      class="absolute w-full bottom-0 text-xxs lg:text-base font-boldHeadline flex items-center px-4 justify-around"
     >
       <p>Laps {{ sessionData.results.session.details.laps }}</p>
       <p>

@@ -8,7 +8,7 @@
         <div class="w-full h-full flex flex-col items-center pt-5">
           <live-stats-map :sessionData="sessionData" />
           <div
-            class="w-full flex h-20 items-center justify-between text-xs font-headline flex-wrap"
+            class="w-full flex h-20 lg:h-28 items-center justify-between text-xs font-headline flex-wrap"
           >
             <p
               class="m-1 cursor-pointer transition-all text-xs lg:text-lg"
@@ -45,7 +45,7 @@
             </p>
           </div>
 
-          <div class="w-full px-2 flex h-96 flex-col overflow-auto">
+          <div class="w-full px-2 flex h-full flex-col overflow-auto">
             <transition name="component" mode="out-in">
               <leader-board v-if="leaderBoard" :sessionData="sessionData" />
             </transition>
