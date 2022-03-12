@@ -128,6 +128,7 @@ module.exports = {
         '80vh': '80vh',
         '84vh': '84vh',
         '30rem': '30rem',
+        '27rem': '27rem',
       },
       fontSize: {
         md: '0.8rem',

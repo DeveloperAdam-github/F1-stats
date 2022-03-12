@@ -2,7 +2,7 @@
   <div class="w-full bg-secondary">
     <div class="">
       <div
-        class="live-page h-80vh lg:h-84vh w-full flex flex-col px-6 py-2 md:p-6 text-white"
+        class="live-page h-80vh lg:h-84vh w-full flex flex-col px-6 py-2 md:p-6 text-white overflow-hidden"
       >
         <live-stats-title :sessionData="sessionData" />
         <div class="w-full h-full flex flex-col items-center pt-5">
@@ -45,7 +45,9 @@
             </p>
           </div>
 
-          <div class="w-full px-2 flex h-full flex-col overflow-auto">
+          <div
+            class="w-full px-2 flex h-27rem lg:h-full flex-col overflow-scroll"
+          >
             <transition name="component" mode="out-in">
               <leader-board v-if="leaderBoard" :sessionData="sessionData" />
             </transition>

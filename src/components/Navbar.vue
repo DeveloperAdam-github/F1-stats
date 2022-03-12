@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bottom-0 h-10vh font-headline w-full flex items-center p-2 bg-secondary text-gray-400 text-xxs sm:text-xs lg:text-base carousel"
+    class="bottom-0 h-10vh z-100 font-headline w-full flex items-center p-2 bg-secondary text-gray-400 text-xxs sm:text-xs lg:text-base carousel"
   >
     <div class="w-1/5 mx-1 carousel-item flex justify-center">
       <router-link class="flex items-center mx-2 p-1" :to="{ name: 'Home' }">
