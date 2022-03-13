@@ -125,6 +125,9 @@ export default {
     };
   },
   props: ['circuit'],
+  created() {
+    console.log(this.$props.circuit, 'kingggggggggg');
+  },
 };
 </script>
 

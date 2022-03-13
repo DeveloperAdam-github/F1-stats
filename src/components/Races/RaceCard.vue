@@ -3,7 +3,7 @@
     <router-link
       :to="{
         name: 'SingleRace',
-        params: { ...race.Circuit, ...race },
+        params: { ...race.Circuit, ...race, ...race.FirstPractice },
         query: { race: race.Circuit.circuitId },
       }"
     >
@@ -337,7 +337,9 @@ export default {
     };
   },
   props: ['race', 'first', 'second', 'third', 'secondPlace'],
-  created() {},
+  created() {
+    // console.log(this.$props.race, '<====== the race?');
+  },
 };
 </script>
 

@@ -7,7 +7,11 @@
         <single-race-title :circuit="circuit" />
         <single-race-map :circuit="circuit" />
         <!-- <h1 class="font-boldHeadline text-lg text-left">Schedule</h1> -->
-        <single-race-times :circuit="circuit" :round="round" />
+        <single-race-times
+          :circuit="circuit"
+          :round="round"
+          :singleRace="singleRace"
+        />
       </div>
     </div>
   </div>
@@ -24,10 +28,18 @@ export default {
       circuit: '',
       round: '',
       qualifyingResults: [],
+      singleRace: '',
     };
   },
   components: { SingleRaceTimes, SingleRaceTitle, SingleRaceMap },
   methods: {
+    async getSingleRaceData() {
+      await axios
+        .get(`https://ergast.com/api/f1/2022/${this.$route.params.round}.json`)
+        .then((response) => {
+          this.singleRace = response.data.MRData.RaceTable.Races[0];
+        });
+    },
     // getQualifyingData() {
     //   axios
     //     .get(
@@ -48,11 +60,12 @@ export default {
     // },
   },
   mounted() {
+    this.getSingleRaceData();
     // this.loadDriverData();
     // this.getQualifyingData();
     this.circuit = this.$route.params;
     this.round = this.$route.params.round;
-    // console.log(this.$route.params, 'params');
+    console.log(this.circuit, 'params');
     // console.log(this.circuit, 'this.circuit');
     // console.log(this.round, 'the round?');
   },

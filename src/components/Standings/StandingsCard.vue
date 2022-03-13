@@ -33,16 +33,16 @@
           ? this.tsunoda
           : driver.Driver.driverId === 'russell'
           ? this.russell
-          : driver.Driver.driverId === 'raikkonen'
-          ? this.raikkonen
+          : driver.Driver.driverId === 'albon'
+          ? this.albon
           : driver.Driver.driverId === 'latifi'
           ? this.latifi
-          : driver.Driver.driverId === 'giovinazzi'
-          ? this.giovinazzi
+          : driver.Driver.driverId === 'zhou'
+          ? this.zhou
           : driver.Driver.driverId === 'mick_schumacher'
           ? this.mick_schumacher
-          : driver.Driver.driverId === 'mazepin'
-          ? this.mazepin
+          : driver.Driver.driverId === 'magnussen'
+          ? this.magnussen
           : driver.Driver.driverId === 'kubica'
           ? this.kubica
           : '',
@@ -113,6 +113,7 @@ import stroll from '../../assets/Drivers/DriversBattle/stroll.jpeg';
 import yuki from '../../assets/Drivers/DriversBattle/yuki.jpeg';
 import vettel from '../../assets/Drivers/DriversBattle/vettel.jpeg';
 import zhou from '../../assets/Drivers/DriversBattle/zhou.jpeg';
+import magnussen from '../../assets/Drivers/DriversBattle/kmag.jpeg';
 export default {
   data() {
     return {
@@ -145,7 +146,7 @@ export default {
       latifi: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${latifi})`,
       albon: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${alex})`,
       mick_schumacher: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${mick})`,
-      mazepin: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${mazepin})`,
+      magnussen: `linear-gradient(to bottom right, rgba(1,1,1,0.01), rgba(1,1,1,0.90)),url(${magnussen})`,
       // verstappen:
       //   'linear-gradient(to bottom right,rgba(0, 0, 0, 0.3), rgba(1, 1, 1, 0.9)), url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/11/17/19/max-verstappen-1.jpg?width=982&height=726&auto=webp&quality=75)',
       // hamilton:

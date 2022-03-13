@@ -4,7 +4,7 @@
     <div class="h-full flex flex-col justify-start pl-3">
       <div class="text-left text-lg font-bold text-white">
         <h1 class="font-boldHeadline tracking-wide text-base lg:text-lg">
-          Weekend Schedule
+          {{ circuit.raceName }} Weekend Schedule
         </h1>
       </div>
       <div
@@ -22,6 +22,9 @@
 <script>
 export default {
   props: ['circuit'],
+  created() {
+    console.log(this.$props.circuit, 'the circuit data');
+  },
 };
 </script>
 

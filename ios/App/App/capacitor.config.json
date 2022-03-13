@@ -2,5 +2,5 @@
 	"appId": "com.developeradam.app",
 	"appName": "Formula GP",
 	"webDir": "dist",
-	"bundledWebRuntime": false,
+	"bundledWebRuntime": false
 }
