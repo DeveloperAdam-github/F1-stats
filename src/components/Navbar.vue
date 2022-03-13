@@ -76,7 +76,7 @@ export default {
 
       // Australia Start & Finish Times.
       var australiaStartDate = new Date('10 Apr 2022 06:00').getTime();
-      var australiaFinishDate = new Date('10 Apri 2022 09:30').getTime();
+      var australiaFinishDate = new Date('10 Apr 2022 09:30').getTime();
 
       // Emilia-Romagna Start & Finish Times.
       var emiliaStartDate = new Date('24th Apr 2022 14:00').getTime();

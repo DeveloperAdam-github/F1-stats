@@ -123,8 +123,8 @@ export default {
       var saudiFinishDate = new Date('27 Mar 2022 21:00').getTime();
 
       // Australia Start & Finish Times.
-      var australiaStartDate = new Date('27 Mar 2022 18:00').getTime();
-      var australiaFinishDate = new Date('27 Mar 2022 21:00').getTime();
+      var australiaStartDate = new Date('10 Apr 2022 06:00').getTime();
+      var australiaFinishDate = new Date('10 Apr 2022 09:30').getTime();
 
       // Emilia-Romagna Start & Finish Times.
       var emiliaStartDate = new Date('24th Apr 2022 14:00').getTime();
