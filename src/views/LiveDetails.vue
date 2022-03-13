@@ -116,7 +116,7 @@ export default {
       var todaysDateInUTC = new Date().getTime();
       // Bahrain Start & Finish Times.
       var bahrainStartDate = new Date('20 Mar 2022 15:00').getTime();
-      var bahrainFinishDate = new Date('20 Mar 2022 18:18').getTime();
+      var bahrainFinishDate = new Date('20 Mar 2022 18:30').getTime();
 
       // Saudi Arabia Start & Finish Times.
       var saudiStartDate = new Date('27 Mar 2022 18:00').getTime();
