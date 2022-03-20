@@ -11,7 +11,7 @@
                 v-if="lastRaceResults.Circuit"
                 class="font-headline text-xs text-gray-500"
               >
-                {{ lastRaceResults.Circuit.Location.locality }}
+                {{ lastRaceResults.raceName }}
               </p>
             </div>
             <div
@@ -19,7 +19,41 @@
             >
               <div
                 v-if="lastRaceResults.Results"
-                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-red_bull"
+                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between"
+                :style="{
+                  'background-color':
+                    lastRaceResults.Results[0].Constructor.constructorId ===
+                    'red_bull'
+                      ? this.red_bull
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'mercedes'
+                      ? this.mercedes
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'ferrari'
+                      ? this.ferrari
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'mclaren'
+                      ? this.mclaren
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'alphatauri'
+                      ? this.alphatauri
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'alpine'
+                      ? this.alpine
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'aston_martin'
+                      ? this.aston_martin
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'williams'
+                      ? this.williams
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'alfa'
+                      ? this.alfa
+                      : lastRaceResults.Results[0].Constructor.constructorId ===
+                        'haas'
+                      ? this.haas
+                      : '',
+                }"
               >
                 <p class="h-auto">
                   {{ lastRaceResults.Results[0].Driver.familyName }}
@@ -28,7 +62,41 @@
               </div>
               <div
                 v-if="lastRaceResults.Results"
-                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-mercedes"
+                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between"
+                :style="{
+                  'background-color':
+                    lastRaceResults.Results[1].Constructor.constructorId ===
+                    'red_bull'
+                      ? this.red_bull
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'mercedes'
+                      ? this.mercedes
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'ferrari'
+                      ? this.ferrari
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'mclaren'
+                      ? this.mclaren
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'alphatauri'
+                      ? this.alphatauri
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'alpine'
+                      ? this.alpine
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'aston_martin'
+                      ? this.aston_martin
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'williams'
+                      ? this.williams
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'alfa'
+                      ? this.alfa
+                      : lastRaceResults.Results[1].Constructor.constructorId ===
+                        'haas'
+                      ? this.haas
+                      : '',
+                }"
               >
                 <p class="h-auto">
                   {{ lastRaceResults.Results[1].Driver.familyName }}
@@ -37,7 +105,41 @@
               </div>
               <div
                 v-if="lastRaceResults.Results"
-                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between bg-ferrari"
+                class="w-1/2 lg:w-1/3 text-sm lg:text-lg lg:p-2 font-boldHeadline m-2 px-2 p-1 flex justify-between"
+                :style="{
+                  'background-color':
+                    lastRaceResults.Results[2].Constructor.constructorId ===
+                    'red_bull'
+                      ? this.red_bull
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'mercedes'
+                      ? this.mercedes
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'ferrari'
+                      ? this.ferrari
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'mclaren'
+                      ? this.mclaren
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'alphatauri'
+                      ? this.alphatauri
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'alpine'
+                      ? this.alpine
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'aston_martin'
+                      ? this.aston_martin
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'williams'
+                      ? this.williams
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'alfa'
+                      ? this.alfa
+                      : lastRaceResults.Results[2].Constructor.constructorId ===
+                        'haas'
+                      ? this.haas
+                      : '',
+                }"
               >
                 <p class="h-auto">
                   {{ lastRaceResults.Results[2].Driver.familyName }}
@@ -202,6 +304,16 @@ export default {
       lastRaceResults: [],
       upcomingRace: [],
       raceDate: '',
+      red_bull: '#0600ef',
+      mercedes: '#00D2BE',
+      ferrari: '#DC0000',
+      mclaren: '#FF9800',
+      alphatauri: '#2B4562',
+      alfa: '#900000',
+      haas: '#FFF',
+      alpine: '#0090FF',
+      aston_martin: '#006F62',
+      williams: '#005AFF',
     };
   },
   components: {
@@ -214,13 +326,14 @@ export default {
         .get('https://ergast.com/api/f1/current/last/results.json')
         .then((response) => {
           this.lastRaceResults = response.data.MRData.RaceTable.Races[0];
-          // console.log(this.lastRaceResults);
+          console.log(this.lastRaceResults);
         });
     },
     getUpcomingRace() {
       axios
         .get('https://ergast.com/api/f1/current/next.json')
         .then((response) => {
+          console.log(response);
           this.upcomingRace = response.data.MRData.RaceTable.Races[0];
           // console.log(this.upcomingRace, 'upcoming');
 
@@ -243,9 +356,9 @@ export default {
         d > 0
           ? d + (d === 1 ? ' day until lights out' : ' days until lights out')
           : '';
-      // const hDisplay = h > 0 ? h + (h === 1 ? ' hour ' : ' hours ') : '';
+      const hDisplay = h > 0 ? h + (h === 1 ? ' hour ' : ' hours ') : '';
 
-      return dDisplay;
+      return hDisplay, dDisplay;
     },
   },
   mounted() {

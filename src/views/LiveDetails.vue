@@ -351,7 +351,7 @@ export default {
     this.getTimeToFeedInSessionId();
     this.interval = setInterval(() => {
       this.getTimeToFeedInSessionId();
-    }, 20 * 100000);
+    }, 60 * 1000);
   },
 };
 </script>
