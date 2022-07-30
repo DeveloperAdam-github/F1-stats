@@ -3,11 +3,19 @@
     <div class="">
       <div class="h-84vh w-full flex flex-col px-6 py-2 md:p-6">
         <race-title />
-        <div class="h-full flex items-center">
-          <div
-            class="w-auto flex overflow-x-scroll no-scrollbar carousel pt-2 lg:pt-8"
-          >
-            <race-card
+        <div class="h-full flex items-center carousel-vertical mt-4">
+          <!-- <div
+            class="w-auto flex overflow-x-scroll no-scrollbar carousel pt-2 lg:pt-8 bg-red-500"
+          > -->
+          <upgraded-race-card
+            v-for="(race, index) in races"
+            :key="index"
+            :race="race"
+            :first="firstPlace[index]"
+            :second="secondPlace[index]"
+            :third="thirdPlace[index]"
+          />
+          <!-- <race-card
               class=""
               v-for="(race, index) in races"
               :key="index"
@@ -15,8 +23,8 @@
               :first="firstPlace[index]"
               :second="secondPlace[index]"
               :third="thirdPlace[index]"
-            />
-          </div>
+            /> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -27,9 +35,10 @@
 import RaceCard from '../components/Races/RaceCard.vue';
 import RaceTitle from '../components/Races/RaceTitle.vue';
 import axios from 'axios';
+import UpgradedRaceCard from '../components/Races/UpgradedRaceCard.vue';
 
 export default {
-  components: { RaceTitle, RaceCard },
+  components: { RaceTitle, RaceCard, UpgradedRaceCard },
   data() {
     return {
       races: [],

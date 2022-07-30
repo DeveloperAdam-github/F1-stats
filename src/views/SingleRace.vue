@@ -59,10 +59,8 @@ export default {
     //   console.log(this.currentDriver, 'hmm?');
     // },
   },
-  mounted() {
-    this.getSingleRaceData();
-    // this.loadDriverData();
-    // this.getQualifyingData();
+  async mounted() {
+    await this.getSingleRaceData();
     this.circuit = this.$route.params;
     this.round = this.$route.params.round;
     console.log(this.circuit, 'params');

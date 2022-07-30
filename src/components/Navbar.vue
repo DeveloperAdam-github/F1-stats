@@ -111,20 +111,20 @@ export default {
       var austriaFinishDate = new Date('10th Jul 2022 17:00').getTime();
 
       // France Start & Finish Times.
-      var franceStartDate = new Date('24th Jul 2022 14:00').getTime();
-      var franceFinishDate = new Date('24th Jul 2022 17:00').getTime();
+      var franceStartDate = new Date('July 24, 2022 14:00').getTime();
+      var franceFinishDate = new Date('July 24 2022 17:00').getTime();
 
       // Hungary Start & Finish Times.
-      var hungaryStartDate = new Date('31st Jul 2022 14:00').getTime();
-      var hungaryFinishDate = new Date('31st Jul 2022 17:00').getTime();
+      var hungaryStartDate = new Date('July 31, 2022 14:00').getTime();
+      var hungaryFinishDate = new Date('July 31, 2022 17:00').getTime();
 
       // Beligum Start & Finish Times.
-      var belgiumStartDate = new Date('28th Aug 2022 14:00').getTime();
-      var belgiumFinishDate = new Date('28th Aug 2022 17:00').getTime();
+      var belgiumStartDate = new Date('Aug 28, 2022 14:00').getTime();
+      var belgiumFinishDate = new Date('Aug 28, 2022 17:00').getTime();
 
       // Netherlands Start & Finish Times.
-      var netherlandsStartDate = new Date('04th Sep 2022 14:00').getTime();
-      var netherlandsFinishDate = new Date('04th Sep 2022 17:00').getTime();
+      var netherlandsStartDate = new Date('July 24, 2022 14:00').getTime();
+      var netherlandsFinishDate = new Date('July 24, 2022 17:00').getTime();
 
       // Italy Start & Finish Times.
       var italyStartDate = new Date('11th Sep 2022 14:00').getTime();
@@ -154,13 +154,14 @@ export default {
       var abudhabiStartDate = new Date('20th Nov 2022 14:00').getTime();
       var abudhabiFinishDate = new Date('20th Nov 2022 17:00').getTime();
 
+      console.log(franceStartDate, 'whats this');
+
       if (
         // 10 > 2
         todaysDateInUTC >= bahrainStartDate &&
         todaysDateInUTC <= bahrainFinishDate
       ) {
         this.sessionActive = true;
-        console.log('hellloooo 🚀');
       } else if (
         todaysDateInUTC >= saudiStartDate &&
         todaysDateInUTC <= saudiFinishDate
@@ -269,9 +270,9 @@ export default {
       } else {
         this.sessionActive = false;
       }
-      console.log(this.sessionActive, 'is the session active?');
-      console.log(todaysDateInUTC, 'todays date');
-      console.log(bahrainStartDate, 'date1', bahrainFinishDate, 'date 2');
+      // console.log(this.sessionActive, 'is the session active?');
+      // console.log(todaysDateInUTC, 'todays date');
+      // console.log(bahrainStartDate, 'date1', bahrainFinishDate, 'date 2');
     },
   },
   mounted() {

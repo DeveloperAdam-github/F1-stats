@@ -155,12 +155,12 @@ export default {
       var greatbritainFinishDate = new Date('03rd Jul 2022 18:00').getTime();
 
       // Austria Start & Finish Times.
-      var austriaStartDate = new Date('10th Jul 2022 14:00').getTime();
-      var austriaFinishDate = new Date('10th Jul 2022 17:00').getTime();
+      var austriaStartDate = new Date('July 24, 2022 14:00').getTime();
+      var austriaFinishDate = new Date('July 24, 2022 23:00').getTime();
 
       // France Start & Finish Times.
-      var franceStartDate = new Date('24th Jul 2022 14:00').getTime();
-      var franceFinishDate = new Date('24th Jul 2022 17:00').getTime();
+      var franceStartDate = new Date('July 23, 2022 14:00').getTime();
+      var franceFinishDate = new Date('July 23, 2022 15:00').getTime();
 
       // Hungary Start & Finish Times.
       var hungaryStartDate = new Date('31st Jul 2022 14:00').getTime();

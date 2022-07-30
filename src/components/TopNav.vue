@@ -10,8 +10,10 @@
         Formula GP
       </p>
     </div>
-    <div class="h-full p-2 w-10 flex items-center">
-      <!-- <img class="w-10" src="../assets/Teams/RedBull.svg" alt="" /> -->
+    <div class="h-full p-2 w-10 flex items-center mt-2 lg:mt-0">
+      <router-link to="">
+        <i class="fa-solid fa-user text-white text-xl"></i>
+      </router-link>
     </div>
   </div>
 </template>
