@@ -68,7 +68,7 @@
               <h2 class="font-headline">Last Race</h2>
               <p
                 v-if="lastRaceResults.Circuit"
-                class="font-headline text-xs text-gray-500"
+                class="font-headline text-xs text-white"
               >
                 {{ lastRaceResults.raceName }}
               </p>
@@ -271,7 +271,7 @@
               <h2 class="font-headline">Upcoming Race</h2>
               <p
                 v-if="upcomingRace.Circuit"
-                class="font-headline text-xs text-gray-500"
+                class="font-headline text-xs text-white"
               >
                 {{ upcomingRace.Circuit.Location.locality }}
               </p>
@@ -280,126 +280,124 @@
               class="h-full w-full flex items-center justify-center flex-col pb-20 uppercase"
             >
               <div
-                class="relative flex justify-center items-center h-14 p-5 w-auto"
+                class="relative flex justify-center items-center h-full w-full flex-col p-4"
               >
-                <h2
-                  v-if="upcomingRace.Circuit"
-                  class="font-boldHeadline text-sm lg:text-xl text-white absolute top-5 left-5 lg:top-4 lg:left-5"
-                >
-                  {{
-                    upcomingRace.Circuit.circuitId === 'bahrain'
-                      ? '18 - 20 Mar'
-                      : upcomingRace.Circuit.circuitId === 'jeddah'
-                      ? '25 - 27 Mar'
-                      : upcomingRace.Circuit.circuitId === 'albert_park'
-                      ? '08 - 10 Apr'
-                      : upcomingRace.Circuit.circuitId === 'imola'
-                      ? '22 - 24 Apr'
-                      : upcomingRace.Circuit.circuitId === 'miami'
-                      ? '06 - 08 May'
-                      : upcomingRace.Circuit.circuitId === 'catalunya'
-                      ? '20 - 22 May'
-                      : upcomingRace.Circuit.circuitId === 'monaco'
-                      ? '27 - 29 May'
-                      : upcomingRace.raceName === 'BAK'
-                      ? '10 - 12 Jun'
-                      : upcomingRace.raceName === 'villeneuve'
-                      ? '17 - 19 Jun'
-                      : upcomingRace.Circuit.circuitId === 'silverstone'
-                      ? '01 - 03 Jul'
-                      : upcomingRace.Circuit.circuitId === 'red_bull_ring'
-                      ? '08 - 10 Jul'
-                      : upcomingRace.Circuit.circuitId === 'ricard'
-                      ? '22 - 24 Jul'
-                      : upcomingRace.Circuit.circuitId === 'hungaroring'
-                      ? '29 - 31 Jul'
-                      : upcomingRace.Circuit.circuitId === 'spa'
-                      ? '26 - 28 Aug'
-                      : upcomingRace.Circuit.circuitId === 'zandvoort'
-                      ? '02 - 04 Sep'
-                      : upcomingRace.Circuit.circuitId === 'monza'
-                      ? '09 - 11 Sep'
-                      : upcomingRace.Circuit.circuitId === 'sochi'
-                      ? '23 - 25 Sep'
-                      : upcomingRace.Circuit.circuitId === 'marina_bay'
-                      ? '30 - 02 Sep - Oct'
-                      : upcomingRace.Circuit.circuitId === 'suzuka'
-                      ? '07 - 09 Oct'
-                      : upcomingRace.Circuit.circuitId === 'austin'
-                      ? '21 - 23 Oct'
-                      : upcomingRace.Circuit.circuitId === 'rodriguez'
-                      ? '28 - 30 Oct'
-                      : upcomingRace.Circuit.circuitId === 'interlagos'
-                      ? '11 - 13 Nov'
-                      : upcomingRace.Circuit.circuitId === 'yas_marina'
-                      ? '18 - 20 Nov'
-                      : ''
-                  }}
-                </h2>
-                <h2
-                  v-if="upcomingRace.Circuit"
-                  class="font-boldHeadline text-sm lg:text-xl text-black"
-                >
-                  {{
-                    upcomingRace.Circuit.circuitId === 'bahrain'
-                      ? '18 - 20 Mar'
-                      : upcomingRace.Circuit.circuitId === 'jeddah'
-                      ? '25 - 27 Mar'
-                      : upcomingRace.Circuit.circuitId === 'albert_park'
-                      ? '08 - 10 Apr'
-                      : upcomingRace.Circuit.circuitId === 'imola'
-                      ? '22 - 24 Apr'
-                      : upcomingRace.Circuit.circuitId === 'miami'
-                      ? '06 - 08 May'
-                      : upcomingRace.Circuit.circuitId === 'catalunya'
-                      ? '20 - 22 May'
-                      : upcomingRace.Circuit.circuitId === 'monaco'
-                      ? '27 - 29 May'
-                      : upcomingRace.raceName === 'BAK'
-                      ? '10 - 12 Jun'
-                      : upcomingRace.raceName === 'villeneuve'
-                      ? '17 - 19 Jun'
-                      : upcomingRace.Circuit.circuitId === 'silverstone'
-                      ? '01 - 03 Jul'
-                      : upcomingRace.Circuit.circuitId === 'red_bull_ring'
-                      ? '08 - 10 Jul'
-                      : upcomingRace.Circuit.circuitId === 'ricard'
-                      ? '22 - 24 Jul'
-                      : upcomingRace.Circuit.circuitId === 'hungaroring'
-                      ? '29 - 31 Jul'
-                      : upcomingRace.Circuit.circuitId === 'spa'
-                      ? '26 - 28 Aug'
-                      : upcomingRace.Circuit.circuitId === 'zandvoort'
-                      ? '02 - 04 Sep'
-                      : upcomingRace.Circuit.circuitId === 'monza'
-                      ? '09 - 11 Sep'
-                      : upcomingRace.Circuit.circuitId === 'sochi'
-                      ? '23 - 25 Sep'
-                      : upcomingRace.Circuit.circuitId === 'marina_bay'
-                      ? '30 - 02 Sep - Oct'
-                      : upcomingRace.Circuit.circuitId === 'suzuka'
-                      ? '07 - 09 Oct'
-                      : upcomingRace.Circuit.circuitId === 'austin'
-                      ? '21 - 23 Oct'
-                      : upcomingRace.Circuit.circuitId === 'rodriguez'
-                      ? '28 - 30 Oct'
-                      : upcomingRace.Circuit.circuitId === 'interlagos'
-                      ? '11 - 13 Nov'
-                      : upcomingRace.Circuit.circuitId === 'yas_marina'
-                      ? '18 - 20 Nov'
-                      : ''
-                  }}
-                </h2>
-              </div>
-              <div class="relative p-1">
-                <p class="font-boldHeadline text-black mb-4 lg:text-lg">
-                  {{ secondsToDhms(this.raceDate) }}
-                </p>
-                <p
-                  class="font-boldHeadline text-white absolute bottom-2.5 mb-2 ml-0.5 lg:text-lg"
-                >
-                  {{ secondsToDhms(this.raceDate) }}
-                </p>
+                <!-- PRACTICE 1 -->
+                <div class="p-2 flex w-full" v-if="upcomingRace">
+                  <div class="flex w-full items-center">
+                    <p class="text-sm font-boldHeadline">P1</p>
+                  </div>
+                  <div
+                    class="flex w-full items-center text-xxs font-boldHeadline"
+                  >
+                    <p>
+                      {{
+                        new Date(upcomingRace.FirstPractice.date).toDateString()
+                      }}
+                    </p>
+                    <p class="mx-1">
+                      {{
+                        localeTimeString(
+                          upcomingRace.FirstPractice.date,
+                          upcomingRace.FirstPractice.time
+                        )
+                      }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- PRACTICE 2 -->
+                <div class="p-2 flex w-full" v-if="upcomingRace">
+                  <div class="flex w-full items-center">
+                    <p class="text-sm font-boldHeadline">P2</p>
+                  </div>
+                  <div
+                    class="flex w-full items-center text-xxs font-boldHeadline"
+                  >
+                    <p>
+                      {{
+                        new Date(
+                          upcomingRace.SecondPractice.date
+                        ).toDateString()
+                      }}
+                    </p>
+                    <p class="mx-1">
+                      {{
+                        localeTimeString(
+                          upcomingRace.SecondPractice.date,
+                          upcomingRace.SecondPractice.time
+                        )
+                      }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- PRACTICE 3 -->
+                <div class="p-2 flex w-full" v-if="upcomingRace">
+                  <div class="flex w-full items-center">
+                    <p class="text-sm font-boldHeadline">P3</p>
+                  </div>
+                  <div
+                    class="flex w-full items-center text-xxs font-boldHeadline"
+                  >
+                    <p>
+                      {{
+                        new Date(upcomingRace.ThirdPractice.date).toDateString()
+                      }}
+                    </p>
+                    <p class="mx-1">
+                      {{
+                        localeTimeString(
+                          upcomingRace.ThirdPractice.date,
+                          upcomingRace.ThirdPractice.time
+                        )
+                      }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- QUALIFYING -->
+                <div class="p-2 flex w-full" v-if="upcomingRace">
+                  <div class="flex w-full items-center">
+                    <p class="text-sm font-boldHeadline">Q</p>
+                  </div>
+                  <div
+                    class="flex w-full items-center text-xxs font-boldHeadline"
+                  >
+                    <p>
+                      {{
+                        new Date(upcomingRace.Qualifying.date).toDateString()
+                      }}
+                    </p>
+                    <p class="mx-1">
+                      {{
+                        localeTimeString(
+                          upcomingRace.Qualifying.date,
+                          upcomingRace.Qualifying.time
+                        )
+                      }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- RACE -->
+                <div class="p-2 flex w-full" v-if="upcomingRace">
+                  <div class="flex w-full items-center">
+                    <p class="text-sm font-boldHeadline">Race</p>
+                  </div>
+                  <div
+                    class="flex w-full items-center text-xxs font-boldHeadline"
+                  >
+                    <p>
+                      {{ new Date(upcomingRace.date).toDateString() }}
+                    </p>
+                    <p class="mx-1">
+                      {{
+                        localeTimeString(upcomingRace.date, upcomingRace.time)
+                      }}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -458,37 +456,49 @@ export default {
       alpine: '#0090FF',
       aston_martin: '#006F62',
       williams: '#005AFF',
-      bahrain: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)), url(${bahrain})`,
-      imola: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${imola})`,
-      portimao: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${portimao})`,
-      catalunya: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${catalunya})`,
-      monaco: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${monaco})`,
-      BAK: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${baku})`,
-      ricard: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${ricard})`,
-      red_bull_ring: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${red_bull_ring})`,
-      silverstone: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${silverstone})`,
-      hungaroring: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${hungaroring})`,
-      spa: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${spa})`,
-      zandvoort: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${zandvoort})`,
-      monza: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${monza})`,
-      sochi: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${sochi})`,
-      istanbul: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${istanbul})`,
-      americas: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${americas})`,
-      rodriguez: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${rodriguez})`,
-      interlagos: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${interlagos})`,
-      losail: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${losail})`,
-      jeddah: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${jeddah})`,
-      yas_marina: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${yas_marina})`,
-      albert_park: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${albert})`,
-      miami: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${miami})`,
-      villeneuve: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${circuit_gilles})`,
-      suzuka: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${suzuka})`,
-      marina: `linear-gradient(to bottom right, rgba(1,1,1,0.25), rgba(1,1,1,0.45)),url(${marina})`,
+      bahrain: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)), url(${bahrain})`,
+      imola: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${imola})`,
+      portimao: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${portimao})`,
+      catalunya: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${catalunya})`,
+      monaco: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${monaco})`,
+      BAK: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${baku})`,
+      ricard: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${ricard})`,
+      red_bull_ring: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${red_bull_ring})`,
+      silverstone: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${silverstone})`,
+      hungaroring: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${hungaroring})`,
+      spa: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${spa})`,
+      zandvoort: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${zandvoort})`,
+      monza: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${monza})`,
+      sochi: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${sochi})`,
+      istanbul: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${istanbul})`,
+      americas: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${americas})`,
+      rodriguez: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${rodriguez})`,
+      interlagos: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${interlagos})`,
+      losail: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${losail})`,
+      jeddah: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${jeddah})`,
+      yas_marina: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${yas_marina})`,
+      albert_park: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${albert})`,
+      miami: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${miami})`,
+      villeneuve: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${circuit_gilles})`,
+      suzuka: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${suzuka})`,
+      marina: `linear-gradient(to bottom right, rgba(1,1,1,0.35), rgba(1,1,1,0.65)),url(${marina})`,
     };
   },
   components: {
     HelloWorld,
     HomeTitle,
+  },
+  computed: {
+    localeTimeString() {
+      return (date, time) => {
+        let passedInDate = date;
+        let passedInTime = time;
+        let joinedDate = passedInDate.concat('T', passedInTime);
+        let localTime = new Date(joinedDate).toLocaleTimeString().slice(0, -3);
+
+        return localTime;
+      };
+    },
   },
   methods: {
     getLastRaceResults() {
@@ -505,7 +515,7 @@ export default {
         .then((response) => {
           console.log(response);
           this.upcomingRace = response.data.MRData.RaceTable.Races[0];
-          // console.log(this.upcomingRace, 'upcoming');
+          console.log(this.upcomingRace, 'upcoming');
 
           const todaysDate = Math.floor(new Date().getTime() / 1000.0);
           const raceDate = Math.floor(
