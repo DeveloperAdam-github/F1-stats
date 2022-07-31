@@ -2,13 +2,34 @@
   <div class="w-full bg-secondary">
     <div class="">
       <div
-        class="live-page h-80vh lg:h-84vh w-full flex flex-col px-6 py-2 md:p-6 text-white overflow-hidden"
+        class="
+          live-page
+          h-80vh
+          lg:h-84vh
+          w-full
+          flex flex-col
+          px-6
+          py-2
+          md:p-6
+          text-white
+          overflow-hidden
+        "
       >
         <live-stats-title :sessionData="sessionData" />
         <div class="w-full h-full flex flex-col items-center pt-5">
           <live-stats-map :sessionData="sessionData" />
           <div
-            class="w-full flex h-20 lg:h-28 items-center justify-between text-xs font-headline flex-wrap"
+            class="
+              w-full
+              flex
+              h-20
+              lg:h-28
+              items-center
+              justify-between
+              text-xs
+              font-headline
+              flex-wrap
+            "
           >
             <p
               class="m-1 cursor-pointer transition-all text-xs lg:text-lg"
@@ -74,12 +95,12 @@
 </template>
 
 <script>
-import axios from 'axios';
-import FastestLap from '../components/LiveStats/FastestLap.vue';
-import LeaderBoard from '../components/LiveStats/LeaderBoard.vue';
-import LiveStatsMap from '../components/LiveStats/LiveStatsMap.vue';
-import LiveStatsTitle from '../components/LiveStats/LiveStatsTitle.vue';
-import PitStops from '../components/LiveStats/PitStops.vue';
+import axios from "axios";
+import FastestLap from "../components/LiveStats/FastestLap.vue";
+import LeaderBoard from "../components/LiveStats/LeaderBoard.vue";
+import LiveStatsMap from "../components/LiveStats/LiveStatsMap.vue";
+import LiveStatsTitle from "../components/LiveStats/LiveStatsTitle.vue";
+import PitStops from "../components/LiveStats/PitStops.vue";
 export default {
   components: {
     LiveStatsTitle,
@@ -95,112 +116,112 @@ export default {
       fastestLaps: false,
       sessionId: 3093,
       isTimerON: false,
-      interval: '',
-      countdown: '',
+      interval: "",
+      countdown: "",
       sessionData: null,
       driverData: [],
-      red_bull: '#0600ef',
-      mercedes: '#00D2BE',
-      ferrari: '#DC0000',
-      mclaren: '#FF9800',
-      alphatauri: '#2B4562',
-      alfa: '#900000',
-      haas: '#FFF',
-      alpine: '#0090FF',
-      aston_martin: '#006F62',
-      williams: '#005AFF',
+      red_bull: "#0600ef",
+      mercedes: "#00D2BE",
+      ferrari: "#DC0000",
+      mclaren: "#FF9800",
+      alphatauri: "#2B4562",
+      alfa: "#900000",
+      haas: "#FFF",
+      alpine: "#0090FF",
+      aston_martin: "#006F62",
+      williams: "#005AFF",
     };
   },
   methods: {
     getTimeToFeedInSessionId() {
       var todaysDateInUTC = new Date().getTime();
       // Bahrain Start & Finish Times.
-      var bahrainStartDate = new Date('20 Mar 2022 15:00').getTime();
-      var bahrainFinishDate = new Date('20 Mar 2022 18:30').getTime();
+      var bahrainStartDate = new Date("20 Mar 2022 15:00").getTime();
+      var bahrainFinishDate = new Date("20 Mar 2022 18:30").getTime();
 
       // Saudi Arabia Start & Finish Times.
-      var saudiStartDate = new Date('27 Mar 2022 18:00').getTime();
-      var saudiFinishDate = new Date('27 Mar 2022 21:00').getTime();
+      var saudiStartDate = new Date("27 Mar 2022 18:00").getTime();
+      var saudiFinishDate = new Date("27 Mar 2022 21:00").getTime();
 
       // Australia Start & Finish Times.
-      var australiaStartDate = new Date('10 Apr 2022 06:00').getTime();
-      var australiaFinishDate = new Date('10 Apr 2022 09:30').getTime();
+      var australiaStartDate = new Date("10 Apr 2022 06:00").getTime();
+      var australiaFinishDate = new Date("10 Apr 2022 09:30").getTime();
 
       // Emilia-Romagna Start & Finish Times.
-      var emiliaStartDate = new Date('24th Apr 2022 14:00').getTime();
-      var emiliaFinishDate = new Date('24th Apr 2022 19:00').getTime();
+      var emiliaStartDate = new Date("24th Apr 2022 14:00").getTime();
+      var emiliaFinishDate = new Date("24th Apr 2022 19:00").getTime();
 
       // Miami Start & Finish Times.
-      var miamiStartDate = new Date('08th May 2022 20:30').getTime();
-      var miamiFinishDate = new Date('08th May 2022 23:30').getTime();
+      var miamiStartDate = new Date("08th May 2022 20:30").getTime();
+      var miamiFinishDate = new Date("08th May 2022 23:30").getTime();
 
       // Spain Start & Finish Times.
-      var spainStartDate = new Date('22nd May 2022 14:00').getTime();
-      var spainFinishDate = new Date('22nd May 2022 17:00').getTime();
+      var spainStartDate = new Date("22nd May 2022 14:00").getTime();
+      var spainFinishDate = new Date("22nd May 2022 17:00").getTime();
 
       // Monaco Start & Finish Times.
-      var monacoStartDate = new Date('29th May 2022 14:00').getTime();
-      var monacoFinishDate = new Date('29th May 2022 17:00').getTime();
+      var monacoStartDate = new Date("29th May 2022 14:00").getTime();
+      var monacoFinishDate = new Date("29th May 2022 17:00").getTime();
 
       // Azerbaijan Start & Finish Times.
-      var azerbaijanStartDate = new Date('12th Jun 2022 12:00').getTime();
-      var azerbaijanFinishDate = new Date('12th Jun 2022 15:00').getTime();
+      var azerbaijanStartDate = new Date("12th Jun 2022 12:00").getTime();
+      var azerbaijanFinishDate = new Date("12th Jun 2022 15:00").getTime();
 
       // Canda Start & Finish Times.
-      var canadaStartDate = new Date('19th Jun 2022 19:00').getTime();
-      var canadaFinishDate = new Date('19th Jun 2022 21:00').getTime();
+      var canadaStartDate = new Date("19th Jun 2022 19:00").getTime();
+      var canadaFinishDate = new Date("19th Jun 2022 21:00").getTime();
 
       // greatbritain Start & Finish Times.
-      var greatbritainStartDate = new Date('03rd Jul 2022 15:00').getTime();
-      var greatbritainFinishDate = new Date('03rd Jul 2022 18:00').getTime();
+      var greatbritainStartDate = new Date("03rd Jul 2022 15:00").getTime();
+      var greatbritainFinishDate = new Date("03rd Jul 2022 18:00").getTime();
 
       // Austria Start & Finish Times.
-      var austriaStartDate = new Date('July 24, 2022 14:00').getTime();
-      var austriaFinishDate = new Date('July 24, 2022 23:00').getTime();
+      var austriaStartDate = new Date("July 14, 2022 14:00").getTime();
+      var austriaFinishDate = new Date("July 14, 2022 23:00").getTime();
 
       // France Start & Finish Times.
-      var franceStartDate = new Date('July 23, 2022 14:00').getTime();
-      var franceFinishDate = new Date('July 23, 2022 15:00').getTime();
+      var franceStartDate = new Date("July 23, 2022 14:00").getTime();
+      var franceFinishDate = new Date("July 23, 2022 15:00").getTime();
 
       // Hungary Start & Finish Times.
-      var hungaryStartDate = new Date('31st Jul 2022 14:00').getTime();
-      var hungaryFinishDate = new Date('31st Jul 2022 17:00').getTime();
+      var hungaryStartDate = new Date("July 31 2022 14:00");
+      var hungaryFinishDate = new Date("July 31 2022 18:00");
 
       // Beligum Start & Finish Times.
-      var belgiumStartDate = new Date('28th Aug 2022 14:00').getTime();
-      var belgiumFinishDate = new Date('28th Aug 2022 17:00').getTime();
+      var belgiumStartDate = new Date("Aug 28 2022 14:00").getTime();
+      var belgiumFinishDate = new Date("Aug 28 2022 17:00").getTime();
 
       // Netherlands Start & Finish Times.
-      var netherlandsStartDate = new Date('04th Sep 2022 14:00').getTime();
-      var netherlandsFinishDate = new Date('04th Sep 2022 17:00').getTime();
+      var netherlandsStartDate = new Date("Sept 04 2022 14:00").getTime();
+      var netherlandsFinishDate = new Date("Sept 04 2022 17:00").getTime();
 
       // Italy Start & Finish Times.
-      var italyStartDate = new Date('11th Sep 2022 14:00').getTime();
-      var italyFinishDate = new Date('11th Sep 2022 17:00').getTime();
+      var italyStartDate = new Date("Sept 11 2022 14:00").getTime();
+      var italyFinishDate = new Date("Sept 11 2022 17:00").getTime();
 
       // Singapore Start & Finish Times.
-      var singaporeStartDate = new Date('02nd Oct 2022 13:00').getTime();
-      var singaporeFinishDate = new Date('02nd Oct 2022 16:00').getTime();
+      var singaporeStartDate = new Date("Oct 02 2022 13:00").getTime();
+      var singaporeFinishDate = new Date("Oct 02 2022 16:00").getTime();
 
       // Japan Start & Finish Times.
-      var japanStartDate = new Date('09th Oct 2022 06:00').getTime();
-      var japanFinishDate = new Date('09th Oct 2022 09:00').getTime();
+      var japanStartDate = new Date("Oct 09 2022 06:00").getTime();
+      var japanFinishDate = new Date("Oct 09 2022 09:00").getTime();
 
       // USA Start & Finish Times.
-      var usaStartDate = new Date('23rd Oct 2022 20:00').getTime();
-      var usaFinishDate = new Date('23rd Oct 2022 23:00').getTime();
+      var usaStartDate = new Date("Oct 23 2022 20:00").getTime();
+      var usaFinishDate = new Date("Oct 23 2022 23:00").getTime();
 
       // Mexico Start & Finish Times.
-      var mexicoStartDate = new Date('30th Oct 2022 20:00').getTime();
-      var mexicoFinishDate = new Date('30th Oct 2022 23:00').getTime();
+      var mexicoStartDate = new Date("Oct 30 2022 20:00").getTime();
+      var mexicoFinishDate = new Date("Oct 30 2022 23:00").getTime();
 
       // Brazil Start & Finish Times.
-      var brazilStartDate = new Date('13th Nov 2022 18:00').getTime();
-      var brazilFinishDate = new Date('13th Nov 2022 21:00').getTime();
+      var brazilStartDate = new Date("Nov 13 2022 18:00").getTime();
+      var brazilFinishDate = new Date("Nov 13 2022 21:00").getTime();
 
       // Abu Dhabi Start & Finish Times.
-      var abudhabiStartDate = new Date('20th Nov 2022 14:00').getTime();
-      var abudhabiFinishDate = new Date('20th Nov 2022 17:00').getTime();
+      var abudhabiStartDate = new Date("Nov 20 2022 14:00").getTime();
+      var abudhabiFinishDate = new Date("Nov 20 2022 17:00").getTime();
 
       if (
         todaysDateInUTC >= bahrainStartDate &&
@@ -314,21 +335,27 @@ export default {
         this.sessionId = 3309;
       } else {
         this.stopInterval();
+        console.log(
+          todaysDateInUTC,
+          hungaryStartDate,
+          hungaryFinishDate,
+          "what the helll???"
+        );
       }
       this.getLiveData();
     },
     stopInterval() {
-      console.log('stopping');
+      console.log("stopping");
       clearInterval(this.interval);
     },
     getLiveData() {
       var options = {
-        method: 'GET',
+        method: "GET",
         url: `https://f1-live-motorsport-data.p.rapidapi.com/session/${this.sessionId}`,
         headers: {
-          'x-rapidapi-host': 'f1-live-motorsport-data.p.rapidapi.com',
-          'x-rapidapi-key':
-            '3473e9306amshb366e69081a5fcfp1a12bcjsn82243f92310b',
+          "x-rapidapi-host": "f1-live-motorsport-data.p.rapidapi.com",
+          "x-rapidapi-key":
+            "3473e9306amshb366e69081a5fcfp1a12bcjsn82243f92310b",
         },
       };
 
@@ -341,7 +368,7 @@ export default {
         .catch(function (error) {
           console.error(error);
         });
-      console.log('👑');
+      console.log("👑");
     },
   },
   beforeDestroy() {
