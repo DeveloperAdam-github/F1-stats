@@ -283,13 +283,14 @@
                 class="relative flex justify-center items-center h-full w-full flex-col p-4"
               >
                 <!-- PRACTICE 1 -->
-                <div class="p-2 flex w-full" v-if="upcomingRace">
-                  <div class="flex w-full items-center">
+                <div
+                  class="p-2 flex w-full justify-between"
+                  v-if="upcomingRace"
+                >
+                  <div class="flex items-center">
                     <p class="text-sm font-boldHeadline">P1</p>
                   </div>
-                  <div
-                    class="flex w-full items-center text-xxs font-boldHeadline"
-                  >
+                  <div class="flex items-center text-xxs font-boldHeadline">
                     <p>
                       {{
                         new Date(upcomingRace.FirstPractice.date).toDateString()
@@ -307,13 +308,14 @@
                 </div>
 
                 <!-- PRACTICE 2 -->
-                <div class="p-2 flex w-full" v-if="upcomingRace">
-                  <div class="flex w-full items-center">
+                <div
+                  class="p-2 flex w-full justify-between"
+                  v-if="upcomingRace"
+                >
+                  <div class="flex items-center">
                     <p class="text-sm font-boldHeadline">P2</p>
                   </div>
-                  <div
-                    class="flex w-full items-center text-xxs font-boldHeadline"
-                  >
+                  <div class="flex items-center text-xxs font-boldHeadline">
                     <p>
                       {{
                         new Date(
@@ -333,13 +335,14 @@
                 </div>
 
                 <!-- PRACTICE 3 -->
-                <div class="p-2 flex w-full" v-if="upcomingRace">
-                  <div class="flex w-full items-center">
+                <div
+                  class="p-2 flex w-full justify-between"
+                  v-if="upcomingRace"
+                >
+                  <div class="flex items-center">
                     <p class="text-sm font-boldHeadline">P3</p>
                   </div>
-                  <div
-                    class="flex w-full items-center text-xxs font-boldHeadline"
-                  >
+                  <div class="flex items-center text-xxs font-boldHeadline">
                     <p>
                       {{
                         new Date(upcomingRace.ThirdPractice.date).toDateString()
@@ -357,13 +360,14 @@
                 </div>
 
                 <!-- QUALIFYING -->
-                <div class="p-2 flex w-full" v-if="upcomingRace">
-                  <div class="flex w-full items-center">
+                <div
+                  class="p-2 flex w-full justify-between"
+                  v-if="upcomingRace"
+                >
+                  <div class="flex items-center">
                     <p class="text-sm font-boldHeadline">Q</p>
                   </div>
-                  <div
-                    class="flex w-full items-center text-xxs font-boldHeadline"
-                  >
+                  <div class="flex items-center text-xxs font-boldHeadline">
                     <p>
                       {{
                         new Date(upcomingRace.Qualifying.date).toDateString()
@@ -381,13 +385,14 @@
                 </div>
 
                 <!-- RACE -->
-                <div class="p-2 flex w-full" v-if="upcomingRace">
-                  <div class="flex w-full items-center">
+                <div
+                  class="p-2 flex w-full justify-between"
+                  v-if="upcomingRace"
+                >
+                  <div class="flex items-center">
                     <p class="text-sm font-boldHeadline">Race</p>
                   </div>
-                  <div
-                    class="flex w-full items-center text-xxs font-boldHeadline"
-                  >
+                  <div class="flex items-center text-xxs font-boldHeadline">
                     <p>
                       {{ new Date(upcomingRace.date).toDateString() }}
                     </p>
